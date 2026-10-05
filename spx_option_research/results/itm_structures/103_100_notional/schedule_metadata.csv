@@ -1,0 +1,8 @@
+schedule_id,entry_interval_weeks,trades,max_concurrent_to_expiry,tranche_notional_pct,maximum_scheduled_notional_pct
+every_1w,1.0,486,9,0.1111111111111111,1.0
+every_2w,2.0,241,5,0.2,1.0
+every_3w,3.0,163,3,0.3333333333333333,1.0
+every_4w,4.0,121,3,0.3333333333333333,1.0
+every_6w,6.0,80,2,0.5,1.0
+every_8w,8.0,62,2,0.5,1.0
+monthly,4.345,118,3,0.3333333333333333,1.0

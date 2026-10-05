@@ -1,0 +1,20 @@
+{
+  "signal": "z-score of IV/RV relative to same spread's previous 24 monthly observations",
+  "historical_mean_and_sample_std_exclude_current": true,
+  "candidate_source": "results\\dynamic_iv_spread_selector\\candidate_trades.parquet",
+  "candidate_source_sha256": "fb4398c656bc6a453fb751052c152863a9636ab2c3b60327cb87eff42529f0f4",
+  "cash_source_sha256": "f1694eb23ccb6e859e1a5609b97033f356ff2c791fcc15f904c183ff2df2cb6e",
+  "rv": "21 simple cash-SPX returns through entry close; sample std * sqrt(252)",
+  "primary_history": 24,
+  "sensitivity_windows_common_dates": [
+    12,
+    24,
+    36
+  ],
+  "first_entry": "2018-11-16",
+  "last_expiration": "2026-09-18",
+  "trades_per_strategy": 94,
+  "notional": "100% of current equity using cash spot times 100",
+  "sharpe": "monthly, annualized by sqrt(12), zero cash rate",
+  "script": "scripts/run_standardized_iv_rv_spread_selector.py"
+}

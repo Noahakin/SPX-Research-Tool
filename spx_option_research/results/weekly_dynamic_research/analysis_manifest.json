@@ -1,0 +1,32 @@
+{
+  "purpose": "post-results reporting only; no model fitting or policy reselection",
+  "frozen_choices_sha256": "31770a34ff8eb676477bb4d94cf2818e61359e132bd8c07b44926f89206a6e57",
+  "validation_results_sha256": "2d9697b9d6399f2276f150f3ac93643326a72d81140340172912ac5ef491b30b",
+  "holdout_summary_sha256": "4c812138f2d761e561a3080ab8a583eed71fa80be922c43d540b27682f541bc8",
+  "primary_validation_gate": "positive_edge",
+  "chart_portfolios": [
+    "Dynamic winner: width3",
+    "Dynamic winner: adaptive_width",
+    "Validation-best fixed spread",
+    "Fixed weekly 99/96"
+  ],
+  "final_period_start": "2024-01-05",
+  "final_period_end": "2026-09-18",
+  "outputs": [
+    "research_report.md",
+    "holdout_equity_drawdown.png",
+    "holdout_performance_comparison.csv",
+    "holdout_calendar_returns.csv",
+    "holdout_selection_summary.csv",
+    "holdout_selection_distribution.csv",
+    "holdout_short_strike_distribution.csv",
+    "holdout_width_distribution.csv",
+    "holdout_selection_distribution.png",
+    "validation_feature_ladder_positive_edge.csv",
+    "validation_feature_ladder_all_gates.csv",
+    "validation_policy_results_all_rows.csv",
+    "validation_feature_ladder.png"
+  ],
+  "mark_sensitivity_sha256": "ae6a3cd5f783e77a81b072dc9e084cdd90e90f4477200d835322c0018680178c",
+  "timing_attribution_sha256": "f3a3f97297d07d4a5d70fd8f0b174a81a02a936cf145fc66a376df5476b05578"
+}

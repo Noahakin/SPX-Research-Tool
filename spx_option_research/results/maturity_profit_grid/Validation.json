@@ -1,0 +1,258 @@
+{
+  "status": "passed",
+  "combinations": 734720,
+  "legacy_control": {
+    "status": "passed",
+    "cached_curve_max_difference_dollars": 0.0,
+    "trades": 118,
+    "weekend_dated_legacy_expirations": 1,
+    "cagr": 0.0415927001529117,
+    "sharpe": 1.089921170098861,
+    "vol": 0.0380489879681383,
+    "max_drawdown": -0.0485422841519664,
+    "note": "Reconciles the original cached trades and valuation convention; the expanded grid independently uses cash-index strike targets and weekday PM expiries."
+  },
+  "shortlist_replays": [
+    {
+      "strategy_id": "d003_s194_w06_p25_weekly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 438
+    },
+    {
+      "strategy_id": "d003_s199_w02_p25_every_4_weeks_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 131
+    },
+    {
+      "strategy_id": "d007_s180_w20_p25_every_4_weeks_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 1.1641532182693481e-10,
+      "trades": 122
+    },
+    {
+      "strategy_id": "d007_s180_w20_p25_every_4_weeks_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 122
+    },
+    {
+      "strategy_id": "d010_s195_w15_p25_monthly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 117
+    },
+    {
+      "strategy_id": "d010_s195_w15_p25_monthly_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 117
+    },
+    {
+      "strategy_id": "d014_s194_w20_p25_weekly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 4.656612873077393e-10,
+      "trades": 520
+    },
+    {
+      "strategy_id": "d014_s194_w20_p25_weekly_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 520
+    },
+    {
+      "strategy_id": "d021_s187_w20_p25_weekly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 2.3283064365386963e-10,
+      "trades": 512
+    },
+    {
+      "strategy_id": "d021_s187_w20_p25_weekly_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 512
+    },
+    {
+      "strategy_id": "d028_s184_w10_p25_weekly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 2.3283064365386963e-10,
+      "trades": 519
+    },
+    {
+      "strategy_id": "d028_s184_w10_p25_weekly_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 519
+    },
+    {
+      "strategy_id": "d035_s181_w20_p25_weekly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 502
+    },
+    {
+      "strategy_id": "d035_s181_w20_p25_weekly_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 502
+    },
+    {
+      "strategy_id": "d042_s215_w20_p25_monthly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 2.3283064365386963e-10,
+      "trades": 114
+    },
+    {
+      "strategy_id": "d042_s215_w20_p25_monthly_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 4.656612873077393e-10,
+      "trades": 114
+    },
+    {
+      "strategy_id": "d045_s181_w20_p25_every_2_weeks_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 245
+    },
+    {
+      "strategy_id": "d045_s215_w20_p25_monthly_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 6.984919309616089e-10,
+      "trades": 104
+    },
+    {
+      "strategy_id": "d056_s203_w06_p25_monthly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 119
+    },
+    {
+      "strategy_id": "d056_s204_w08_p25_monthly_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 2.3283064365386963e-10,
+      "trades": 119
+    },
+    {
+      "strategy_id": "d060_s203_w06_p25_monthly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 119
+    },
+    {
+      "strategy_id": "d060_s201_w02_p25_monthly_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 118
+    },
+    {
+      "strategy_id": "d075_s198_w08_p25_weekly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 440
+    },
+    {
+      "strategy_id": "d075_s198_w08_p25_weekly_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 440
+    },
+    {
+      "strategy_id": "d090_s218_w20_p25_monthly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 108
+    },
+    {
+      "strategy_id": "d090_s218_w20_p25_monthly_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 4.656612873077393e-10,
+      "trades": 108
+    },
+    {
+      "strategy_id": "d120_s217_w20_p25_monthly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 2.3283064365386963e-10,
+      "trades": 99
+    },
+    {
+      "strategy_id": "d120_s217_w20_p25_monthly_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 99
+    },
+    {
+      "strategy_id": "d010_s186_w15_hold_weekly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 1.1641532182693481e-10,
+      "trades": 500
+    },
+    {
+      "strategy_id": "d010_s180_w20_hold_every_4_weeks_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 108
+    },
+    {
+      "strategy_id": "d010_s180_w20_p95_every_4_weeks_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 108
+    },
+    {
+      "strategy_id": "d010_s180_w20_hold_every_4_weeks_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 108
+    },
+    {
+      "strategy_id": "d007_s180_w20_hold_every_4_weeks_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 122
+    },
+    {
+      "strategy_id": "d010_s180_w20_p95_every_4_weeks_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 108
+    },
+    {
+      "strategy_id": "d007_s180_w20_hold_every_4_weeks_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 122
+    },
+    {
+      "strategy_id": "d010_s180_w20_p90_every_4_weeks_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 108
+    },
+    {
+      "strategy_id": "d003_s194_w06_p05_weekly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 438
+    },
+    {
+      "strategy_id": "d003_s194_w06_p10_weekly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 438
+    },
+    {
+      "strategy_id": "d060_s206_w06_p25_monthly_risk_5pct_initial",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 2.3283064365386963e-10,
+      "trades": 119
+    },
+    {
+      "strategy_id": "d060_s206_w06_p25_monthly_notional_100pct_equity",
+      "curve_replay_max_difference": 0.0,
+      "terminal_ledger_difference": 0.0,
+      "trades": 119
+    }
+  ],
+  "note": "Exact single-configuration replays and independent sums of realized trade P&L reconcile the retained shortlisted curves."
+}

@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "original_curves_covered": 8820,
+  "option_strategies": 7350,
+  "existing_spx_overlays_reconciled": 1470,
+  "new_spx_overlays": 5880,
+  "maximum_existing_overlay_difference_dollars": 3.958120942115784e-08,
+  "dates": 2510,
+  "daily_values": 36897000,
+  "encoding": "gzip + base64, little-endian Float64; exact round-trip checked for every shard",
+  "data_files": 126,
+  "source_artifact_sha256": {
+    "entries.parquet": "34e9643e2fe0f42f860442000209cb489c26b15af5aca5debf212a38209c1a6a",
+    "schedule.parquet": "1a204bab0d5174df8b1578fc104afa6a37ef79927ea1111a0b692342cbee8e07",
+    "audited_quotes.parquet": "4ffa665f6c970506ecd610cc714ca07ccc782cf7fcd8e4e0b67e5bcb2e33b791"
+  },
+  "source_cash_sha256": "f642d7ae85522c4c4c6116b735aa98899be5b10e70647fad9a9d4e25227de9ad",
+  "source_base_curves_sha256": "62391c9ceccc9fdb691d78dd1013d445e88870f7d653ed897782e19b534b10d6",
+  "total_bytes": 344234629
+}

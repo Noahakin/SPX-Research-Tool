@@ -1,0 +1,5 @@
+{
+  "selection": "Highest full-period daily Sharpe among rows passing the original eligibility screens. This explicitly uses the full historical period, including the reused test segment, and is not a validation or out-of-sample claim.",
+  "precision": "Compressed grid locates candidates; each retained candidate is then simulated again in Float64.",
+  "retained_strategies": 39
+}

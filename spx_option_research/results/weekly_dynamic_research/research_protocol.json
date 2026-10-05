@@ -1,0 +1,51 @@
+{
+  "objective": "Select a richly compensated weekly short put and inexpensive protective put, with the option to stay in cash when estimated net compensation is inadequate.",
+  "universe": {
+    "short_strike_spot_ratios": [0.97, 0.98, 0.99, 1.00, 1.01, 1.02, 1.03],
+    "hedge_widths_fraction_spot": [0.01, 0.02, 0.03, 0.05],
+    "roll": "Friday close or prior holiday session to following Friday PM expiration",
+    "notional": "100% of current equity using SPX cash spot; fractional contracts",
+    "width_comparisons": ["3% fixed width", "adaptive 1%, 2%, 3%, 5% width"]
+  },
+  "information_timing": {
+    "market_indices": "Prior SPX trading session closing SPX, VIX, VVIX, VIX3M indicators",
+    "option_features": "Entry snapshot bid/ask, IV, Greeks and recorded volume/open interest; same-EOD execution convention",
+    "training_labels": "Only trades expired strictly before the annual model refit cutoff",
+    "holdout": "2024-01-01 through archive end; model families, feature sets, and entry thresholds frozen using earlier validation only"
+  },
+  "fitting": {
+    "validation_years": [2021, 2022, 2023],
+    "holdout_years": [2024, 2025, 2026],
+    "schedule": "Expanding annual refits; candidates from each entry week stay in the same split",
+    "minimum_training_weeks": 156,
+    "economic_forecast": "156 most recent matured weekly outcomes, minimum 104, scaled using lagged realized volatility; forecast both legs jointly",
+    "regression_target": "Expected terminal spread liability as a fraction of strike width",
+    "models": {
+      "ridge": {"alpha": 10.0, "imputation": "training median", "scaling": "training standardization"},
+      "hist_gradient_boosting": {"max_iter": 120, "max_leaf_nodes": 7, "max_depth": 3, "min_samples_leaf": 100, "learning_rate": 0.05, "l2_regularization": 10.0, "random_state": 1729, "early_stopping": false}
+    },
+    "sample_weight": "Each entry week has total weight one regardless of available candidate count"
+  },
+  "feature_groups": ["structure_and_compensation", "economic_payoff_forecast", "greeks", "implied_volatility_and_skew", "vix_vvix_regime", "spx_and_vix_momentum", "volume_open_interest_and_execution"],
+  "feature_comparisons": "Core structure/compensation, additions of each feature family, full model, and full model leaving each family out",
+  "policies": {
+    "rank": "Forecast net credit less expected spread liability divided by forecast liability risk with a floor",
+    "gate": ["always trade", "require positive forecast edge", "require forecast edge/risk at least 0.10"],
+    "risk_floor": "max(10% of width as spot fraction, 0.0005)",
+    "tie_break": "Lower width, then lower short strike"
+  },
+  "selection": {
+    "criterion": "Highest validation daily marked Sharpe among policies with a positive-compensation gate, then validation CAGR; always-trade policies are controls; no holdout-based reselection",
+    "minimum_validation_active_weeks": 30,
+    "iv_z_rule": "Diagnostic only; a positive difference of leg IV z-scores is not a positive-compensation gate and is excluded from primary winner eligibility. Clarified before viewing validation results or fitting final-period models.",
+    "finalists": "One frozen winner for each width universe, fixed weekly 99/96, validation-best fixed 3%-wide spread, and economic-rule controls"
+  },
+  "execution": {"realistic_spread_fraction_from_mid": 0.25, "natural_spread_fraction_from_mid": 0.5, "commission_dollars_per_leg": 1.5, "expiry": "Cash SPX intrinsic value"},
+  "reporting": {
+    "headline_sharpe": "Actual daily bid/ask midpoint NAV returns, annualized by sqrt(252), zero cash rate",
+    "cash_weeks": "Zero option returns included on all trading days",
+    "metrics": ["CAGR", "daily Sharpe", "daily drawdown", "trade frequency", "worst week", "average width", "net delta", "annual results", "realistic/natural fill sensitivity"],
+    "uncertainty": "Paired weekly block bootstrap on final-period strategies versus fixed 99/96",
+    "claim_limit": "Exploratory feature research; improved performance is not promised"
+  }
+}

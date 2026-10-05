@@ -1,0 +1,1831 @@
+{
+  "status": "passed",
+  "grid_rows": 202752,
+  "grid_parts": 88,
+  "retained_strategies": 139,
+  "retained_trades": 20829,
+  "scheduled_entry_decisions_checked": 13190,
+  "max_daily_nav_difference": 3.4924596548080444e-09,
+  "method": "Single-policy replays; independent position-by-position daily NAV, realized cashflows, prior-close allocation and first executable 25%-profit exits; direct entry-only re-ranking of every retained dynamic policy at every scheduled entry. Accounting checks do not erase separately disclosed data-quality flags.",
+  "independent_checks": [
+    {
+      "strategy_id": "r052_u02_g0_weekly_notional_100pct_equity_ladder",
+      "trades": 417,
+      "max_daily_nav_difference": 1.1641532182693481e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.6645352591003757e-15,
+      "max_prior_equity_difference": 1.0477378964424133e-09,
+      "terminal_cash_difference": 1.1641532182693481e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r052_u02_g0_weekly_notional_100pct_equity_one_at_a_time",
+      "trades": 368,
+      "max_daily_nav_difference": 1.1641532182693481e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 3.552713678800501e-15,
+      "max_prior_equity_difference": 2.3283064365386963e-09,
+      "terminal_cash_difference": 1.1641532182693481e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r052_u02_g0_weekly_risk_5pct_initial_ladder",
+      "trades": 417,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 4.656612873077393e-10,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r052_u02_g0_weekly_risk_5pct_initial_one_at_a_time",
+      "trades": 368,
+      "max_daily_nav_difference": 1.3969838619232178e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.6298145055770874e-09,
+      "terminal_cash_difference": 1.1641532182693481e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r068_u58_g1_every_4_weeks_notional_100pct_equity_ladder",
+      "trades": 94,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 8.881784197001252e-16,
+      "max_prior_equity_difference": 2.3283064365386963e-09,
+      "terminal_cash_difference": 9.313225746154785e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r044_u43_g0_weekly_notional_100pct_equity_one_at_a_time",
+      "trades": 114,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.3322676295501878e-15,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r040_u59_g0_every_4_weeks_risk_5pct_initial_ladder",
+      "trades": 101,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.7478019859472624e-15,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r056_u58_g1_every_4_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 52,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 4.656612873077393e-10,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r053_u14_g0_weekly_notional_100pct_equity_ladder",
+      "trades": 417,
+      "max_daily_nav_difference": 1.1641532182693481e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 3.1086244689504383e-15,
+      "max_prior_equity_difference": 2.0954757928848267e-09,
+      "terminal_cash_difference": 9.313225746154785e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r061_u15_g0_weekly_notional_100pct_equity_one_at_a_time",
+      "trades": 335,
+      "max_daily_nav_difference": 1.1641532182693481e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.3322676295501878e-15,
+      "max_prior_equity_difference": 4.656612873077393e-10,
+      "terminal_cash_difference": 9.313225746154785e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r053_u14_g0_weekly_risk_5pct_initial_ladder",
+      "trades": 417,
+      "max_daily_nav_difference": 1.3969838619232178e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r057_u26_g0_weekly_risk_5pct_initial_one_at_a_time",
+      "trades": 268,
+      "max_daily_nav_difference": 1.862645149230957e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 1.6298145055770874e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r069_u58_g1_every_4_weeks_notional_100pct_equity_ladder",
+      "trades": 94,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.220446049250313e-15,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 9.313225746154785e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r057_u39_g0_weekly_notional_100pct_equity_one_at_a_time",
+      "trades": 210,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.220446049250313e-15,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r041_u59_g0_every_4_weeks_risk_5pct_initial_ladder",
+      "trades": 99,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.7478019859472624e-15,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r057_u58_g1_every_4_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 59,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r018_u02_g1_every_2_weeks_notional_100pct_equity_ladder",
+      "trades": 186,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 8.881784197001252e-16,
+      "max_prior_equity_difference": 3.4924596548080444e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r018_u62_g1_every_2_weeks_notional_100pct_equity_one_at_a_time",
+      "trades": 182,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 8.881784197001252e-16,
+      "max_prior_equity_difference": 4.656612873077393e-10,
+      "terminal_cash_difference": 5.820766091346741e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r018_u02_g1_every_2_weeks_risk_5pct_initial_ladder",
+      "trades": 186,
+      "max_daily_nav_difference": 3.4924596548080444e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 2.3283064365386963e-10,
+      "terminal_cash_difference": 1.1641532182693481e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r018_u62_g1_every_2_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 182,
+      "max_daily_nav_difference": 3.4924596548080444e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 5.820766091346741e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r038_u44_g0_every_4_weeks_notional_100pct_equity_ladder",
+      "trades": 105,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.9984014443252818e-15,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r062_u44_g1_every_4_weeks_notional_100pct_equity_one_at_a_time",
+      "trades": 85,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.220446049250313e-15,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r042_u58_g1_every_4_weeks_risk_5pct_initial_ladder",
+      "trades": 82,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.6298145055770874e-09,
+      "terminal_cash_difference": 9.313225746154785e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r042_u58_g1_every_4_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 54,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r019_u02_g1_every_2_weeks_notional_100pct_equity_ladder",
+      "trades": 186,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 8.881784197001252e-16,
+      "max_prior_equity_difference": 3.4924596548080444e-10,
+      "terminal_cash_difference": 3.4924596548080444e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r023_u62_g1_every_2_weeks_notional_100pct_equity_one_at_a_time",
+      "trades": 187,
+      "max_daily_nav_difference": 2.3283064365386963e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 8.881784197001252e-16,
+      "max_prior_equity_difference": 3.4924596548080444e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r019_u02_g1_every_2_weeks_risk_5pct_initial_ladder",
+      "trades": 186,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 2.3283064365386963e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r023_u62_g1_every_2_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 187,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 1.1641532182693481e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r027_u18_g0_weekly_notional_100pct_equity_ladder",
+      "trades": 417,
+      "max_daily_nav_difference": 3.259629011154175e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 4.6629367034256575e-15,
+      "max_prior_equity_difference": 1.862645149230957e-09,
+      "terminal_cash_difference": 2.3283064365386963e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r019_u58_g1_weekly_notional_100pct_equity_one_at_a_time",
+      "trades": 87,
+      "max_daily_nav_difference": 1.3969838619232178e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 3.552713678800501e-15,
+      "max_prior_equity_difference": 1.862645149230957e-09,
+      "terminal_cash_difference": 9.313225746154785e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r043_u58_g1_every_4_weeks_risk_5pct_initial_ladder",
+      "trades": 82,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.6298145055770874e-09,
+      "terminal_cash_difference": 9.313225746154785e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r043_u58_g1_every_4_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 54,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r072_u25_g0_monthly_notional_100pct_equity_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 3.4924596548080444e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.9984014443252818e-15,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r072_u25_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "trades": 75,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 8.881784197001252e-16,
+      "max_prior_equity_difference": 3.4924596548080444e-10,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r072_u25_g0_monthly_risk_5pct_initial_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.6298145055770874e-09,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r072_u25_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "trades": 75,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r072_u12_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "trades": 92,
+      "max_daily_nav_difference": 2.3283064365386963e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.6645352591003757e-15,
+      "max_prior_equity_difference": 5.820766091346741e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r072_u12_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "trades": 92,
+      "max_daily_nav_difference": 1.862645149230957e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 1.3969838619232178e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r073_u42_g0_monthly_notional_100pct_equity_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 1.3969838619232178e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 4.3298697960381105e-15,
+      "max_prior_equity_difference": 2.3283064365386963e-09,
+      "terminal_cash_difference": 1.1641532182693481e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r073_u54_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "trades": 59,
+      "max_daily_nav_difference": 1.1641532182693481e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.220446049250313e-15,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r073_u42_g0_monthly_risk_5pct_initial_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 8.881784197001252e-16,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r073_u54_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "trades": 59,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 3.026798367500305e-09,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r073_u37_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "trades": 88,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.3322676295501878e-15,
+      "max_prior_equity_difference": 4.656612873077393e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r073_u37_g0_monthly_risk_5pct_initial_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 4.440892098500626e-16,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r073_u37_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "trades": 88,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 5.820766091346741e-10,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r074_u25_g0_monthly_notional_100pct_equity_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.9984014443252818e-15,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r074_u25_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "trades": 75,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 8.881784197001252e-16,
+      "max_prior_equity_difference": 4.656612873077393e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r074_u25_g0_monthly_risk_5pct_initial_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.6298145055770874e-09,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r074_u25_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "trades": 75,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r074_u12_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "trades": 92,
+      "max_daily_nav_difference": 2.3283064365386963e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.6645352591003757e-15,
+      "max_prior_equity_difference": 5.820766091346741e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r074_u12_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "trades": 92,
+      "max_daily_nav_difference": 1.862645149230957e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 1.3969838619232178e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r075_u14_g0_weekly_notional_100pct_equity_ladder",
+      "trades": 417,
+      "max_daily_nav_difference": 1.6298145055770874e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.7763568394002505e-15,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 9.313225746154785e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r075_u14_g0_weekly_notional_100pct_equity_one_at_a_time",
+      "trades": 331,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 3.552713678800501e-15,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r075_u14_g0_weekly_risk_5pct_initial_ladder",
+      "trades": 417,
+      "max_daily_nav_difference": 1.3969838619232178e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.1102230246251565e-16,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r075_u14_g0_weekly_risk_5pct_initial_one_at_a_time",
+      "trades": 331,
+      "max_daily_nav_difference": 2.0954757928848267e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 1.6298145055770874e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r082_u43_g1_monthly_notional_100pct_equity_ladder",
+      "trades": 55,
+      "max_daily_nav_difference": 2.3283064365386963e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.3322676295501878e-15,
+      "max_prior_equity_difference": 5.820766091346741e-10,
+      "terminal_cash_difference": 1.1641532182693481e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r077_u46_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "trades": 67,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 3.1086244689504383e-15,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r078_u42_g0_monthly_risk_5pct_initial_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 4.440892098500626e-16,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r078_u42_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "trades": 78,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r080_u59_g0_monthly_notional_100pct_equity_ladder",
+      "trades": 93,
+      "max_daily_nav_difference": 1.3969838619232178e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 5.551115123125783e-16,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r079_u42_g1_every_2_weeks_notional_100pct_equity_one_at_a_time",
+      "trades": 68,
+      "max_daily_nav_difference": 1.1641532182693481e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.6645352591003757e-15,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r082_u58_g1_monthly_risk_5pct_initial_ladder",
+      "trades": 58,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 4.656612873077393e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r076_u54_g1_every_2_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 53,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 2.3283064365386963e-09,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r084_u41_g0_monthly_notional_100pct_equity_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.220446049250313e-15,
+      "max_prior_equity_difference": 1.862645149230957e-09,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r084_u66_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "trades": 81,
+      "max_daily_nav_difference": 1.6298145055770874e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.7763568394002505e-15,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 1.1641532182693481e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r087_u60_g1_monthly_risk_5pct_initial_ladder",
+      "trades": 91,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r084_u41_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "trades": 73,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 4.656612873077393e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r087_u59_g0_monthly_notional_100pct_equity_ladder",
+      "trades": 92,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 4.440892098500626e-16,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r085_u31_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "trades": 80,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.6645352591003757e-15,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r087_u57_g1_monthly_risk_5pct_initial_ladder",
+      "trades": 88,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "r085_u58_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "trades": 63,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_weekly_risk_5pct_initial_ladder",
+      "trades": 409,
+      "max_daily_nav_difference": 1.6298145055770874e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 6.661338147750939e-16,
+      "max_prior_equity_difference": 1.6298145055770874e-09,
+      "terminal_cash_difference": 1.1641532182693481e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_weekly_risk_5pct_initial_one_at_a_time",
+      "trades": 101,
+      "max_daily_nav_difference": 1.3969838619232178e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 9.313225746154785e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_weekly_notional_100pct_equity_ladder",
+      "trades": 409,
+      "max_daily_nav_difference": 1.862645149230957e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 4.996003610813204e-16,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 1.3969838619232178e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_weekly_notional_100pct_equity_one_at_a_time",
+      "trades": 101,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 3.9968028886505635e-15,
+      "max_prior_equity_difference": 1.862645149230957e-09,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_every_2_weeks_risk_5pct_initial_ladder",
+      "trades": 204,
+      "max_daily_nav_difference": 1.6298145055770874e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_every_2_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 87,
+      "max_daily_nav_difference": 1.1641532182693481e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_every_2_weeks_notional_100pct_equity_ladder",
+      "trades": 204,
+      "max_daily_nav_difference": 1.1641532182693481e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.887379141862766e-15,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_every_2_weeks_notional_100pct_equity_one_at_a_time",
+      "trades": 87,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.220446049250313e-15,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_every_4_weeks_risk_5pct_initial_ladder",
+      "trades": 101,
+      "max_daily_nav_difference": 1.3969838619232178e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.3322676295501878e-15,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 1.1641532182693481e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_every_4_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 66,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_every_4_weeks_notional_100pct_equity_ladder",
+      "trades": 101,
+      "max_daily_nav_difference": 3.4924596548080444e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.6653345369377348e-15,
+      "max_prior_equity_difference": 3.4924596548080444e-10,
+      "terminal_cash_difference": 1.1641532182693481e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_every_4_weeks_notional_100pct_equity_one_at_a_time",
+      "trades": 66,
+      "max_daily_nav_difference": 2.3283064365386963e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.7763568394002505e-15,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_monthly_risk_5pct_initial_ladder",
+      "trades": 95,
+      "max_daily_nav_difference": 1.3969838619232178e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 8.881784197001252e-16,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 1.3969838619232178e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_monthly_risk_5pct_initial_one_at_a_time",
+      "trades": 73,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_monthly_notional_100pct_equity_ladder",
+      "trades": 95,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.220446049250313e-15,
+      "max_prior_equity_difference": 1.862645149230957e-09,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d60_s103_w3_monthly_notional_100pct_equity_one_at_a_time",
+      "trades": 73,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.7763568394002505e-15,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_weekly_risk_5pct_initial_ladder",
+      "trades": 414,
+      "max_daily_nav_difference": 2.0954757928848267e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 5.551115123125783e-15,
+      "max_prior_equity_difference": 3.259629011154175e-09,
+      "terminal_cash_difference": 1.3969838619232178e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_weekly_risk_5pct_initial_one_at_a_time",
+      "trades": 133,
+      "max_daily_nav_difference": 1.862645149230957e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 1.862645149230957e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_weekly_notional_100pct_equity_ladder",
+      "trades": 414,
+      "max_daily_nav_difference": 2.7939677238464355e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 3.0253577421035516e-15,
+      "max_prior_equity_difference": 3.026798367500305e-09,
+      "terminal_cash_difference": 2.561137080192566e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_weekly_notional_100pct_equity_one_at_a_time",
+      "trades": 133,
+      "max_daily_nav_difference": 2.0954757928848267e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 4.884981308350689e-15,
+      "max_prior_equity_difference": 2.561137080192566e-09,
+      "terminal_cash_difference": 1.6298145055770874e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_every_2_weeks_risk_5pct_initial_ladder",
+      "trades": 208,
+      "max_daily_nav_difference": 1.3969838619232178e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.3322676295501878e-15,
+      "max_prior_equity_difference": 2.0954757928848267e-09,
+      "terminal_cash_difference": 1.1641532182693481e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_every_2_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 121,
+      "max_daily_nav_difference": 1.6298145055770874e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_every_2_weeks_notional_100pct_equity_ladder",
+      "trades": 208,
+      "max_daily_nav_difference": 1.1641532182693481e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.9976021664879227e-15,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_every_2_weeks_notional_100pct_equity_one_at_a_time",
+      "trades": 121,
+      "max_daily_nav_difference": 1.862645149230957e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 3.552713678800501e-15,
+      "max_prior_equity_difference": 1.862645149230957e-09,
+      "terminal_cash_difference": 1.1641532182693481e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_every_4_weeks_risk_5pct_initial_ladder",
+      "trades": 104,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 4.440892098500626e-16,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_every_4_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 79,
+      "max_daily_nav_difference": 3.4924596548080444e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_every_4_weeks_notional_100pct_equity_ladder",
+      "trades": 104,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.1102230246251565e-15,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_every_4_weeks_notional_100pct_equity_one_at_a_time",
+      "trades": 79,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.7763568394002505e-15,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 3.4924596548080444e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_monthly_risk_5pct_initial_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 1.3969838619232178e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 4.440892098500626e-16,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 1.3969838619232178e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_monthly_risk_5pct_initial_one_at_a_time",
+      "trades": 83,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_monthly_notional_100pct_equity_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 3.552713678800501e-15,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d42_s103_w5_monthly_notional_100pct_equity_one_at_a_time",
+      "trades": 83,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.7763568394002505e-15,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_weekly_risk_5pct_initial_ladder",
+      "trades": 408,
+      "max_daily_nav_difference": 1.1641532182693481e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.6298145055770874e-09,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_weekly_risk_5pct_initial_one_at_a_time",
+      "trades": 100,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_weekly_notional_100pct_equity_ladder",
+      "trades": 408,
+      "max_daily_nav_difference": 3.4924596548080444e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 6.2727600891321345e-15,
+      "max_prior_equity_difference": 3.725290298461914e-09,
+      "terminal_cash_difference": 2.7939677238464355e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_weekly_notional_100pct_equity_one_at_a_time",
+      "trades": 100,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.220446049250313e-15,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_every_2_weeks_risk_5pct_initial_ladder",
+      "trades": 206,
+      "max_daily_nav_difference": 1.3969838619232178e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 2.0954757928848267e-09,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_every_2_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 90,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_every_2_weeks_notional_100pct_equity_ladder",
+      "trades": 206,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 6.5503158452884236e-15,
+      "max_prior_equity_difference": 2.561137080192566e-09,
+      "terminal_cash_difference": 9.313225746154785e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_every_2_weeks_notional_100pct_equity_one_at_a_time",
+      "trades": 90,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.7763568394002505e-15,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_every_4_weeks_risk_5pct_initial_ladder",
+      "trades": 103,
+      "max_daily_nav_difference": 1.1641532182693481e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 7.771561172376096e-16,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_every_4_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 72,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_every_4_weeks_notional_100pct_equity_ladder",
+      "trades": 103,
+      "max_daily_nav_difference": 2.3283064365386963e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.4424906541753444e-15,
+      "max_prior_equity_difference": 1.6298145055770874e-09,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_every_4_weeks_notional_100pct_equity_one_at_a_time",
+      "trades": 72,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 3.9968028886505635e-15,
+      "max_prior_equity_difference": 1.6298145055770874e-09,
+      "terminal_cash_difference": 3.4924596548080444e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_monthly_risk_5pct_initial_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 4.440892098500626e-16,
+      "max_prior_equity_difference": 4.656612873077393e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_monthly_risk_5pct_initial_one_at_a_time",
+      "trades": 71,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 9.313225746154785e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_monthly_notional_100pct_equity_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.7763568394002505e-15,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d56_s104_w5_monthly_notional_100pct_equity_one_at_a_time",
+      "trades": 71,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 3.552713678800501e-15,
+      "max_prior_equity_difference": 1.862645149230957e-09,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_weekly_risk_5pct_initial_ladder",
+      "trades": 416,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.5133991837501526e-09,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 1
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_weekly_risk_5pct_initial_one_at_a_time",
+      "trades": 235,
+      "max_daily_nav_difference": 1.6298145055770874e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 1.6298145055770874e-09,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_weekly_notional_100pct_equity_ladder",
+      "trades": 416,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.55351295663786e-15,
+      "max_prior_equity_difference": 6.984919309616089e-10,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 1
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_weekly_notional_100pct_equity_one_at_a_time",
+      "trades": 235,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 8.881784197001252e-16,
+      "max_prior_equity_difference": 3.4924596548080444e-10,
+      "terminal_cash_difference": 1.1641532182693481e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_every_2_weeks_risk_5pct_initial_ladder",
+      "trades": 209,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 4.440892098500626e-16,
+      "max_prior_equity_difference": 3.4924596548080444e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 1
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_every_2_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 178,
+      "max_daily_nav_difference": 1.6298145055770874e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 1.6298145055770874e-09,
+      "unresolved_marks": 1
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_every_2_weeks_notional_100pct_equity_ladder",
+      "trades": 209,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 2.220446049250313e-15,
+      "max_prior_equity_difference": 1.5133991837501526e-09,
+      "terminal_cash_difference": 5.820766091346741e-10,
+      "unresolved_marks": 1
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_every_2_weeks_notional_100pct_equity_one_at_a_time",
+      "trades": 178,
+      "max_daily_nav_difference": 3.4924596548080444e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.7763568394002505e-15,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 1
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_every_4_weeks_risk_5pct_initial_ladder",
+      "trades": 105,
+      "max_daily_nav_difference": 2.3283064365386963e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 5.820766091346741e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_every_4_weeks_risk_5pct_initial_one_at_a_time",
+      "trades": 105,
+      "max_daily_nav_difference": 3.4924596548080444e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 5.820766091346741e-10,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_every_4_weeks_notional_100pct_equity_ladder",
+      "trades": 105,
+      "max_daily_nav_difference": 5.820766091346741e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 8.881784197001252e-16,
+      "max_prior_equity_difference": 4.656612873077393e-10,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_every_4_weeks_notional_100pct_equity_one_at_a_time",
+      "trades": 105,
+      "max_daily_nav_difference": 3.4924596548080444e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.3322676295501878e-15,
+      "max_prior_equity_difference": 4.656612873077393e-10,
+      "terminal_cash_difference": 1.1641532182693481e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_monthly_risk_5pct_initial_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 1.1641532182693481e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 1
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_monthly_risk_5pct_initial_one_at_a_time",
+      "trades": 96,
+      "max_daily_nav_difference": 1.1641532182693481e-09,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 6.984919309616089e-10,
+      "unresolved_marks": 1
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_monthly_notional_100pct_equity_ladder",
+      "trades": 96,
+      "max_daily_nav_difference": 3.4924596548080444e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.7763568394002505e-15,
+      "max_prior_equity_difference": 8.149072527885437e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 1
+    },
+    {
+      "strategy_id": "fixed_d28_s99_w3_monthly_notional_100pct_equity_one_at_a_time",
+      "trades": 96,
+      "max_daily_nav_difference": 3.4924596548080444e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.7763568394002505e-15,
+      "max_prior_equity_difference": 8.149072527885437e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 1
+    },
+    {
+      "strategy_id": "within_universe_fixed_for_r040_u59_g0_every_4_weeks_risk_5pct_initial_ladder",
+      "trades": 89,
+      "max_daily_nav_difference": 5.820766091346741e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 4.656612873077393e-10,
+      "terminal_cash_difference": 5.820766091346741e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "within_universe_fixed_for_r079_u42_g1_every_2_weeks_notional_100pct_equity_one_at_a_time",
+      "trades": 53,
+      "max_daily_nav_difference": 6.984919309616089e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 1.7763568394002505e-15,
+      "max_prior_equity_difference": 1.1641532182693481e-09,
+      "terminal_cash_difference": 0.0,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "within_universe_fixed_for_r085_u58_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "trades": 51,
+      "max_daily_nav_difference": 4.656612873077393e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 0.0,
+      "max_prior_equity_difference": 9.313225746154785e-10,
+      "terminal_cash_difference": 2.3283064365386963e-10,
+      "unresolved_marks": 0
+    },
+    {
+      "strategy_id": "within_universe_fixed_for_r087_u59_g0_monthly_notional_100pct_equity_ladder",
+      "trades": 76,
+      "max_daily_nav_difference": 9.313225746154785e-10,
+      "max_entry_credit_difference": 0.0,
+      "max_realized_pnl_difference": 0.0,
+      "max_quantity_difference": 4.996003610813204e-16,
+      "max_prior_equity_difference": 1.3969838619232178e-09,
+      "terminal_cash_difference": 4.656612873077393e-10,
+      "unresolved_marks": 0
+    }
+  ],
+  "replay_checks": [
+    {
+      "strategy_id": "r052_u02_g0_weekly_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r052_u02_g0_weekly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r052_u02_g0_weekly_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r052_u02_g0_weekly_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r068_u58_g1_every_4_weeks_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r044_u43_g0_weekly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r040_u59_g0_every_4_weeks_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r056_u58_g1_every_4_weeks_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r053_u14_g0_weekly_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r061_u15_g0_weekly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r053_u14_g0_weekly_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r057_u26_g0_weekly_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r069_u58_g1_every_4_weeks_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r057_u39_g0_weekly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r041_u59_g0_every_4_weeks_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r057_u58_g1_every_4_weeks_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r018_u02_g1_every_2_weeks_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r018_u62_g1_every_2_weeks_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r018_u02_g1_every_2_weeks_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r018_u62_g1_every_2_weeks_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r038_u44_g0_every_4_weeks_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r062_u44_g1_every_4_weeks_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r042_u58_g1_every_4_weeks_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r042_u58_g1_every_4_weeks_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r019_u02_g1_every_2_weeks_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r023_u62_g1_every_2_weeks_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r019_u02_g1_every_2_weeks_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r023_u62_g1_every_2_weeks_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r027_u18_g0_weekly_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r019_u58_g1_weekly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r043_u58_g1_every_4_weeks_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r043_u58_g1_every_4_weeks_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r072_u25_g0_monthly_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r072_u25_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r072_u25_g0_monthly_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r072_u25_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r072_u12_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r072_u12_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r073_u42_g0_monthly_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r073_u54_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r073_u42_g0_monthly_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r073_u54_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r073_u37_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r073_u37_g0_monthly_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r073_u37_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r074_u25_g0_monthly_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r074_u25_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r074_u25_g0_monthly_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r074_u25_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r074_u12_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r074_u12_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r075_u14_g0_weekly_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r075_u14_g0_weekly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r075_u14_g0_weekly_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r075_u14_g0_weekly_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r082_u43_g1_monthly_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r077_u46_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r078_u42_g0_monthly_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r078_u42_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r080_u59_g0_monthly_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r079_u42_g1_every_2_weeks_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r082_u58_g1_monthly_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r076_u54_g1_every_2_weeks_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r084_u41_g0_monthly_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r084_u66_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r087_u60_g1_monthly_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r084_u41_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r087_u59_g0_monthly_notional_100pct_equity_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r085_u31_g0_monthly_notional_100pct_equity_one_at_a_time",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r087_u57_g1_monthly_risk_5pct_initial_ladder",
+      "max_difference": 0.0
+    },
+    {
+      "strategy_id": "r085_u58_g0_monthly_risk_5pct_initial_one_at_a_time",
+      "max_difference": 0.0
+    }
+  ],
+  "audit_code_sha256": "0f99f7c21436506fb0f77b6c2405e48ec4ba251df27920dc8bed749e622fe1e0",
+  "additional_fixed_candidate_tests": 3058,
+  "within_universe_controls": "Highest full-period Sharpe under identical universe bounds, scoring availability, positive-score gate, cadence, sizing and overlap mode. Prefer the identical primary eligibility screens. If none pass, clearly flag a diagnostic comparator requiring at least 20 trades and no unresolved marks instead. Both dynamic and fixed historical leaders use hindsight.",
+  "fixed_control_code_sha256": "6a1af3903e5e783ed004efb3860f0f8aae74dc67d95d32d99f4c278b2bf4f89d"
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><title>SPX Research · Compare</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="core.js"></script><script defer src="catalog.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="SPX Research home"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M4 20 10 13 15 17 24 6"/><path d="M18 6h6v6"/></svg></span><span>SPX <b>Research</b><small>STRATEGY COMPARISON</small></span></a>
+  <nav><span class="nav-current">Compare</span><button id="methodBtn" class="nav-link">Methodology</button><a class="nav-link" href="../SPX%20Research%20Organized%20Charts/index.html">Chart library ↗</a></nav>
+  <span class="data-badge"><i></i><span id="dataThrough">Daily research data</span></span>
+</header>
+<div class="workspace">
+  <aside class="sidebar" aria-label="Strategy library">
+    <div class="side-heading"><div><span class="eyebrow">BUILD YOUR COMPARISON</span><h1>Strategy library</h1></div><button id="resetFilters" class="text-button">Reset filters</button></div>
+    <label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="search" type="search" placeholder="Search, e.g. 98/95 buffer" aria-label="Search strategies"></label>
+    <div id="categories" class="category-tabs" aria-label="Strategy category">
+      <button data-category="" aria-pressed="true">All</button><button data-category="Put selling" aria-pressed="false">Put selling</button><button data-category="Put buying" aria-pressed="false">Put buying</button><button data-category="Both" aria-pressed="false">Both</button>
+    </div>
+    <div class="filter-grid">
+      <label>Option expiry<select id="tenor"><option value="">All expiries</option></select></label>
+      <label>Strike target<select id="primary"><option value="">All strikes</option></select></label>
+      <label>Base spread width<select id="width"><option value="">All widths</option></select></label>
+      <label>Premium budget<select id="premium"><option value="">All budgets</option><option value="0.05">5% of premium</option><option value="0.1">10% of premium</option><option value="0.15">15% of premium</option><option value="0.2">20% of premium</option></select></label>
+      <label>Hedge type<select id="hedge"><option value="">All hedges</option><option value="Long put">Long put</option><option value="Downside buffer">Put buffer</option></select></label>
+      <label>Add new lines as<select id="addMode"><option value="options">Options only</option><option value="spx">With SPX</option><option value="both">Both versions</option></select></label>
+    </div>
+    <div class="result-controls"><span id="resultCount">Loading strategies…</span><button id="addMatching" class="small-button">Add all matches <span>+</span></button></div>
+    <div id="strategyList" class="virtual-list" role="group" aria-label="Matching strategies"><div id="strategySpace"></div><div id="strategyRows"></div></div>
+    <p class="side-foot">Mix any number of strategies and expiries. Filters narrow the library; they keep your selected lines.</p>
+  </aside>
+  <main>
+    <section class="page-heading"><div><span class="eyebrow">ONE CHART. YOUR COMPARISON.</span><h2>See the strategies together.</h2><p>Add lines from the library, compare with SPX, and explore any period.</p></div><div class="file-actions"><button id="saveSetup" class="outline-button">Save setup</button><button id="loadSetup" class="outline-button">Load setup</button><input id="setupFile" type="file" accept="application/json,.json" hidden></div></section>
+    <section class="chart-card" aria-label="Interactive comparison chart">
+      <div class="chart-title"><div><h3>Portfolio performance <span id="lineCount" class="count-pill">0 lines</span></h3><p id="rangeLabel">Full research period</p></div><div class="chart-actions"><label class="benchmark-toggle"><input id="benchmark" type="checkbox"> SPX benchmark</label><select id="view" aria-label="Chart view"><option value="growth">Growth of $100</option><option value="return">Total return (%)</option><option value="drawdown">Drawdown (%)</option></select><button id="saveImage" class="icon-button" title="Save chart as PNG" aria-label="Save chart as PNG"><svg viewBox="0 0 20 20"><path d="M10 2v10m-4-4 4 4 4-4M3 13v4h14v-4"/></svg></button></div></div>
+      <div class="date-toolbar"><div id="presets" class="presets" aria-label="Historical time horizon"><button data-period="1M">1M</button><button data-period="3M">3M</button><button data-period="6M">6M</button><button data-period="YTD">YTD</button><button data-period="1Y">1Y</button><button data-period="3Y">3Y</button><button data-period="5Y">5Y</button><button data-period="ALL" class="active">All</button></div><div class="date-inputs"><label><span class="sr-only">Start date</span><input id="from" type="date" aria-label="Start date"></label><span>—</span><label><span class="sr-only">End date</span><input id="to" type="date" aria-label="End date"></label><button id="applyDates" class="small-button">Apply</button></div></div>
+      <div id="chartWrap" class="chart-wrap"><canvas id="chart" aria-label="Comparison of selected strategy portfolios"></canvas><canvas id="overlay" tabindex="0" aria-label="Drag to zoom into dates; double-click to reset. Date controls also adjust the range."></canvas><section id="chartMetrics" class="chart-metrics" aria-label="Performance metrics for visible lines" hidden>
+        <div class="chart-metrics-heading"><strong>Period performance</strong><span id="chartMetricsCount"></span></div>
+        <div class="chart-metrics-header"><span>Portfolio</span><span>CAGR</span><span>Ann. vol.</span><span>Max drawdown</span><span>Sharpe</span></div>
+        <div id="chartMetricsList" class="chart-metrics-list" tabindex="0" role="group" aria-label="Scroll to compare portfolio metrics"><div id="chartMetricsSpace"></div><div id="chartMetricsRows"></div></div>
+        <p id="chartMetricsNote" class="chart-metrics-note" hidden>With SPX: differences vs SPX below each value · pp = percentage points</p>
+      </section><div id="chartEmpty" class="chart-empty" hidden><span class="empty-icon">＋</span><h3>Choose your first strategy</h3><p>Select lines from the library, or start with an example.</p><button id="example" class="primary-button">Load 98/95 comparison</button></div><div id="tooltip" class="tooltip" hidden></div><div id="chartProgress" class="chart-progress" hidden>Preparing comparison…</div></div>
+      <div class="navigator" aria-label="Date range navigator"><canvas id="navChart"></canvas><div id="navSelection"></div><input id="rangeStart" type="range" min="0" aria-label="First session in chart"><input id="rangeEnd" type="range" min="0" aria-label="Last session in chart"></div>
+      <div class="chart-caption"><span><i class="line-key"></i>Options only <i class="line-key dashed"></i>With SPX</span><span>Drag to zoom · Double-click for all dates</span><span id="sessionCount"></span></div>
+    </section>
+    <section class="selected-card" aria-label="Selected strategies and performance">
+      <div class="selected-heading"><div><h3>Your comparison <span id="strategyCount" class="count-pill">0 strategies</span></h3><p>Each line is an independent portfolio. Metrics update with the date range.</p></div><div class="selection-actions"><span class="subtle">Set all:</span><div class="segmented"><button data-all-mode="options">Options only</button><button data-all-mode="spx">With SPX</button><button data-all-mode="both">Both</button></div><button id="clear" class="text-button">Clear</button><button id="exportMetrics" class="outline-button">Export metrics ↓</button></div></div>
+      <div class="table-scroll"><div class="table-header"><span>STRATEGY</span><span>EXPOSURE</span><span>TOTAL RETURN</span><span>CAGR</span><span>ANN. VOL.</span><span>SHARPE</span><span>MAX DRAWDOWN</span><span></span></div><div id="selectedList" class="selected-list"><div id="selectedSpace"></div><div id="selectedRows"></div></div></div>
+      <div class="table-foot"><span>Both versions: options on top, with SPX below · Trading costs included</span><span id="status" aria-live="polite">Loading data…</span></div>
+    </section>
+    <footer class="page-footer"><span>SPX RESEARCH <b> / </b> Daily portfolio data</span><span>Strikes and widths are percentages of SPX at entry.</span><button class="text-button" id="assumptionsBtn">How to read this comparison ↗</button></footer>
+  </main>
+</div>
+<dialog id="methods"><form method="dialog"><button class="dialog-close" aria-label="Close methodology">×</button></form><span class="eyebrow">RESEARCH NOTES</span><h2>What each line represents</h2>
+<h3>Options only, with SPX, or both</h3><p>Options use 100% of current equity in SPX notional at each option roll. “With SPX” adds 100% SPX price exposure to that same option strategy. All quantities stay fixed between rolls, then resize using the combined portfolio’s equity. SPX stays invested when an option trade is unavailable. This is an overlay, not a 50/50 portfolio.</p>
+<h3>Dates and option expiries are separate</h3><p>The expiry filter chooses the option’s holding schedule. Date controls choose which part of the historical portfolio you view. Changing dates does not restart trades or reselect hedges. Returns include the first selected session, using the prior close as the starting value (or initial capital on the first research date). Every line is rebased to the same starting capital.</p>
+<h3>Buffers buy protection; Sharpe does not select them</h3><p>Buffers use the full allocated net credit on every traded roll. The rule chooses the closest affordable target to the money, preferring a 5-point width at that target and allowing 4 or 3. At least one buffer per short contract is required; the remaining budget buys more of it. Actual width is at least 3% of entry SPX. If no valid buffer is affordable, the option combination stays in cash. Targets use the existing one-point grid, with hedge strikes between 80% and 100% of SPX.</p>
+<h3>Long-put selections are retrospective</h3><p>Long-put combinations retain the earlier highest full-period combined Sharpe selections. They are historical research winners, not out-of-sample results. Adding SPX or changing the visible dates does not optimize or change those selected hedges.</p>
+<h3>Costs, returns and metrics</h3><p>Each option leg pays 25% of its full bid/ask spread from midpoint plus $1.50 per contract at entry. Positions settle at intrinsic value on expiry; daily marks use the audited quotes. SPX excludes dividends. Cash earns zero. Financing, borrowing costs and taxes are not included.</p><p>CAGR uses elapsed calendar years. Volatility and Sharpe use daily returns, annualized at 252 sessions; Sharpe assumes a zero cash rate. Drawdown starts with the selected period’s starting capital in its high-water mark. Annualized statistics are unavailable for a single session. Short windows can produce extreme annualized values.</p>
+<p class="method-links"><a href="Data%20validation.json">Data validation</a><a href="../SPX%20Research%20Organized%20Charts/Methodology%20and%20coverage.md">Full research methodology</a></p></dialog>
+<div id="toast" class="toast" role="status" hidden></div>
+<noscript>This comparison website requires JavaScript. Open it in Chrome or Edge with JavaScript enabled.</noscript>
+</body></html>

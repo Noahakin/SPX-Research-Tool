@@ -1,0 +1,11 @@
+{
+  "archive_start": "2016-09-22",
+  "archive_end": "2026-09-22",
+  "target_dte": 45,
+  "profit_target": 0.25,
+  "structures": [
+    "99/96",
+    "103/100"
+  ],
+  "candidates": 4975
+}

@@ -1,0 +1,45 @@
+{
+  "selection_period": "2021\u20132023; expiration before 2024-01-01",
+  "holdout_start": "2024-01-01",
+  "criterion": "highest validation daily Sharpe among gated policies, minimum 30 active weeks",
+  "choices": {
+    "Dynamic winner: width3": {
+      "model": "rule__normal_rv",
+      "universe": "width3",
+      "gate": "edge_risk_0.10",
+      "validation_policy_id": "rule__normal_rv__width3__edge_risk_0.10",
+      "validation_sharpe": 0.7409667582980232,
+      "validation_cagr": 0.0202591442479758
+    },
+    "Dynamic winner: adaptive_width": {
+      "model": "ridge__core_plus_greeks",
+      "universe": "adaptive_width",
+      "gate": "positive_edge",
+      "validation_policy_id": "ridge__core_plus_greeks__adaptive_width__positive_edge",
+      "validation_sharpe": 1.2018954485178783,
+      "validation_cagr": 0.0596185881899835
+    },
+    "Validation-best fixed spread": {
+      "model": "fixed__0.97",
+      "universe": "width3",
+      "gate": "always"
+    },
+    "Fixed weekly 99/96": {
+      "model": "fixed__0.99",
+      "universe": "width3",
+      "gate": "always"
+    },
+    "Economic model: fixed width": {
+      "model": "rule__economic_risk",
+      "universe": "width3",
+      "gate": "positive_edge"
+    },
+    "Economic model: adaptive width": {
+      "model": "rule__economic_risk",
+      "universe": "adaptive_width",
+      "gate": "positive_edge"
+    }
+  },
+  "validation_results_sha256": "2d9697b9d6399f2276f150f3ac93643326a72d81140340172912ac5ef491b30b",
+  "research_protocol_sha256": "3420b819443fc5fbb9e24ca89cc57d1c7842c96403e0a5dc5754dd1ed89b6b4d"
+}

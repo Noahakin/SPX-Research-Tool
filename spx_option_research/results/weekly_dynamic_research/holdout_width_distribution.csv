@@ -1,0 +1,11 @@
+portfolio,target_width_pct,weeks,trades,pct_traded_weeks
+Dynamic winner: adaptive_width,0.01,3,141,0.02127659574468085
+Dynamic winner: adaptive_width,0.05,138,141,0.9787234042553191
+Dynamic winner: width3,0.03,37,37,1.0
+Economic model: adaptive width,0.01,21,140,0.15
+Economic model: adaptive width,0.02,62,140,0.44285714285714284
+Economic model: adaptive width,0.03,43,140,0.30714285714285716
+Economic model: adaptive width,0.05,14,140,0.1
+Economic model: fixed width,0.03,140,140,1.0
+Fixed weekly 99/96,0.03,141,141,1.0
+Validation-best fixed spread,0.03,141,141,1.0

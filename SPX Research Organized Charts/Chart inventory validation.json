@@ -1,0 +1,105 @@
+{
+  "status": "passed",
+  "image_count": 10537,
+  "image_dimensions": [
+    1600,
+    1000
+  ],
+  "buffer_selection_rule_version": "entry_affordability_v1",
+  "selected_hedges": 5880,
+  "both_lossless_webp_count": 7152,
+  "top_level_both_folders": [
+    "05 percent premium",
+    "10 percent premium",
+    "15 percent premium",
+    "20 percent premium"
+  ],
+  "short_variations_per_budget": 105,
+  "preserved_files_sha256_verified": 3384,
+  "browser_checks": [
+    {
+      "label": "complete library",
+      "pass": true
+    },
+    {
+      "label": "default is selected weekly 98/95 hedge",
+      "pass": true
+    },
+    {
+      "label": "Both count",
+      "pass": true
+    },
+    {
+      "label": "requested budgets",
+      "pass": true
+    },
+    {
+      "label": "budget count",
+      "pass": true
+    },
+    {
+      "label": "14 curves per short variation and budget",
+      "pass": true
+    },
+    {
+      "label": "seven expiries per hedge",
+      "pass": true
+    },
+    {
+      "label": "one selected winner",
+      "pass": true
+    },
+    {
+      "label": "short variation comparison",
+      "pass": true
+    },
+    {
+      "label": "budget comparison",
+      "pass": true
+    },
+    {
+      "label": "expiry comparison",
+      "pass": true
+    },
+    {
+      "label": "individual selected hedge",
+      "pass": true
+    },
+    {
+      "label": "retrospective selection disclosed",
+      "pass": true
+    },
+    {
+      "label": "buffer protection rule disclosed",
+      "pass": true
+    },
+    {
+      "label": "full buffer allocation disclosed",
+      "pass": true
+    },
+    {
+      "label": "budget tab label",
+      "pass": true
+    },
+    {
+      "label": "standalone category remains usable",
+      "pass": true
+    },
+    {
+      "label": "put buying preserved",
+      "pass": true
+    },
+    {
+      "label": "corrected buffer image selected",
+      "pass": true
+    },
+    {
+      "label": "buffer title has exact budget",
+      "pass": true
+    },
+    {
+      "label": "selected image loads at full resolution",
+      "pass": true
+    }
+  ]
+}

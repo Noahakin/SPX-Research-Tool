@@ -1,0 +1,2 @@
+entry_date,scheduled_entry_friday,expiration_date,scheduled_expiration_friday,dte,expected_candidates,reason
+2016-12-09,2016-12-09,2016-12-16,2016-12-16,7,28,no valid PM-settled SPXW puts for next weekly expiration

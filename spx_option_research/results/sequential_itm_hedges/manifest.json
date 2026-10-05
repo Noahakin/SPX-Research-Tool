@@ -1,0 +1,17 @@
+{
+  "core_candidates": 82242,
+  "sequential_core_variants": 468,
+  "strategies_screened": 7956,
+  "finalists_daily_marked": 61,
+  "finalists_meeting_3_to_5_pct": 31,
+  "plotted_strategies": [
+    "104/101_dte21_profit_90_none",
+    "104/101_dte45_hold_none",
+    "103/100_dte30_profit_60_none",
+    "103/100_dte30_profit_60_put_d5_b10",
+    "103/100_dte21_hold_none",
+    "103/100_dte21_hold_put_d5_b5"
+  ],
+  "archive_start": "2016-09-22",
+  "archive_end": "2026-09-22"
+}

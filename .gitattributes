@@ -1,0 +1,7 @@
+# Preserve source bytes so recorded research SHA-256 fingerprints remain valid.
+* -text
+*.png binary
+*.webp binary
+*.parquet binary
+*.gz binary
+*.npz binary

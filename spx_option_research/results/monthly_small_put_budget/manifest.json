@@ -1,0 +1,21 @@
+{
+  "archive_start": "2016-09-22",
+  "archive_end": "2026-09-22",
+  "trades_per_strategy": 118,
+  "budgets_tested": [
+    0.01,
+    0.025,
+    0.05,
+    0.075,
+    0.1
+  ],
+  "best_hedged_strategy": "103/100 + far OTM put (2.5% credit budget)",
+  "best_hedged_cagr": 0.029335481748687053,
+  "plotted_strategies": [
+    "99/96 monthly, no hedge",
+    "103/100 monthly, no hedge",
+    "103/100 + far OTM put (2.5% credit budget)",
+    "103/100 + far OTM put (5.0% credit budget)",
+    "103/100 + far OTM put (10.0% credit budget)"
+  ]
+}

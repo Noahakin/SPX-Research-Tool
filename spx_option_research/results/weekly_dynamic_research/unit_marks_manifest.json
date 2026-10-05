@@ -1,0 +1,16 @@
+{
+  "candidate_count": 14501,
+  "candidate_rows_sha256": "68ba9d5c589206a643f1929fd8d12983c8521492901092b4c561647c9b768278",
+  "cash_rows_sha256": "688d10d1efb9adc6ed1a098b8b9097f2ec3a5a376f6a1dd5c0926fb2be8de7cd",
+  "unit_mark_rows": 84332,
+  "quote_rows": 30039,
+  "settlements_reconciled": 14501,
+  "midpoint_bound_flags": 429,
+  "first_entry": "2016-09-23",
+  "last_expiration": "2026-09-18",
+  "formula": "cum_return_fill = entry premium per SPX cash notional - spread midpoint liability / entry SPX cash",
+  "expiry": "cash SPX intrinsic spread liability, no expiration quote required",
+  "costs": "Entry transaction costs once, carried in premium; no additional daily costs",
+  "missing_marks": "Fail; never forward-fill",
+  "primary_marks": "Raw actual bid/ask midpoints, without clipping"
+}

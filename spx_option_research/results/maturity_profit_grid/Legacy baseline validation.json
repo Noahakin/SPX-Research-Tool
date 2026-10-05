@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "cached_curve_max_difference_dollars": 0.0,
+  "trades": 118,
+  "weekend_dated_legacy_expirations": 1,
+  "cagr": 0.0415927001529117,
+  "sharpe": 1.089921170098861,
+  "vol": 0.0380489879681383,
+  "max_drawdown": -0.0485422841519664,
+  "note": "Reconciles the original cached trades and valuation convention; the expanded grid independently uses cash-index strike targets and weekday PM expiries."
+}

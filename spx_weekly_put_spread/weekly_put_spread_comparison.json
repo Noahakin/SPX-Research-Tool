@@ -1,0 +1,15 @@
+{
+  "archive_start": "2022-01-03",
+  "archive_end": "2026-06-04",
+  "first_trade": "2022-01-07",
+  "last_trade": "2026-05-22",
+  "valid_trades": 201,
+  "skipped_candidate_weeks": 9,
+  "early_exit_triggers": 12,
+  "early_exit_trigger_rate_pct": 5.970149253731344,
+  "early_exit_total_pnl_difference_dollars": -7481.000000000009,
+  "early_exit_mean_difference_when_triggered_dollars": -623.4166666666673,
+  "early_exit_wins_vs_hold": 8,
+  "early_exit_losses_vs_hold": 4,
+  "early_exit_ties_vs_hold": 0
+}

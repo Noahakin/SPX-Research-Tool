@@ -1,0 +1,150 @@
+{
+  "generated_at_utc": "2026-10-02T14:44:22.480461+00:00",
+  "start": "2010-01-01",
+  "end": "2026-09-22",
+  "sources": {
+    "spx": {
+      "first_date": "2010-01-04",
+      "last_date": "2026-09-22",
+      "observations": 4205,
+      "sources": [
+        "Yahoo ^GSPC local: 05 - Underlying Prices and Events/Cleaned Data/Yahoo Finance/FX External/processed/provider=yfinance/group=equities/series=sp500/year=2010/sp500_2010.parquet",
+        "Yahoo ^GSPC local: 05 - Underlying Prices and Events/Cleaned Data/Yahoo Finance/FX External/processed/provider=yfinance/group=equities/series=sp500/year=2011/sp500_2011.parquet",
+        "Yahoo ^GSPC local: 05 - Underlying Prices and Events/Cleaned Data/Yahoo Finance/FX External/processed/provider=yfinance/group=equities/series=sp500/year=2012/sp500_2012.parquet",
+        "Yahoo ^GSPC local: 05 - Underlying Prices and Events/Cleaned Data/Yahoo Finance/FX External/processed/provider=yfinance/group=equities/series=sp500/year=2013/sp500_2013.parquet",
+        "Yahoo ^GSPC local: 05 - Underlying Prices and Events/Cleaned Data/Yahoo Finance/FX External/processed/provider=yfinance/group=equities/series=sp500/year=2014/sp500_2014.parquet",
+        "Yahoo ^GSPC local: 05 - Underlying Prices and Events/Cleaned Data/Yahoo Finance/FX External/processed/provider=yfinance/group=equities/series=sp500/year=2015/sp500_2015.parquet",
+        "Yahoo ^GSPC local: 05 - Underlying Prices and Events/Cleaned Data/Yahoo Finance/FX External/processed/provider=yfinance/group=equities/series=sp500/year=2016/sp500_2016.parquet",
+        "Yahoo ^GSPC: results/requested_premium_study/spx_cash_close.csv"
+      ],
+      "sha256": "f642d7ae85522c4c4c6116b735aa98899be5b10e70647fad9a9d4e25227de9ad",
+      "missing_on_spx_calendar": 0,
+      "missing_dates": []
+    },
+    "vix": {
+      "first_date": "2010-01-04",
+      "last_date": "2026-09-22",
+      "observations": 4238,
+      "sources": [
+        "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
+      ],
+      "sha256": "ca2aa4daea7965a154cb24c4ebb39de1782e0cb99a020f9f10ea63059af35044",
+      "missing_on_spx_calendar": 0,
+      "missing_dates": []
+    },
+    "vvix": {
+      "first_date": "2010-01-04",
+      "last_date": "2026-09-22",
+      "observations": 4203,
+      "sources": [
+        "https://cdn.cboe.com/api/global/us_indices/daily_prices/VVIX_History.csv"
+      ],
+      "sha256": "64674e59c60079326965178cf908d61ed4349ba3ba863e6feadfe12443e3b1a2",
+      "missing_on_spx_calendar": 2,
+      "missing_dates": [
+        "2010-11-11",
+        "2013-05-13"
+      ]
+    },
+    "vix3m": {
+      "first_date": "2010-01-04",
+      "last_date": "2026-09-22",
+      "observations": 4205,
+      "sources": [
+        "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX3M_History.csv"
+      ],
+      "sha256": "2f0b8ae6c2699ce7a42458fd26b166148c18af697a24a26dfacd899ef3951a91",
+      "missing_on_spx_calendar": 0,
+      "missing_dates": []
+    }
+  },
+  "feature_timing": "All features shifted one SPX trading session after alignment; market_source_date records the latest source close.",
+  "missing_policy": "No forward-fill or backfill; rolling windows require all observations.",
+  "rv_definition": "Sample standard deviation of simple daily cash SPX returns times sqrt(252).",
+  "zscore_definition": "Level minus preceding 252-session mean, divided by preceding 252-session sample std; result then lagged one session.",
+  "cash_cache_download_time": "Earlier corrected Yahoo cache did not retain its source retrieval timestamp; its hash is recorded.",
+  "cash_cache_sha256": "f1694eb23ccb6e859e1a5609b97033f356ff2c791fcc15f904c183ff2df2cb6e",
+  "feature_columns": [
+    "spx_close_lag1",
+    "spx_momentum_1d",
+    "spx_momentum_5d",
+    "spx_momentum_21d",
+    "spx_momentum_63d",
+    "spx_momentum_252d",
+    "spx_rv_5d",
+    "spx_rv_21d",
+    "spx_rv_63d",
+    "spx_drawdown_252d",
+    "vix",
+    "vix_change_5d",
+    "vix_change_21d",
+    "vix_zscore_252d",
+    "vvix",
+    "vvix_change_5d",
+    "vvix_change_21d",
+    "vvix_zscore_252d",
+    "vix3m",
+    "vix3m_change_5d",
+    "vix3m_change_21d",
+    "vix3m_zscore_252d",
+    "vix_to_vix3m",
+    "vvix_to_vix",
+    "vix_to_spx_rv_21d"
+  ],
+  "missing_by_feature_entire_file": {
+    "spx_close_lag1": 1,
+    "spx_momentum_1d": 2,
+    "spx_momentum_5d": 6,
+    "spx_momentum_21d": 22,
+    "spx_momentum_63d": 64,
+    "spx_momentum_252d": 253,
+    "spx_rv_5d": 6,
+    "spx_rv_21d": 22,
+    "spx_rv_63d": 64,
+    "spx_drawdown_252d": 252,
+    "vix": 1,
+    "vix_change_5d": 6,
+    "vix_change_21d": 22,
+    "vix_zscore_252d": 253,
+    "vvix": 3,
+    "vvix_change_5d": 10,
+    "vvix_change_21d": 26,
+    "vvix_zscore_252d": 724,
+    "vix3m": 1,
+    "vix3m_change_5d": 6,
+    "vix3m_change_21d": 22,
+    "vix3m_zscore_252d": 253,
+    "vix_to_vix3m": 1,
+    "vvix_to_vix": 3,
+    "vix_to_spx_rv_21d": 22,
+    "market_source_date": 1
+  },
+  "missing_by_feature_study_period": {
+    "spx_close_lag1": 0,
+    "spx_momentum_1d": 0,
+    "spx_momentum_5d": 0,
+    "spx_momentum_21d": 0,
+    "spx_momentum_63d": 0,
+    "spx_momentum_252d": 0,
+    "spx_rv_5d": 0,
+    "spx_rv_21d": 0,
+    "spx_rv_63d": 0,
+    "spx_drawdown_252d": 0,
+    "vix": 0,
+    "vix_change_5d": 0,
+    "vix_change_21d": 0,
+    "vix_zscore_252d": 0,
+    "vvix": 0,
+    "vvix_change_5d": 0,
+    "vvix_change_21d": 0,
+    "vvix_zscore_252d": 0,
+    "vix3m": 0,
+    "vix3m_change_5d": 0,
+    "vix3m_change_21d": 0,
+    "vix3m_zscore_252d": 0,
+    "vix_to_vix3m": 0,
+    "vvix_to_vix": 0,
+    "vix_to_spx_rv_21d": 0,
+    "market_source_date": 0
+  }
+}

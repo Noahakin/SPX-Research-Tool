@@ -1,0 +1,58 @@
+{
+  "archive_start": "2016-09-22",
+  "archive_end": "2026-09-22",
+  "entry_schedule": "calendar Friday, or latest archive session in the prior four calendar days",
+  "expiration": "next weekly roll date; PM-settled SPXW puts held to cash settlement",
+  "candidate_grid": {
+    "short_strike_ratios": [
+      0.97,
+      0.98,
+      0.99,
+      1.0,
+      1.01,
+      1.02,
+      1.03
+    ],
+    "hedge_widths_pct_of_entry_cash_spot": [
+      0.01,
+      0.02,
+      0.03,
+      0.05
+    ],
+    "fixed_before_outcome_observation": true
+  },
+  "candidate_rows": 14501,
+  "scheduled_weeks": 521,
+  "weeks_with_candidates": 520,
+  "fully_skipped_weeks": 1,
+  "missing_grid_points": 87,
+  "baseline_99_96_available_weeks": 520,
+  "spot_and_settlement_source": "read-only cached/local Yahoo Finance ^GSPC unadjusted cash close",
+  "normalization": "100% of entry cash-SPX spot notional; fractional contracts",
+  "realistic_execution": {
+    "bid_ask_spread_fraction_away_from_mid": 0.25,
+    "commission_per_contract_per_leg": 1.5
+  },
+  "natural_execution": {
+    "bid_ask_spread_fraction_away_from_mid": 0.5,
+    "commission_per_contract_per_leg": 1.5
+  },
+  "feature_timing": "option features use the entry snapshot only; lagged VIX, VVIX, and cash technical features are joined by the separate market-feature stage",
+  "outcome_fields": [
+    "spot_expiration",
+    "spx_forward_return",
+    "short_terminal_intrinsic_cash",
+    "long_terminal_intrinsic_cash",
+    "expiration_value_cash",
+    "pnl_*"
+  ],
+  "files": {
+    "candidates": [
+      "candidate_trades.parquet",
+      "candidate_trades.csv"
+    ],
+    "missing_grid_points": "missing_candidates.csv",
+    "weekly_availability": "weekly_availability.csv",
+    "fully_skipped_weeks": "skipped_weeks.csv"
+  }
+}

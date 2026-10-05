@@ -1,0 +1,847 @@
+entry_date,expiration_date,candidate_id,score,model,universe,gate,portfolio
+2024-01-05,2024-01-12,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-01-12,2024-01-19,20240112_s103_w03,0.203597087754683,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-01-19,2024-01-26,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-01-26,2024-02-02,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-02-02,2024-02-09,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-02-09,2024-02-16,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-02-16,2024-02-23,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-02-23,2024-03-01,20240223_s103_w03,0.12161874416451629,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-03-01,2024-03-08,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-03-08,2024-03-15,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-03-15,2024-03-22,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-03-22,2024-03-28,20240322_s103_w03,0.17883020711024958,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-03-28,2024-04-05,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-04-05,2024-04-12,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-04-12,2024-04-19,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-04-19,2024-04-26,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-04-26,2024-05-03,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-05-03,2024-05-10,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-05-10,2024-05-17,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-05-17,2024-05-24,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-05-24,2024-05-31,20240524_s103_w03,0.2681819900093558,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-05-31,2024-06-07,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-06-07,2024-06-14,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-06-14,2024-06-21,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-06-21,2024-06-28,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-06-28,2024-07-05,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-07-05,2024-07-12,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-07-12,2024-07-19,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-07-19,2024-07-26,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-07-26,2024-08-02,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-08-02,2024-08-09,20240802_s099_w03,0.10318702593342659,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-08-09,2024-08-16,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-08-16,2024-08-23,20240816_s103_w03,0.21426854039041637,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-08-23,2024-08-30,20240823_s103_w03,0.17756500781864795,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-08-30,2024-09-06,20240830_s103_w03,0.2825123336665018,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-09-06,2024-09-13,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-09-13,2024-09-20,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-09-20,2024-09-27,20240920_s103_w03,0.267800558009,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-09-27,2024-10-04,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-10-04,2024-10-11,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-10-11,2024-10-18,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-10-18,2024-10-25,20241018_s103_w03,0.13309489934074847,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-10-25,2024-11-01,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-11-01,2024-11-08,20241101_s099_w03,0.12207221740514697,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-11-08,2024-11-15,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-11-15,2024-11-22,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-11-22,2024-11-29,20241122_s103_w03,0.2772694971977608,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-11-29,2024-12-06,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-12-06,2024-12-13,20241206_s103_w03,0.23259357628348448,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-12-13,2024-12-20,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-12-20,2024-12-27,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-12-27,2025-01-03,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-01-03,2025-01-10,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-01-10,2025-01-17,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-01-17,2025-01-24,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-01-24,2025-01-31,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-01-31,2025-02-07,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-02-07,2025-02-14,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-02-14,2025-02-21,20250214_s103_w03,0.2517733651668789,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-02-21,2025-02-28,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-02-28,2025-03-07,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-03-07,2025-03-14,20250307_s099_w03,0.10543950097779614,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-03-14,2025-03-21,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-03-21,2025-03-28,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-03-28,2025-04-04,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-04-04,2025-04-11,20250404_s097_w03,0.17656740953024233,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-04-11,2025-04-17,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-04-17,2025-04-25,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-04-25,2025-05-02,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-05-02,2025-05-09,20250502_s103_w03,0.13942441579044376,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-05-09,2025-05-16,20250509_s103_w03,0.10720376921057591,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-05-16,2025-05-23,20250516_s103_w03,0.45063564075868195,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-05-23,2025-05-30,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-05-30,2025-06-06,20250530_s103_w03,0.15403328189076232,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-06-06,2025-06-13,20250606_s103_w03,0.27575455111607333,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-06-13,2025-06-20,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-06-20,2025-06-27,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-06-27,2025-07-03,20250627_s103_w03,0.4722108050943281,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-07-03,2025-07-11,20250703_s103_w03,0.39726767504513716,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-07-11,2025-07-18,20250711_s103_w03,0.27409124865764917,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-07-18,2025-07-25,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-07-25,2025-08-01,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-08-01,2025-08-08,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-08-08,2025-08-15,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-08-15,2025-08-22,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-08-22,2025-08-29,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-08-29,2025-09-05,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-09-05,2025-09-12,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-09-12,2025-09-19,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-09-19,2025-09-26,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-09-26,2025-10-03,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-10-03,2025-10-10,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-10-10,2025-10-17,20251010_s099_w03,0.13151929713239374,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-10-17,2025-10-24,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-10-24,2025-10-31,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-10-31,2025-11-07,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-11-07,2025-11-14,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-11-14,2025-11-21,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-11-21,2025-11-28,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-11-28,2025-12-05,20251128_s103_w03,0.10726653046884677,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-12-05,2025-12-12,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-12-12,2025-12-19,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-12-19,2025-12-26,20251219_s103_w03,0.16091743752971585,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2025-12-26,2026-01-02,20251226_s103_w03,0.17637241993909386,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-01-02,2026-01-09,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-01-09,2026-01-16,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-01-16,2026-01-23,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-01-23,2026-01-30,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-01-30,2026-02-06,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-02-06,2026-02-13,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-02-13,2026-02-20,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-02-20,2026-02-27,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-02-27,2026-03-06,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-03-06,2026-03-13,20260306_s098_w03,0.15090322097191744,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-03-13,2026-03-20,20260313_s099_w03,0.18059025470226334,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-03-20,2026-03-27,20260320_s099_w03,0.12343909825126474,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-03-27,2026-04-02,20260327_s099_w03,0.19216923157632954,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-04-02,2026-04-10,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-04-10,2026-04-17,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-04-17,2026-04-24,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-04-24,2026-05-01,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-05-01,2026-05-08,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-05-08,2026-05-15,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-05-15,2026-05-22,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-05-22,2026-05-29,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-05-29,2026-06-05,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-06-05,2026-06-12,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-06-12,2026-06-18,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-06-18,2026-06-26,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-06-26,2026-07-02,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-07-02,2026-07-10,20260702_s103_w03,0.2657098645714347,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-07-10,2026-07-17,20260710_s103_w03,0.17032711402093928,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-07-17,2026-07-24,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-07-24,2026-07-31,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-07-31,2026-08-07,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-08-07,2026-08-14,20260807_s103_w03,0.16532303587526748,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-08-14,2026-08-21,20260814_s103_w03,0.4068753486283946,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-08-21,2026-08-28,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-08-28,2026-09-04,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-09-04,2026-09-11,20260904_s103_w03,0.17620560308287164,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2026-09-11,2026-09-18,,,rule__normal_rv,width3,edge_risk_0.10,Dynamic winner: width3
+2024-01-05,2024-01-12,20240105_s097_w01,0.1341687277146796,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-01-12,2024-01-19,20240112_s103_w05,0.18454189354936623,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-01-19,2024-01-26,20240119_s103_w05,0.17064990512801348,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-01-26,2024-02-02,20240126_s102_w05,0.11949100683003397,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-02-02,2024-02-09,20240202_s097_w01,0.13155648073274936,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-02-09,2024-02-16,20240209_s103_w05,0.14621710088095177,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-02-16,2024-02-23,20240216_s103_w05,0.10441343426562999,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-02-23,2024-03-01,20240223_s103_w05,0.1458259102813705,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-03-01,2024-03-08,20240301_s103_w05,0.13096473631288275,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-03-08,2024-03-15,20240308_s097_w05,0.1243137254901963,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-03-15,2024-03-22,20240315_s101_w05,0.12176820662593561,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-03-22,2024-03-28,20240322_s103_w05,0.18794987083071218,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-03-28,2024-04-05,20240328_s103_w05,0.19006165240929718,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-04-05,2024-04-12,20240405_s097_w05,0.11862862089548412,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-04-12,2024-04-19,20240412_s097_w05,0.14792350014184216,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-04-19,2024-04-26,20240419_s099_w05,0.1274308579950462,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-04-26,2024-05-03,20240426_s099_w05,0.12483784055267842,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-05-03,2024-05-10,20240503_s103_w05,0.1251580226428538,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-05-10,2024-05-17,20240510_s103_w05,0.10607892788853052,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-05-17,2024-05-24,20240517_s103_w05,0.21038374096632337,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-05-24,2024-05-31,20240524_s103_w05,0.2240356436830169,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-05-31,2024-06-07,20240531_s103_w05,0.16237799847587603,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-06-07,2024-06-14,20240607_s099_w05,0.15338856780012697,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-06-14,2024-06-21,20240614_s103_w05,0.14256010804341265,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-06-21,2024-06-28,20240621_s103_w05,0.14389989589250446,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-06-28,2024-07-05,20240628_s103_w05,0.28446582880230403,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-07-05,2024-07-12,20240705_s103_w05,0.15012141341200455,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-07-12,2024-07-19,20240712_s103_w05,0.19889454569355527,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-07-19,2024-07-26,20240719_s097_w05,0.10875000000000003,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-07-26,2024-08-02,20240726_s099_w05,0.16145363941845492,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-08-02,2024-08-09,20240802_s097_w05,0.19605335497751222,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-08-09,2024-08-16,20240809_s097_w05,0.19408823386648213,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-08-16,2024-08-23,20240816_s097_w05,0.07168165448308046,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-08-23,2024-08-30,20240823_s097_w05,0.0897502809413128,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-08-30,2024-09-06,20240830_s101_w05,0.07542337005703054,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-09-06,2024-09-13,20240906_s097_w05,0.18582147238329358,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-09-13,2024-09-20,20240913_s097_w05,0.17324861360672628,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-09-20,2024-09-27,20240920_s097_w05,0.09149122807017547,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-09-27,2024-10-04,20240927_s097_w05,0.14691807969971954,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-10-04,2024-10-11,20241004_s097_w05,0.15620297151190238,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-10-11,2024-10-18,20241011_s097_w05,0.1364655172413791,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-10-18,2024-10-25,20241018_s098_w05,0.06145513471450885,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-10-25,2024-11-01,20241025_s097_w05,0.1465093941228591,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-11-01,2024-11-08,20241101_s097_w05,0.28521525726457403,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-11-08,2024-11-15,20241108_s097_w05,0.09149999999999998,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-11-15,2024-11-22,20241115_s097_w05,0.13881355932203404,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-11-22,2024-11-29,20241122_s103_w05,0.08119992874821363,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-11-29,2024-12-06,20241129_s100_w05,0.09378465344729996,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-12-06,2024-12-13,20241206_s103_w05,0.1719315078907047,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-12-13,2024-12-20,20241213_s097_w01,0.08407090140052045,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-12-20,2024-12-27,20241220_s097_w05,0.14494869207788943,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-12-27,2025-01-03,20241227_s099_w05,0.10179124444120409,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-01-03,2025-01-10,20250103_s099_w05,0.18637105713002197,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-01-10,2025-01-17,20250110_s098_w05,0.2350836545369442,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-01-17,2025-01-24,20250117_s099_w05,0.14465735056218254,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-01-24,2025-01-31,20250124_s099_w05,0.19146121529276364,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-01-31,2025-02-07,20250131_s098_w05,0.23800651267102693,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-02-07,2025-02-14,20250207_s098_w05,0.196440373170081,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-02-14,2025-02-21,20250214_s098_w05,0.13802209390926068,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-02-21,2025-02-28,20250221_s097_w05,0.22286457713800095,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-02-28,2025-03-07,20250228_s098_w05,0.31332205032778665,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-03-07,2025-03-14,20250307_s098_w05,0.35946814595550647,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-03-14,2025-03-21,20250314_s097_w05,0.32615412138027283,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-03-21,2025-03-28,20250321_s097_w05,0.21849459120076012,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-03-28,2025-04-04,20250328_s097_w05,0.35887386891690604,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-04-04,2025-04-11,20250404_s097_w05,0.013781993375236383,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-04-11,2025-04-17,20250411_s097_w05,0.09188600071532148,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-04-17,2025-04-25,20250417_s097_w05,0.10678412594254916,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-04-25,2025-05-02,20250425_s097_w05,0.10808703918551468,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-05-02,2025-05-09,20250502_s097_w05,0.09329430233387086,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-05-09,2025-05-16,20250509_s097_w05,0.1025255110157619,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-05-16,2025-05-23,20250516_s099_w05,0.1035052479389088,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-05-23,2025-05-30,20250523_s097_w05,0.13549334023691773,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-05-30,2025-06-06,20250530_s099_w05,0.12044339343022309,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-06-06,2025-06-13,20250606_s101_w05,0.09645425673149954,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-06-13,2025-06-20,20250613_s097_w05,0.1407824603912332,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-06-20,2025-06-27,20250620_s097_w05,0.13870579079078213,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-06-27,2025-07-03,20250627_s099_w05,0.08676125300665556,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-07-03,2025-07-11,20250703_s097_w05,0.08300694267369434,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-07-11,2025-07-18,20250711_s097_w05,0.09669196043306943,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-07-18,2025-07-25,20250718_s099_w05,0.16292173806633062,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-07-25,2025-08-01,20250725_s099_w05,0.20928758880274,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-08-01,2025-08-08,20250801_s097_w05,0.22544648099919018,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-08-08,2025-08-15,20250808_s099_w05,0.14987640420986087,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-08-15,2025-08-22,20250815_s099_w05,0.1716527469137414,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-08-22,2025-08-29,20250822_s099_w05,0.1933949631767578,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-08-29,2025-09-05,20250829_s099_w05,0.17743919879191683,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-09-05,2025-09-12,20250905_s099_w05,0.19941627974372875,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-09-12,2025-09-19,20250912_s098_w05,0.17956660310193073,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-09-19,2025-09-26,20250919_s099_w05,0.17207374984886092,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-09-26,2025-10-03,20250926_s099_w05,0.1851431054680129,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-10-03,2025-10-10,20251003_s098_w05,0.1525690895823461,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-10-10,2025-10-17,20251010_s097_w05,0.24186831196101066,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-10-17,2025-10-24,20251017_s097_w05,0.2864459272220527,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-10-24,2025-10-31,20251024_s098_w05,0.22808025170211593,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-10-31,2025-11-07,20251031_s098_w05,0.22904107953185257,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-11-07,2025-11-14,20251107_s098_w05,0.24789489327591235,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-11-14,2025-11-21,20251114_s097_w05,0.29253150450495885,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-11-21,2025-11-28,20251121_s097_w05,0.30480307463590467,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-11-28,2025-12-05,20251128_s098_w05,0.16277743422903573,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-12-05,2025-12-12,20251205_s098_w05,0.19181754030474443,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-12-12,2025-12-19,20251212_s098_w05,0.21181673834083364,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-12-19,2025-12-26,20251219_s099_w05,0.13069430430963158,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2025-12-26,2026-01-02,20251226_s103_w05,0.1454835716108019,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-01-02,2026-01-09,20260102_s099_w05,0.2313646227816679,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-01-09,2026-01-16,20260109_s099_w05,0.2140475632493727,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-01-16,2026-01-23,20260116_s099_w05,0.2548331579221485,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-01-23,2026-01-30,20260123_s098_w05,0.3001662256232567,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-01-30,2026-02-06,20260130_s098_w05,0.3205002063169442,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-02-06,2026-02-13,20260206_s098_w05,0.329791946705166,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-02-13,2026-02-20,20260213_s097_w05,0.33461020812311887,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-02-20,2026-02-27,20260220_s097_w05,0.33035409464547744,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-02-27,2026-03-06,20260227_s097_w05,0.3447330916478818,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-03-06,2026-03-13,20260306_s097_w05,0.3554684733949195,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-03-13,2026-03-20,20260313_s097_w05,0.38577394596867104,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-03-20,2026-03-27,20260320_s097_w05,0.3498432832540625,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-03-27,2026-04-02,20260327_s097_w05,0.2878937783775566,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-04-02,2026-04-10,20260402_s097_w05,0.3697190533215605,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-04-10,2026-04-17,20260410_s097_w05,0.21098026620428575,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-04-17,2026-04-24,20260417_s098_w05,0.17384359047462997,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-04-24,2026-05-01,20260424_s097_w05,0.28545509696687354,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-05-01,2026-05-08,20260501_s098_w05,0.2595617933048533,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-05-08,2026-05-15,20260508_s098_w05,0.2719050706356243,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-05-15,2026-05-22,20260515_s098_w05,0.3589261230262618,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-05-22,2026-05-29,20260522_s098_w05,0.2710172538013322,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-05-29,2026-06-05,20260529_s099_w05,0.2211343990255083,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-06-05,2026-06-12,20260605_s097_w05,0.36691702185621056,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-06-12,2026-06-18,20260612_s097_w05,0.2082000000000003,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-06-18,2026-06-26,20260618_s099_w05,0.2252672471694309,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-06-26,2026-07-02,20260626_s098_w05,0.17818189177798865,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-07-02,2026-07-10,20260702_s099_w05,0.24761180432836263,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-07-10,2026-07-17,20260710_s099_w05,0.19178676248026832,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-07-17,2026-07-24,20260717_s098_w05,0.35704932436882275,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-07-24,2026-07-31,20260724_s098_w05,0.3581613835748007,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-07-31,2026-08-07,20260731_s098_w05,0.2678186298041002,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-08-07,2026-08-14,20260807_s099_w05,0.232402969526986,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-08-14,2026-08-21,20260814_s099_w05,0.20184599806645048,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-08-21,2026-08-28,20260821_s099_w05,0.23461222847052363,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-08-28,2026-09-04,20260828_s099_w05,0.23395771329236711,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-09-04,2026-09-11,20260904_s099_w05,0.2534208254158213,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2026-09-11,2026-09-18,20260911_s098_w05,0.30439837831215605,ridge__core_plus_greeks,adaptive_width,positive_edge,Dynamic winner: adaptive_width
+2024-01-05,2024-01-12,20240105_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-01-12,2024-01-19,20240112_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-01-19,2024-01-26,20240119_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-01-26,2024-02-02,20240126_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-02-02,2024-02-09,20240202_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-02-09,2024-02-16,20240209_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-02-16,2024-02-23,20240216_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-02-23,2024-03-01,20240223_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-03-01,2024-03-08,20240301_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-03-08,2024-03-15,20240308_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-03-15,2024-03-22,20240315_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-03-22,2024-03-28,20240322_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-03-28,2024-04-05,20240328_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-04-05,2024-04-12,20240405_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-04-12,2024-04-19,20240412_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-04-19,2024-04-26,20240419_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-04-26,2024-05-03,20240426_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-05-03,2024-05-10,20240503_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-05-10,2024-05-17,20240510_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-05-17,2024-05-24,20240517_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-05-24,2024-05-31,20240524_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-05-31,2024-06-07,20240531_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-06-07,2024-06-14,20240607_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-06-14,2024-06-21,20240614_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-06-21,2024-06-28,20240621_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-06-28,2024-07-05,20240628_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-07-05,2024-07-12,20240705_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-07-12,2024-07-19,20240712_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-07-19,2024-07-26,20240719_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-07-26,2024-08-02,20240726_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-08-02,2024-08-09,20240802_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-08-09,2024-08-16,20240809_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-08-16,2024-08-23,20240816_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-08-23,2024-08-30,20240823_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-08-30,2024-09-06,20240830_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-09-06,2024-09-13,20240906_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-09-13,2024-09-20,20240913_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-09-20,2024-09-27,20240920_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-09-27,2024-10-04,20240927_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-10-04,2024-10-11,20241004_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-10-11,2024-10-18,20241011_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-10-18,2024-10-25,20241018_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-10-25,2024-11-01,20241025_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-11-01,2024-11-08,20241101_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-11-08,2024-11-15,20241108_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-11-15,2024-11-22,20241115_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-11-22,2024-11-29,20241122_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-11-29,2024-12-06,20241129_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-12-06,2024-12-13,20241206_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-12-13,2024-12-20,20241213_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-12-20,2024-12-27,20241220_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-12-27,2025-01-03,20241227_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-01-03,2025-01-10,20250103_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-01-10,2025-01-17,20250110_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-01-17,2025-01-24,20250117_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-01-24,2025-01-31,20250124_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-01-31,2025-02-07,20250131_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-02-07,2025-02-14,20250207_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-02-14,2025-02-21,20250214_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-02-21,2025-02-28,20250221_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-02-28,2025-03-07,20250228_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-03-07,2025-03-14,20250307_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-03-14,2025-03-21,20250314_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-03-21,2025-03-28,20250321_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-03-28,2025-04-04,20250328_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-04-04,2025-04-11,20250404_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-04-11,2025-04-17,20250411_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-04-17,2025-04-25,20250417_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-04-25,2025-05-02,20250425_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-05-02,2025-05-09,20250502_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-05-09,2025-05-16,20250509_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-05-16,2025-05-23,20250516_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-05-23,2025-05-30,20250523_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-05-30,2025-06-06,20250530_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-06-06,2025-06-13,20250606_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-06-13,2025-06-20,20250613_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-06-20,2025-06-27,20250620_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-06-27,2025-07-03,20250627_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-07-03,2025-07-11,20250703_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-07-11,2025-07-18,20250711_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-07-18,2025-07-25,20250718_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-07-25,2025-08-01,20250725_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-08-01,2025-08-08,20250801_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-08-08,2025-08-15,20250808_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-08-15,2025-08-22,20250815_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-08-22,2025-08-29,20250822_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-08-29,2025-09-05,20250829_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-09-05,2025-09-12,20250905_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-09-12,2025-09-19,20250912_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-09-19,2025-09-26,20250919_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-09-26,2025-10-03,20250926_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-10-03,2025-10-10,20251003_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-10-10,2025-10-17,20251010_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-10-17,2025-10-24,20251017_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-10-24,2025-10-31,20251024_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-10-31,2025-11-07,20251031_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-11-07,2025-11-14,20251107_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-11-14,2025-11-21,20251114_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-11-21,2025-11-28,20251121_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-11-28,2025-12-05,20251128_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-12-05,2025-12-12,20251205_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-12-12,2025-12-19,20251212_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-12-19,2025-12-26,20251219_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2025-12-26,2026-01-02,20251226_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-01-02,2026-01-09,20260102_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-01-09,2026-01-16,20260109_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-01-16,2026-01-23,20260116_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-01-23,2026-01-30,20260123_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-01-30,2026-02-06,20260130_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-02-06,2026-02-13,20260206_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-02-13,2026-02-20,20260213_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-02-20,2026-02-27,20260220_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-02-27,2026-03-06,20260227_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-03-06,2026-03-13,20260306_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-03-13,2026-03-20,20260313_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-03-20,2026-03-27,20260320_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-03-27,2026-04-02,20260327_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-04-02,2026-04-10,20260402_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-04-10,2026-04-17,20260410_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-04-17,2026-04-24,20260417_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-04-24,2026-05-01,20260424_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-05-01,2026-05-08,20260501_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-05-08,2026-05-15,20260508_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-05-15,2026-05-22,20260515_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-05-22,2026-05-29,20260522_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-05-29,2026-06-05,20260529_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-06-05,2026-06-12,20260605_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-06-12,2026-06-18,20260612_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-06-18,2026-06-26,20260618_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-06-26,2026-07-02,20260626_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-07-02,2026-07-10,20260702_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-07-10,2026-07-17,20260710_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-07-17,2026-07-24,20260717_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-07-24,2026-07-31,20260724_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-07-31,2026-08-07,20260731_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-08-07,2026-08-14,20260807_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-08-14,2026-08-21,20260814_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-08-21,2026-08-28,20260821_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-08-28,2026-09-04,20260828_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-09-04,2026-09-11,20260904_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2026-09-11,2026-09-18,20260911_s097_w03,0.0,fixed__0.97,width3,always,Validation-best fixed spread
+2024-01-05,2024-01-12,20240105_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-01-12,2024-01-19,20240112_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-01-19,2024-01-26,20240119_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-01-26,2024-02-02,20240126_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-02-02,2024-02-09,20240202_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-02-09,2024-02-16,20240209_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-02-16,2024-02-23,20240216_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-02-23,2024-03-01,20240223_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-03-01,2024-03-08,20240301_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-03-08,2024-03-15,20240308_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-03-15,2024-03-22,20240315_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-03-22,2024-03-28,20240322_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-03-28,2024-04-05,20240328_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-04-05,2024-04-12,20240405_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-04-12,2024-04-19,20240412_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-04-19,2024-04-26,20240419_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-04-26,2024-05-03,20240426_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-05-03,2024-05-10,20240503_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-05-10,2024-05-17,20240510_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-05-17,2024-05-24,20240517_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-05-24,2024-05-31,20240524_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-05-31,2024-06-07,20240531_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-06-07,2024-06-14,20240607_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-06-14,2024-06-21,20240614_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-06-21,2024-06-28,20240621_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-06-28,2024-07-05,20240628_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-07-05,2024-07-12,20240705_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-07-12,2024-07-19,20240712_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-07-19,2024-07-26,20240719_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-07-26,2024-08-02,20240726_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-08-02,2024-08-09,20240802_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-08-09,2024-08-16,20240809_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-08-16,2024-08-23,20240816_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-08-23,2024-08-30,20240823_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-08-30,2024-09-06,20240830_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-09-06,2024-09-13,20240906_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-09-13,2024-09-20,20240913_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-09-20,2024-09-27,20240920_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-09-27,2024-10-04,20240927_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-10-04,2024-10-11,20241004_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-10-11,2024-10-18,20241011_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-10-18,2024-10-25,20241018_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-10-25,2024-11-01,20241025_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-11-01,2024-11-08,20241101_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-11-08,2024-11-15,20241108_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-11-15,2024-11-22,20241115_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-11-22,2024-11-29,20241122_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-11-29,2024-12-06,20241129_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-12-06,2024-12-13,20241206_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-12-13,2024-12-20,20241213_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-12-20,2024-12-27,20241220_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-12-27,2025-01-03,20241227_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-01-03,2025-01-10,20250103_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-01-10,2025-01-17,20250110_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-01-17,2025-01-24,20250117_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-01-24,2025-01-31,20250124_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-01-31,2025-02-07,20250131_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-02-07,2025-02-14,20250207_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-02-14,2025-02-21,20250214_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-02-21,2025-02-28,20250221_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-02-28,2025-03-07,20250228_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-03-07,2025-03-14,20250307_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-03-14,2025-03-21,20250314_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-03-21,2025-03-28,20250321_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-03-28,2025-04-04,20250328_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-04-04,2025-04-11,20250404_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-04-11,2025-04-17,20250411_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-04-17,2025-04-25,20250417_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-04-25,2025-05-02,20250425_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-05-02,2025-05-09,20250502_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-05-09,2025-05-16,20250509_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-05-16,2025-05-23,20250516_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-05-23,2025-05-30,20250523_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-05-30,2025-06-06,20250530_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-06-06,2025-06-13,20250606_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-06-13,2025-06-20,20250613_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-06-20,2025-06-27,20250620_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-06-27,2025-07-03,20250627_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-07-03,2025-07-11,20250703_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-07-11,2025-07-18,20250711_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-07-18,2025-07-25,20250718_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-07-25,2025-08-01,20250725_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-08-01,2025-08-08,20250801_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-08-08,2025-08-15,20250808_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-08-15,2025-08-22,20250815_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-08-22,2025-08-29,20250822_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-08-29,2025-09-05,20250829_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-09-05,2025-09-12,20250905_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-09-12,2025-09-19,20250912_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-09-19,2025-09-26,20250919_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-09-26,2025-10-03,20250926_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-10-03,2025-10-10,20251003_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-10-10,2025-10-17,20251010_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-10-17,2025-10-24,20251017_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-10-24,2025-10-31,20251024_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-10-31,2025-11-07,20251031_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-11-07,2025-11-14,20251107_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-11-14,2025-11-21,20251114_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-11-21,2025-11-28,20251121_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-11-28,2025-12-05,20251128_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-12-05,2025-12-12,20251205_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-12-12,2025-12-19,20251212_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-12-19,2025-12-26,20251219_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2025-12-26,2026-01-02,20251226_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-01-02,2026-01-09,20260102_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-01-09,2026-01-16,20260109_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-01-16,2026-01-23,20260116_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-01-23,2026-01-30,20260123_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-01-30,2026-02-06,20260130_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-02-06,2026-02-13,20260206_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-02-13,2026-02-20,20260213_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-02-20,2026-02-27,20260220_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-02-27,2026-03-06,20260227_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-03-06,2026-03-13,20260306_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-03-13,2026-03-20,20260313_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-03-20,2026-03-27,20260320_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-03-27,2026-04-02,20260327_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-04-02,2026-04-10,20260402_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-04-10,2026-04-17,20260410_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-04-17,2026-04-24,20260417_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-04-24,2026-05-01,20260424_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-05-01,2026-05-08,20260501_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-05-08,2026-05-15,20260508_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-05-15,2026-05-22,20260515_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-05-22,2026-05-29,20260522_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-05-29,2026-06-05,20260529_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-06-05,2026-06-12,20260605_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-06-12,2026-06-18,20260612_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-06-18,2026-06-26,20260618_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-06-26,2026-07-02,20260626_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-07-02,2026-07-10,20260702_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-07-10,2026-07-17,20260710_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-07-17,2026-07-24,20260717_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-07-24,2026-07-31,20260724_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-07-31,2026-08-07,20260731_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-08-07,2026-08-14,20260807_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-08-14,2026-08-21,20260814_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-08-21,2026-08-28,20260821_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-08-28,2026-09-04,20260828_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-09-04,2026-09-11,20260904_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2026-09-11,2026-09-18,20260911_s099_w03,0.0,fixed__0.99,width3,always,Fixed weekly 99/96
+2024-01-05,2024-01-12,20240105_s097_w03,0.030582052849300885,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-01-12,2024-01-19,20240112_s103_w03,0.21623524928926388,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-01-19,2024-01-26,20240119_s103_w03,0.09382940940220445,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-01-26,2024-02-02,20240126_s098_w03,0.1690079465840967,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-02-02,2024-02-09,20240202_s103_w03,0.07429941699491749,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-02-09,2024-02-16,20240209_s103_w03,0.07136198694812028,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-02-16,2024-02-23,20240216_s103_w03,0.0857486505666221,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-02-23,2024-03-01,20240223_s103_w03,0.19542497937708272,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-03-01,2024-03-08,20240301_s103_w03,0.19259586945073762,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-03-08,2024-03-15,20240308_s097_w03,0.1160743284270282,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-03-15,2024-03-22,20240315_s098_w03,0.17320485046065887,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-03-22,2024-03-28,20240322_s103_w03,0.21600364325213026,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-03-28,2024-04-05,20240328_s103_w03,0.12666219074673585,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-04-05,2024-04-12,20240405_s098_w03,0.41965022501896926,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-04-12,2024-04-19,20240412_s098_w03,0.47520748118517653,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-04-19,2024-04-26,20240419_s098_w03,0.4849155599595584,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-04-26,2024-05-03,20240426_s098_w03,0.16098261949605747,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-05-03,2024-05-10,20240503_s103_w03,0.09629192033533665,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-05-10,2024-05-17,20240510_s103_w03,0.17279326015511798,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-05-17,2024-05-24,20240517_s103_w03,0.1652024015043156,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-05-24,2024-05-31,20240524_s103_w03,0.27192284365909275,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-05-31,2024-06-07,20240531_s097_w03,0.027337966445704756,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-06-07,2024-06-14,20240607_s099_w03,0.22200890828379938,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-06-14,2024-06-21,20240614_s103_w03,0.11611245136254382,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-06-21,2024-06-28,20240621_s097_w03,0.04141525910947795,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-06-28,2024-07-05,20240628_s097_w03,0.02638252739419812,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-07-05,2024-07-12,20240705_s098_w03,0.07880135546947498,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-07-12,2024-07-19,20240712_s097_w03,0.040290405761666384,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-07-19,2024-07-26,20240719_s098_w03,0.2854372751191838,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-07-26,2024-08-02,20240726_s098_w03,0.31450307821964246,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-08-02,2024-08-09,20240802_s097_w03,0.5628967806005832,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-08-09,2024-08-16,20240809_s097_w03,0.07479709966909089,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-08-16,2024-08-23,20240816_s103_w03,0.2654994723734573,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-08-23,2024-08-30,20240823_s103_w03,0.2582546627665455,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-08-30,2024-09-06,20240830_s103_w03,0.2983918655652322,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-09-06,2024-09-13,20240906_s097_w03,0.29751059739820485,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-09-13,2024-09-20,20240913_s103_w03,0.07615069327177859,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-09-20,2024-09-27,20240920_s103_w03,0.29451334655313216,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-09-27,2024-10-04,20240927_s103_w03,0.13744992826823954,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-10-04,2024-10-11,20241004_s097_w03,0.12596760095145604,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-10-11,2024-10-18,20241011_s103_w03,0.16771986601050567,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-10-18,2024-10-25,20241018_s103_w03,0.22324900107730927,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-10-25,2024-11-01,20241025_s097_w03,0.23471098709007598,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-11-01,2024-11-08,20241101_s097_w03,0.7689732237114356,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-11-08,2024-11-15,20241108_s103_w03,0.11613765066990629,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-11-15,2024-11-22,20241115_s097_w03,0.07454807714310106,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-11-22,2024-11-29,20241122_s103_w03,0.2781311660586032,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-11-29,2024-12-06,20241129_s103_w03,0.1936703159977255,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-12-06,2024-12-13,20241206_s103_w03,0.26646179641744444,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-12-13,2024-12-20,20241213_s103_w03,0.12701313661209057,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-12-20,2024-12-27,20241220_s097_w03,0.27713060611422813,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-12-27,2025-01-03,20241227_s103_w03,0.018086620901129585,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-01-03,2025-01-10,20250103_s103_w03,0.0856589387972924,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-01-10,2025-01-17,20250110_s097_w03,0.2413636356209451,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-01-17,2025-01-24,20250117_s103_w03,0.15907696833988533,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-01-24,2025-01-31,20250124_s103_w03,0.19884515912269424,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-01-31,2025-02-07,20250131_s097_w03,0.17690093169982277,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-02-07,2025-02-14,20250207_s097_w03,0.13955235562213353,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-02-14,2025-02-21,20250214_s103_w03,0.27191777645156934,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-02-21,2025-02-28,20250221_s098_w03,0.42347408135306325,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-02-28,2025-03-07,20250228_s098_w03,0.740785167502321,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-03-07,2025-03-14,20250307_s097_w03,0.7385296822474443,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-03-14,2025-03-21,20250314_s097_w03,0.428850730657784,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-03-21,2025-03-28,20250321_s103_w03,0.06976260593329518,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-03-28,2025-04-04,20250328_s097_w03,0.2487338546749102,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-04-04,2025-04-11,20250404_s097_w03,0.5535419791475386,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-04-11,2025-04-17,,,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-04-17,2025-04-25,20250417_s103_w03,0.044976960891859985,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-04-25,2025-05-02,20250425_s103_w03,0.17009356488775348,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-05-02,2025-05-09,20250502_s103_w03,0.28562514172601117,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-05-09,2025-05-16,20250509_s103_w03,0.27106492495401524,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-05-16,2025-05-23,20250516_s103_w03,0.4244229729331225,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-05-23,2025-05-30,20250523_s103_w03,0.24063627782220812,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-05-30,2025-06-06,20250530_s103_w03,0.283748731420383,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-06-06,2025-06-13,20250606_s103_w03,0.3592158285421945,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-06-13,2025-06-20,20250613_s103_w03,0.14337966696665722,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-06-20,2025-06-27,20250620_s103_w03,0.21872811242568277,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-06-27,2025-07-03,20250627_s103_w03,0.4176183983066905,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-07-03,2025-07-11,20250703_s103_w03,0.4180784191039921,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-07-11,2025-07-18,20250711_s103_w03,0.3497674371485312,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-07-18,2025-07-25,20250718_s103_w03,0.17024470344793963,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-07-25,2025-08-01,20250725_s098_w03,0.21599260213235952,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-08-01,2025-08-08,20250801_s098_w03,0.7000294771482841,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-08-08,2025-08-15,20250808_s097_w03,0.08248453755724545,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-08-15,2025-08-22,20250815_s098_w03,0.12075226068984979,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-08-22,2025-08-29,20250822_s098_w03,0.07484360875355299,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-08-29,2025-09-05,20250829_s097_w03,0.07336773138741076,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-09-05,2025-09-12,20250905_s098_w03,0.16128090785282795,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-09-12,2025-09-19,20250912_s098_w03,0.17129460705671837,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-09-19,2025-09-26,20250919_s098_w03,0.1514135748424254,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-09-26,2025-10-03,20250926_s099_w03,0.2590376070806942,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-10-03,2025-10-10,20251003_s099_w03,0.36423547178305493,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-10-10,2025-10-17,20251010_s099_w03,1.0579929839715427,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-10-17,2025-10-24,20251017_s097_w03,0.3478552465754467,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-10-24,2025-10-31,20251024_s097_w03,0.14532118449418926,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-10-31,2025-11-07,20251031_s103_w03,0.08926817669591665,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-11-07,2025-11-14,20251107_s097_w03,0.11942236252938049,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-11-14,2025-11-21,20251114_s097_w03,0.34621448703580276,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-11-21,2025-11-28,20251121_s097_w03,0.3610628849061793,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-11-28,2025-12-05,20251128_s103_w03,0.25996916082162597,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-12-05,2025-12-12,20251205_s103_w03,0.11850544567150004,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-12-12,2025-12-19,20251212_s103_w03,0.06674674814950253,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-12-19,2025-12-26,20251219_s103_w03,0.2949640527000591,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2025-12-26,2026-01-02,20251226_s103_w03,0.29773245627490236,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-01-02,2026-01-09,20260102_s103_w03,0.11978567720561792,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-01-09,2026-01-16,20260109_s103_w03,0.19161814193987498,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-01-16,2026-01-23,20260116_s103_w03,0.11652394014033697,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-01-23,2026-01-30,20260123_s097_w03,0.24360319547603346,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-01-30,2026-02-06,20260130_s098_w03,0.3020860982794845,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-02-06,2026-02-13,20260206_s097_w03,0.3283404761108972,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-02-13,2026-02-20,20260213_s097_w03,0.3134208808647729,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-02-20,2026-02-27,20260220_s097_w03,0.3181410902964205,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-02-27,2026-03-06,20260227_s097_w03,0.46990276344693044,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-03-06,2026-03-13,20260306_s097_w03,1.0163852925786365,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-03-13,2026-03-20,20260313_s097_w03,1.0297891922424813,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-03-20,2026-03-27,20260320_s097_w03,0.7181245988924441,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-03-27,2026-04-02,20260327_s097_w03,0.9217856766256185,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-04-02,2026-04-10,20260402_s097_w03,0.21427251933269464,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-04-10,2026-04-17,20260410_s103_w03,0.17248249451390213,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-04-17,2026-04-24,20260417_s103_w03,0.2291517488761155,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-04-24,2026-05-01,20260424_s103_w03,0.1300152611945433,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-05-01,2026-05-08,20260501_s103_w03,0.14634324917337316,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-05-08,2026-05-15,20260508_s103_w03,0.1713936933667302,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-05-15,2026-05-22,20260515_s098_w03,0.24090410970385018,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-05-22,2026-05-29,20260522_s103_w03,0.14233577996893243,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-05-29,2026-06-05,20260529_s103_w03,0.17807292496069174,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-06-05,2026-06-12,20260605_s097_w03,0.5699054233512566,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-06-12,2026-06-18,20260612_s103_w03,0.07117209922496652,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-06-18,2026-06-26,20260618_s103_w03,0.17398614139762328,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-06-26,2026-07-02,20260626_s103_w03,0.09322573787368024,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-07-02,2026-07-10,20260702_s103_w03,0.34720539442126824,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-07-10,2026-07-17,20260710_s103_w03,0.30343085900994543,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-07-17,2026-07-24,20260717_s097_w03,0.27611052700787553,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-07-24,2026-07-31,20260724_s097_w03,0.36720994874705987,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-07-31,2026-08-07,20260731_s103_w03,0.11645897592641347,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-08-07,2026-08-14,20260807_s103_w03,0.2841525462669813,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-08-14,2026-08-21,20260814_s103_w03,0.40082467397535254,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-08-21,2026-08-28,20260821_s103_w03,0.20082745851530698,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-08-28,2026-09-04,20260828_s103_w03,0.24447154867786947,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-09-04,2026-09-11,20260904_s103_w03,0.2803647703520234,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2026-09-11,2026-09-18,20260911_s098_w03,0.19598428294758594,rule__economic_risk,width3,positive_edge,Economic model: fixed width
+2024-01-05,2024-01-12,20240105_s097_w03,0.030582052849300885,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-01-12,2024-01-19,20240112_s103_w03,0.21623524928926388,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-01-19,2024-01-26,20240119_s103_w03,0.09382940940220445,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-01-26,2024-02-02,20240126_s098_w02,0.189892398251602,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-02-02,2024-02-09,20240202_s103_w03,0.07429941699491749,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-02-09,2024-02-16,20240209_s102_w02,0.07912615266147527,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-02-16,2024-02-23,20240216_s101_w01,0.09898349067401914,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-02-23,2024-03-01,20240223_s103_w03,0.19542497937708272,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-03-01,2024-03-08,20240301_s102_w02,0.1938020695046596,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-03-08,2024-03-15,20240308_s097_w02,0.1349152090618944,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-03-15,2024-03-22,20240315_s098_w03,0.17320485046065887,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-03-22,2024-03-28,20240322_s103_w03,0.21600364325213026,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-03-28,2024-04-05,20240328_s103_w03,0.12666219074673585,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-04-05,2024-04-12,20240405_s098_w02,0.4252935185018963,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-04-12,2024-04-19,20240412_s098_w02,0.48737780762701,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-04-19,2024-04-26,20240419_s098_w03,0.4849155599595584,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-04-26,2024-05-03,20240426_s097_w02,0.16631867144225704,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-05-03,2024-05-10,20240503_s103_w02,0.10709314573101199,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-05-10,2024-05-17,20240510_s103_w03,0.17279326015511798,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-05-17,2024-05-24,20240517_s103_w03,0.1652024015043156,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-05-24,2024-05-31,20240524_s103_w03,0.27192284365909275,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-05-31,2024-06-07,20240531_s097_w02,0.032134044107740733,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-06-07,2024-06-14,20240607_s098_w02,0.26115931860373875,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-06-14,2024-06-21,20240614_s103_w03,0.11611245136254382,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-06-21,2024-06-28,20240621_s097_w01,0.05151850460116119,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-06-28,2024-07-05,20240628_s097_w01,0.03129462514675827,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-07-05,2024-07-12,20240705_s098_w02,0.09547476047694006,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-07-12,2024-07-19,20240712_s097_w01,0.057234853648635446,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-07-19,2024-07-26,20240719_s098_w02,0.36451954904241074,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-07-26,2024-08-02,20240726_s097_w02,0.3216808823109812,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-08-02,2024-08-09,20240802_s097_w03,0.5628967806005832,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-08-09,2024-08-16,20240809_s097_w05,0.12341392622065303,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-08-16,2024-08-23,20240816_s103_w02,0.35167496567090795,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-08-23,2024-08-30,20240823_s103_w02,0.31317450051771983,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-08-30,2024-09-06,20240830_s103_w02,0.3251283204357506,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-09-06,2024-09-13,20240906_s097_w03,0.29751059739820485,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-09-13,2024-09-20,20240913_s103_w02,0.12021639231095814,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-09-20,2024-09-27,20240920_s103_w02,0.31528124307789857,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-09-27,2024-10-04,20240927_s103_w01,0.22110099769454247,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-10-04,2024-10-11,20241004_s097_w03,0.12596760095145604,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-10-11,2024-10-18,20241011_s103_w03,0.16771986601050567,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-10-18,2024-10-25,20241018_s103_w02,0.28833814706633853,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-10-25,2024-11-01,20241025_s097_w02,0.2756471542675064,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-11-01,2024-11-08,20241101_s097_w02,0.867696820046295,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-11-08,2024-11-15,20241108_s103_w03,0.11613765066990629,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-11-15,2024-11-22,20241115_s097_w02,0.0753826125003556,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-11-22,2024-11-29,20241122_s103_w02,0.3153798689753062,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-11-29,2024-12-06,20241129_s103_w02,0.204431145184789,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-12-06,2024-12-13,20241206_s103_w02,0.29287509269563133,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-12-13,2024-12-20,20241213_s097_w01,0.12961318093783522,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-12-20,2024-12-27,20241220_s097_w02,0.3250709091713428,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2024-12-27,2025-01-03,20241227_s103_w02,0.03814233025964974,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-01-03,2025-01-10,20250103_s103_w03,0.0856589387972924,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-01-10,2025-01-17,20250110_s097_w02,0.24208616365078892,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-01-17,2025-01-24,20250117_s103_w02,0.1670297686069127,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-01-24,2025-01-31,20250124_s103_w02,0.21028114355076077,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-01-31,2025-02-07,20250131_s097_w02,0.21222639754973402,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-02-07,2025-02-14,20250207_s097_w02,0.1676618667665334,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-02-14,2025-02-21,20250214_s103_w02,0.3483496800332738,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-02-21,2025-02-28,20250221_s097_w01,0.49192942079369123,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-02-28,2025-03-07,20250228_s097_w01,0.7883531261620167,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-03-07,2025-03-14,20250307_s097_w03,0.7385296822474443,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-03-14,2025-03-21,20250314_s097_w03,0.428850730657784,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-03-21,2025-03-28,20250321_s103_w01,0.10432798950247381,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-03-28,2025-04-04,20250328_s097_w05,0.317328082941755,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-04-04,2025-04-11,20250404_s097_w05,0.9027067604762123,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-04-11,2025-04-17,,,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-04-17,2025-04-25,20250417_s103_w02,0.07932034241930747,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-04-25,2025-05-02,20250425_s103_w02,0.23283708065557565,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-05-02,2025-05-09,20250502_s103_w01,0.43644349053446785,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-05-09,2025-05-16,20250509_s103_w02,0.33391408289135704,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-05-16,2025-05-23,20250516_s103_w02,0.503820940204005,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-05-23,2025-05-30,20250523_s103_w02,0.2900258600069448,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-05-30,2025-06-06,20250530_s103_w02,0.3303248205394619,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-06-06,2025-06-13,20250606_s103_w02,0.4213611946919874,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-06-13,2025-06-20,20250613_s103_w02,0.21950238287582025,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-06-20,2025-06-27,20250620_s103_w02,0.28484075172353374,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-06-27,2025-07-03,20250627_s103_w02,0.462994590978523,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-07-03,2025-07-11,20250703_s103_w02,0.4982507890102594,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-07-11,2025-07-18,20250711_s102_w01,0.4180695898571313,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-07-18,2025-07-25,20250718_s103_w03,0.17024470344793963,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-07-25,2025-08-01,20250725_s097_w01,0.23714743589743648,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-08-01,2025-08-08,20250801_s098_w02,0.7815998738002033,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-08-08,2025-08-15,20250808_s097_w01,0.09124317984759742,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-08-15,2025-08-22,20250815_s097_w01,0.15785894872367123,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-08-22,2025-08-29,20250822_s097_w01,0.11092168428802314,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-08-29,2025-09-05,20250829_s097_w01,0.10215828399349615,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-09-05,2025-09-12,20250905_s097_w01,0.175670987691735,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-09-12,2025-09-19,20250912_s097_w01,0.1800806635312952,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-09-19,2025-09-26,20250919_s098_w02,0.1646747305268086,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-09-26,2025-10-03,20250926_s098_w01,0.2697152886172589,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-10-03,2025-10-10,20251003_s098_w01,0.43007002242382664,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-10-10,2025-10-17,20251010_s098_w01,1.1573285532618722,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-10-17,2025-10-24,20251017_s097_w03,0.3478552465754467,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-10-24,2025-10-31,20251024_s097_w03,0.14532118449418926,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-10-31,2025-11-07,20251031_s103_w03,0.08926817669591665,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-11-07,2025-11-14,20251107_s098_w05,0.14572383538453987,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-11-14,2025-11-21,20251114_s098_w05,0.35726430329547415,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-11-21,2025-11-28,20251121_s098_w05,0.3637813336356468,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-11-28,2025-12-05,20251128_s103_w03,0.25996916082162597,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-12-05,2025-12-12,20251205_s103_w03,0.11850544567150004,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-12-12,2025-12-19,20251212_s103_w03,0.06674674814950253,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-12-19,2025-12-26,20251219_s103_w03,0.2949640527000591,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2025-12-26,2026-01-02,20251226_s103_w03,0.29773245627490236,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-01-02,2026-01-09,20260102_s103_w03,0.11978567720561792,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-01-09,2026-01-16,20260109_s103_w03,0.19161814193987498,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-01-16,2026-01-23,20260116_s103_w03,0.11652394014033697,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-01-23,2026-01-30,20260123_s097_w02,0.2641390295463886,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-01-30,2026-02-06,20260130_s097_w02,0.3413418986777401,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-02-06,2026-02-13,20260206_s097_w02,0.3461900870712612,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-02-13,2026-02-20,20260213_s098_w05,0.3172388365928286,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-02-20,2026-02-27,20260220_s097_w03,0.3181410902964205,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-02-27,2026-03-06,20260227_s097_w03,0.46990276344693044,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-03-06,2026-03-13,20260306_s097_w03,1.0163852925786365,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-03-13,2026-03-20,20260313_s098_w05,1.0402420992181278,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-03-20,2026-03-27,20260320_s098_w05,0.7311241548808092,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-03-27,2026-04-02,20260327_s098_w05,0.9568535284821952,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-04-02,2026-04-10,20260402_s097_w05,0.23497744820859232,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-04-10,2026-04-17,20260410_s103_w02,0.2305640634564109,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-04-17,2026-04-24,20260417_s103_w02,0.25862612419429326,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-04-24,2026-05-01,20260424_s103_w02,0.16545578680203527,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-05-01,2026-05-08,20260501_s103_w02,0.16657286364960414,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-05-08,2026-05-15,20260508_s103_w03,0.1713936933667302,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-05-15,2026-05-22,20260515_s098_w05,0.2728433003948356,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-05-22,2026-05-29,20260522_s103_w02,0.15903485421399657,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-05-29,2026-06-05,20260529_s103_w02,0.19308993873179817,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-06-05,2026-06-12,20260605_s098_w05,0.5990666906734053,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-06-12,2026-06-18,20260612_s103_w02,0.09133176586014469,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-06-18,2026-06-26,20260618_s103_w02,0.2523964206676635,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-06-26,2026-07-02,20260626_s103_w02,0.10471320195358423,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-07-02,2026-07-10,20260702_s103_w02,0.35650649969468606,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-07-10,2026-07-17,20260710_s103_w02,0.32128018411865905,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-07-17,2026-07-24,20260717_s098_w05,0.2810794565258939,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-07-24,2026-07-31,20260724_s097_w02,0.3950834678051767,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-07-31,2026-08-07,20260731_s103_w02,0.15939511512241689,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-08-07,2026-08-14,20260807_s103_w03,0.2841525462669813,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-08-14,2026-08-21,20260814_s103_w03,0.40082467397535254,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-08-21,2026-08-28,20260821_s103_w03,0.20082745851530698,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-08-28,2026-09-04,20260828_s103_w03,0.24447154867786947,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-09-04,2026-09-11,20260904_s103_w03,0.2803647703520234,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width
+2026-09-11,2026-09-18,20260911_s098_w03,0.19598428294758594,rule__economic_risk,adaptive_width,positive_edge,Economic model: adaptive width

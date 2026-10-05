@@ -1,0 +1,23 @@
+portfolio,target_short_ratio,weeks,trades,pct_traded_weeks
+Dynamic winner: adaptive_width,0.97,54,141,0.3829787234042553
+Dynamic winner: adaptive_width,0.98,28,141,0.19858156028368795
+Dynamic winner: adaptive_width,0.99,33,141,0.23404255319148937
+Dynamic winner: adaptive_width,1.0,1,141,0.0070921985815602835
+Dynamic winner: adaptive_width,1.01,3,141,0.02127659574468085
+Dynamic winner: adaptive_width,1.02,1,141,0.0070921985815602835
+Dynamic winner: adaptive_width,1.03,21,141,0.14893617021276595
+Dynamic winner: width3,0.97,1,37,0.02702702702702703
+Dynamic winner: width3,0.98,1,37,0.02702702702702703
+Dynamic winner: width3,0.99,7,37,0.1891891891891892
+Dynamic winner: width3,1.03,28,37,0.7567567567567568
+Economic model: adaptive width,0.97,43,140,0.30714285714285716
+Economic model: adaptive width,0.98,24,140,0.17142857142857143
+Economic model: adaptive width,1.01,1,140,0.007142857142857143
+Economic model: adaptive width,1.02,3,140,0.02142857142857143
+Economic model: adaptive width,1.03,69,140,0.4928571428571429
+Economic model: fixed width,0.97,41,140,0.29285714285714287
+Economic model: fixed width,0.98,21,140,0.15
+Economic model: fixed width,0.99,4,140,0.02857142857142857
+Economic model: fixed width,1.03,74,140,0.5285714285714286
+Fixed weekly 99/96,0.99,141,141,1.0
+Validation-best fixed spread,0.97,141,141,1.0

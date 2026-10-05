@@ -1,0 +1,2 @@
+date,candidate_id,raw_spread,adjacent_put_spread,call_parity_spread,reason
+2020-02-27,20200221_s097_w03,-33.224999999999994,100.55000000000001,103.72500000000001,"Sensitivity estimates for clearly defective 3240 put midpoint; adjacent observed put midpoints interpolated, or opposite observed call midpoints with DF=1. Raw source preserved; neither is a recovered observed put quote."

@@ -1,0 +1,15 @@
+{
+  "source_trades": "results\\standardized_iv_rv_spread_selector\\portfolio_trades.parquet",
+  "source_trades_sha256": "850bf33ff859aca94fabf07e02503a9941b841aa9f12c013c76662907ab18b78",
+  "cash_close_sha256": "f1694eb23ccb6e859e1a5609b97033f356ff2c791fcc15f904c183ff2df2cb6e",
+  "daily_quotes_sha256": "a5c36732bc35e27c0d95367ac22800113d8c266cced2dbbc0dc41ae1736c8cb4",
+  "sessions_per_portfolio": 1968,
+  "quotes": 7271,
+  "trade_settlements": 188,
+  "max_settlement_error_dollars": 1.6298145055770874e-09,
+  "mark": "actual daily bid/ask midpoints; cash SPX intrinsic at expiration",
+  "missing_quote_policy": "fail; no forward filling or interpolation",
+  "sharpe": "daily mean/sample_std * sqrt(252), zero cash rate",
+  "first_entry_cost_included": true,
+  "daily_liquidation_costs_charged": false
+}

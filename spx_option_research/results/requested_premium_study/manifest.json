@@ -1,0 +1,23 @@
+{
+  "archive_start": "2016-09-22",
+  "archive_end": "2026-09-22",
+  "one_month_matched_cycles": 118,
+  "three_month_quote_observations": 117,
+  "entry_schedule": "third Friday or latest available session in the prior three days",
+  "spot_and_settlement_source": "Yahoo Finance ^GSPC unadjusted cash close",
+  "cash_close_start": "2016-09-22",
+  "cash_close_end": "2026-09-22",
+  "cash_close_observations": 2513,
+  "cash_close_cache": "results\\requested_premium_study\\spx_cash_close.csv",
+  "option_settlement": "PM-settled SPXW; intrinsic value at expiration-day cash SPX close",
+  "normalization": "SPX spot notional at entry",
+  "annualization": "sum of normalized amounts divided by total contract-years",
+  "realistic_execution": {
+    "bid_ask_spread_fraction_away_from_mid": 0.25,
+    "commission_per_contract_per_leg": 1.5
+  },
+  "natural_execution": {
+    "bid_ask_spread_fraction_away_from_mid": 0.5,
+    "commission_per_contract_per_leg": 1.5
+  }
+}

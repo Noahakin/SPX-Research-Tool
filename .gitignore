@@ -1,0 +1,33 @@
+# Credentials and local environments
+.env
+.env.*
+*.pem
+*.key
+.venv/
+venv/
+.research_dependencies/
+.publish/
+
+# Local data archives and caches
+/0*/
+_inventory/
+spx_option_research/data/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+*.lnk
+*.tmp
+
+# New generated outputs stay local. Supplied, tracked snapshots remain tracked.
+/spx_option_research/results/
+/SPX Research Organized Charts/
+**/chrome*/
+**/browser_qa_profile/
+
+# Operating-system metadata
+Thumbs.db
+Desktop.ini
+.DS_Store

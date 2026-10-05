@@ -1,0 +1,10 @@
+{
+  "archive_start": "2016-09-22",
+  "archive_end": "2026-09-22",
+  "trades_per_strategy": 118,
+  "average_entry_dte": 30.43220338983051,
+  "hedge_selection": "highest strike below the 103/100 long put whose one-for-one debit does not exceed the credit surplus over 99/96",
+  "average_hedge_otm_pct": 3.4630537807904074,
+  "average_hedge_abs_delta": 0.33170210169491526,
+  "average_surplus_spent_pct": 0.9071311370669041
+}

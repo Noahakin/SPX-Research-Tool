@@ -1,0 +1,98 @@
+[
+  {
+    "tenor": 3,
+    "completed": 45920,
+    "eligible": 1780,
+    "seconds": 27.98114540008828
+  },
+  {
+    "tenor": 7,
+    "completed": 91840,
+    "eligible": 17164,
+    "seconds": 56.828984500141814
+  },
+  {
+    "tenor": 10,
+    "completed": 137760,
+    "eligible": 33462,
+    "seconds": 84.4854908999987
+  },
+  {
+    "tenor": 14,
+    "completed": 183680,
+    "eligible": 56527,
+    "seconds": 113.86049780016765
+  },
+  {
+    "tenor": 21,
+    "completed": 229600,
+    "eligible": 87418,
+    "seconds": 144.74149470007978
+  },
+  {
+    "tenor": 28,
+    "completed": 275520,
+    "eligible": 99046,
+    "seconds": 172.06901540001854
+  },
+  {
+    "tenor": 35,
+    "completed": 321440,
+    "eligible": 125030,
+    "seconds": 277.1872010000516
+  },
+  {
+    "tenor": 42,
+    "completed": 367360,
+    "eligible": 145605,
+    "seconds": 304.9873154000379
+  },
+  {
+    "tenor": 45,
+    "completed": 413280,
+    "eligible": 166804,
+    "seconds": 332.44423500006087
+  },
+  {
+    "tenor": 56,
+    "completed": 459200,
+    "eligible": 199839,
+    "seconds": 381.42706930008717
+  },
+  {
+    "tenor": 60,
+    "completed": 505120,
+    "eligible": 230142,
+    "seconds": 410.75479690008797
+  },
+  {
+    "tenor": 75,
+    "completed": 551040,
+    "eligible": 256271,
+    "seconds": 441.46693700016476
+  },
+  {
+    "tenor": 90,
+    "completed": 596960,
+    "eligible": 271218,
+    "seconds": 472.10816820012406
+  },
+  {
+    "tenor": 120,
+    "completed": 642880,
+    "eligible": 306903,
+    "seconds": 500.6479183000047
+  },
+  {
+    "tenor": 150,
+    "completed": 688800,
+    "eligible": 306903,
+    "seconds": 536.3934427001514
+  },
+  {
+    "tenor": 180,
+    "completed": 734720,
+    "eligible": 306903,
+    "seconds": 556.4265863001347
+  }
+]

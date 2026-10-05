@@ -1,0 +1,35 @@
+[
+  {
+    "series": "vix",
+    "official_start": "1990-01-02",
+    "official_end": "2026-10-01",
+    "rows": 9285,
+    "missing_cash_sessions": 0,
+    "missing_dates": [],
+    "overlap_comparisons": 6730,
+    "overlap_max_abs_diff": 0.0,
+    "overlap_count_abs_diff_gt_0_011": 0
+  },
+  {
+    "series": "vix3m",
+    "official_start": "2009-09-18",
+    "official_end": "2026-10-01",
+    "rows": 4285,
+    "missing_cash_sessions": 0,
+    "missing_dates": [],
+    "overlap_comparisons": 4237,
+    "overlap_max_abs_diff": 0.0,
+    "overlap_count_abs_diff_gt_0_011": 0
+  },
+  {
+    "series": "vvix",
+    "official_start": "2006-03-06",
+    "official_end": "2026-10-01",
+    "rows": 5116,
+    "missing_cash_sessions": 0,
+    "missing_dates": [],
+    "overlap_comparisons": 4929,
+    "overlap_max_abs_diff": 5.000002441406252,
+    "overlap_count_abs_diff_gt_0_011": 12
+  }
+]

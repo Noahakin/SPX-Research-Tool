@@ -1,0 +1,8 @@
+{
+  "source_root": "C:\\Users\\NoahAkin\\OneDrive - lsfunds.com\\Raw Data\\04 - Options and Volatility\\Raw Downloads\\IVolatility\\data\\raw\\spx_options_6m",
+  "source_index_sha256": "32ec964c5a9b5cfcfe263ecb4b43364b5166ff5162350a978aac1328b75b3776",
+  "source_files": 2504,
+  "quotes": 30039,
+  "cache_key": "Required dates/symbols, relative archive paths, file sizes and nanosecond modification times",
+  "fill_missing_quotes": false
+}

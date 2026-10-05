@@ -1,0 +1,14 @@
+{
+  "first_entry": "2024-01-05",
+  "last_expiration": "2026-09-18",
+  "weeks": 141,
+  "new_96_93_candidates": 141,
+  "new_exact_daily_leg_quotes": 1354,
+  "new_96_93_unit_marks": 818,
+  "new_96_93_bound_flags": 0,
+  "notional_multiples": [
+    1,
+    2
+  ],
+  "quote_source": "C:\\Users\\NoahAkin\\OneDrive - lsfunds.com\\Raw Data\\spx_option_research\\results\\weekly_dynamic_research\\weekly_daily_option_quotes.parquet"
+}

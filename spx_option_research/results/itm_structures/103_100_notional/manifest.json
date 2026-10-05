@@ -1,0 +1,45 @@
+{
+  "strategies_tested": 140,
+  "profit_levels": [
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    35,
+    40,
+    45,
+    50,
+    55,
+    60,
+    65,
+    70,
+    75,
+    80,
+    85,
+    90,
+    95
+  ],
+  "entry_intervals_weeks": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8
+  ],
+  "notional_definition": "short strike x 100 x contracts",
+  "maximum_allowed_notional_pct": 1.0,
+  "best_strategy_id": "monthly_profit_25",
+  "best_cagr": 0.010996207724687679,
+  "best_max_drawdown": -0.015149723035136842,
+  "best_max_actual_notional_pct": 1.0,
+  "plotted_strategies": [
+    "monthly_profit_25",
+    "every_2w_profit_25",
+    "every_1w_hold",
+    "every_3w_profit_85",
+    "every_6w_profit_25"
+  ]
+}

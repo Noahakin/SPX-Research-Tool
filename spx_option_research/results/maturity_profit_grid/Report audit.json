@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "verified_grid_rows": 734720,
+  "independently_verified_strategies": 74,
+  "independently_verified_trades": 16405,
+  "code_sha256": {
+    "present_maturity_grid.py": "71ba8b504a0ff41c481072513b89f8a99c7842ff33f2673ac22ed07dc23b4ac2",
+    "validate_maturity_grid.py": "2b3583c6797a5e49a492d6baffb91a8f9b43817fcd0aec2b501365bba69cb981",
+    "run_maturity_profit_study.py": "07995754fdf9e626318c64e8179fceaa2d42f165e2b1fd5d683ded94a89f0e4d",
+    "historical_maturity_grid.py": "313a3f91427c7245cf8dd1e7e73f9ce22a52ff9f9f689697bc04a8967b4041e8"
+  }
+}

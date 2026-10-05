@@ -1,0 +1,16 @@
+{
+  "trade_candidates": 105945,
+  "leg_rows": 293823,
+  "strategies_tested": 2916,
+  "qualifying_strategies": 387,
+  "qualifying_verticals": 380,
+  "qualifying_butterflies": 7,
+  "plotted_strategies": [
+    "vertical_103/100_monthly_dte60_m103_profit_25",
+    "vertical_delta55_3wide_monthly_dte60_d55_profit_50",
+    "butterfly_short_condor_2x2x2_upper101_monthly_dte21_m101_profit_25",
+    "butterfly_short_condor_2x2x2_upper101_weekly_dte30_m101_hold"
+  ],
+  "archive_start": "2016-09-22",
+  "archive_end": "2026-09-22"
+}

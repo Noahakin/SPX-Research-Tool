@@ -1,0 +1,3 @@
+draws,block_weeks,seed,calendar_weeks,daily_observations,finite_sharpe_draws,sharpe_difference,sharpe_difference_ci_low,sharpe_difference_ci_high,annual_arithmetic_return_difference,annual_arithmetic_return_difference_ci_low,annual_arithmetic_return_difference_ci_high,fraction_draws_sharpe_difference_positive,fraction_draws_return_difference_positive,portfolio
+1000,4,1729,142,678,1000,-0.9815534034247194,-2.2061232730689646,0.01569168515237119,-0.04745775347597993,-0.08788553275313944,-0.005773311483916938,0.029,0.015,Dynamic winner: width3
+1000,4,1729,142,678,1000,-0.10486020113107555,-0.8848607663579015,0.7955072012668731,0.003517310399174289,-0.038175480201905254,0.05019078759251891,0.411,0.54,Dynamic winner: adaptive_width

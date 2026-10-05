@@ -1,0 +1,27 @@
+{
+  "candidate_source": "results\\dynamic_iv_spread_selector\\candidate_trades.parquet",
+  "candidate_source_sha256": "fb4398c656bc6a453fb751052c152863a9636ab2c3b60327cb87eff42529f0f4",
+  "cash_close_source": "results\\requested_premium_study\\spx_cash_close.csv",
+  "cash_close_source_sha256": "f1694eb23ccb6e859e1a5609b97033f356ff2c791fcc15f904c183ff2df2cb6e",
+  "candidates": [
+    "98/95",
+    "99/96",
+    "100/97",
+    "101/98",
+    "102/99",
+    "103/100"
+  ],
+  "signal": "(short IV / RV21) / own previous 24 available monthly IV/RV median - 1",
+  "lookback": 24,
+  "history_includes_current": false,
+  "rv": "21 simple cash-close returns, sample std * sqrt(252), including entry close",
+  "evaluation_first_entry": "2018-11-16",
+  "evaluation_last_expiration": "2026-09-18",
+  "evaluation_trades_per_strategy": 94,
+  "warmup_observations_per_spread": 24,
+  "notional": "100% of current equity divided by cash spot times 100; fractional contracts",
+  "realistic_fill": "midpoint +/- 25% of full leg bid/ask plus $1.50 per contract per leg",
+  "sharpe": "sample mean/std of monthly option returns * sqrt(12); zero cash rate",
+  "cagr": "compounded wealth ^ (365.2425 / elapsed calendar days) - 1",
+  "selection_uses_expiration_outcome": false
+}

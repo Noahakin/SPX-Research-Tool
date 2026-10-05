@@ -1,0 +1,9 @@
+{
+  "archive_start": "2021-09-22",
+  "archive_end": "2026-09-22",
+  "quarterly_entries": 20,
+  "variants": 16,
+  "target_dte": 90,
+  "dte_tolerance": 10,
+  "baseline": "call60_cap110"
+}

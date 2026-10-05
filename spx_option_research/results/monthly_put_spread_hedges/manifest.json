@@ -1,0 +1,13 @@
+{
+  "archive_start": "2016-09-22",
+  "archive_end": "2026-09-22",
+  "trades_per_strategy": 118,
+  "hedge_budget_pct_of_core_credit": 0.05,
+  "target_hedge_width_pct_of_spot": 0.03,
+  "strategies": [
+    "99/96 monthly, no hedge",
+    "99/96 monthly, 5% credit put-spread hedge",
+    "101/98 monthly, no hedge",
+    "101/98 monthly, 5% credit put-spread hedge"
+  ]
+}

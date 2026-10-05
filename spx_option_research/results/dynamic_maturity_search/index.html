@@ -1,0 +1,2094 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dynamic SPX spread-selection research</title>
+<style>body{font:15px Segoe UI,Arial,sans-serif;color:#16354e;background:#f3f6fa;max-width:1320px;margin:35px auto;padding:0 22px;line-height:1.65}h1{font-size:33px;line-height:1.2}h2{margin-top:32px}h3{margin-top:5px}.box,section{background:white;border:1px solid #d6e0ec;border-radius:10px;padding:18px 22px;margin:20px 0}p{max-width:1150px}.links{display:flex;gap:8px 22px;flex-wrap:wrap}a{color:#235fbb}.table{overflow:auto}table{border-collapse:collapse;font-size:12px;white-space:nowrap;width:100%}th,td{padding:9px;border-bottom:1px solid #dce4ed;text-align:right}th{background:#eaf1f8}td:first-child,th:first-child{text-align:left;white-space:normal;min-width:220px;max-width:450px}img{max-width:100%;border-radius:8px}summary{cursor:pointer;font-weight:600}.muted{color:#526e82}.tag{text-transform:uppercase;letter-spacing:.08em;color:#3c729a;font-size:12px}</style></head><body>
+<div class="tag">Completed research · Dynamic entry selection</div><h1>Choose the spread anew at each entry</h1>
+<p><strong>202,752 policy configurations</strong> · up to 4,592 strike/width/maturity targets per entry · 25% profit-taking</p>
+<p>At every scheduled entry, each policy scores the then-available candidates and chooses the highest-scoring spread jointly across strike, width and expiration. The chosen contracts are held until the first supported EOD quote reaches 25% net profit, expiry, or the common data endpoint. The position is not switched merely because a different spread later scores better.</p><nav class="links">
+<a href="Report.md">Full method and findings</a> <a href="All%20policy%20results.csv.gz">Complete grid CSV (gzip)</a> <a href="Overall%20leaders.csv">Overall leaders CSV</a> <a href="Selection%20distribution.csv">Chosen-spread distribution</a> <a href="Calendar%20year%20returns.csv">Calendar-year returns</a> <a href="Validation.json">Accounting and selection audit</a>
+</nav>
+<div class="box"><h2 style="margin-top:0">What the completed search found</h2>
+<p>5% initial-capital risk budget, overlapping positions, every 4 weeks entries: Expected edge / maximum loss; 63-session RV; volatility ×1.2; drift 0%; always choose the highest score. Allowed maturities 90–180 DTE, short strikes 90–110% and widths 1–10 percentage points. CAGR 3.83%, volatility 2.71%, maximum drawdown -2.48%, full-period Sharpe 1.41; reused-test Sharpe 1.47. Executed 101 trades across 4 maturity targets, 6 short-strike targets and 6 widths. Fixed comparison within the identical universe, with the same score gate, schedule and sizing: 91/81 at 120 DTE, CAGR 0.39%, Sharpe 0.69.</p>
+<p>5% initial-capital risk budget, one position at a time, monthly entries: Whole-spread edge versus own history; 21-session RV; 104-week history; always choose the highest score. Allowed maturities 90–180 DTE, short strikes 90–110% and widths 5–10 percentage points. CAGR 5.77%, volatility 4.30%, maximum drawdown -6.17%, full-period Sharpe 1.33; reused-test Sharpe 0.91. Executed 63 trades across 3 maturity targets, 25 short-strike targets and 3 widths. Fixed comparison within the identical universe, with the same score gate, schedule and sizing: 104.5/94.5 at 120 DTE, CAGR 2.73%, Sharpe 0.85. No fixed candidate passed every primary eligibility screen. The displayed fixed comparison is a diagnostic with 51 trades and 79.2% score coverage; it uses a lower minimum trade count and can have lower coverage or nonpositive train/validation returns.</p>
+<p>100% equity notional, overlapping positions, monthly entries: Whole-spread edge versus own history; 63-session RV; 104-week history; always choose the highest score. Allowed maturities 90–180 DTE, short strikes 90–110% and widths 1–10 percentage points. CAGR 0.72%, volatility 0.59%, maximum drawdown -0.88%, full-period Sharpe 1.24; reused-test Sharpe 1.11. Executed 92 trades across 3 maturity targets, 30 short-strike targets and 7 widths. Fixed comparison within the identical universe, with the same score gate, schedule and sizing: 104.5/94.5 at 120 DTE, CAGR 1.67%, Sharpe 0.95. No fixed candidate passed every primary eligibility screen. The displayed fixed comparison is a diagnostic with 76 trades and 79.2% score coverage; it uses a lower minimum trade count and can have lower coverage or nonpositive train/validation returns.</p>
+<p>100% equity notional, one position at a time, every 2 weeks entries: IV/RV richness versus own history; 21-session RV; 104-week history; mean leg IV; positive score required. Allowed maturities 45–120 DTE, short strikes 98–105% and widths 5–10 percentage points. CAGR 3.60%, volatility 3.18%, maximum drawdown -3.85%, full-period Sharpe 1.13; reused-test Sharpe 0.61. Executed 68 trades across 6 maturity targets, 12 short-strike targets and 3 widths. Fixed comparison within the identical universe, with the same score gate, schedule and sizing: 105/100 at 45 DTE, CAGR 3.23%, Sharpe 1.01.</p>
+<p class="muted">Historical leaders were selected after looking across the entire period. Validation leaders are listed separately and are selected using training/validation data only. The archive has been studied before, so the later segment is reused historical evidence, not a fresh untouched out-of-sample test. Comparing hundreds of thousands of configurations creates substantial selection bias.</p></div>
+<p>The charts compare each dynamic leader with a fixed candidate inside its own permitted strike, width and maturity range. Both use the same scoring availability, positive-score gate, schedule, sizing and position mode. Primary eligibility screens are matched where possible; when no fixed candidate qualifies, a lower-screened diagnostic comparator is explicitly labeled. Both sides are selected retrospectively.</p>
+<img src="Dynamic%20versus%20fixed.png" alt="Dynamic leaders compared with the best fixed candidates inside the same permitted universe and under identical gates, schedules and sizing">
+<img src="Dynamic%20drawdowns.png" alt="Daily drawdowns for the same comparisons">
+<h2>Actual entry choices</h2><p>The following chart shows the historical leader with a 5% risk budget and one position at a time. Each point is an executed trade, showing the expiration, strikes and width selected on that entry.</p>
+<img src="Entry%20choices%20over%20time.png" alt="Selected expirations, short and long strikes, and widths changing at each actual entry">
+<h2>Historical leaders by sizing and position mode</h2><p>Full-period performance selected these rows. The test columns are a consistency check and were part of the history used for that selection.</p>
+<section><h3>5% initial-capital risk budget · Overlapping positions</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Expected edge / maximum loss; 63-session RV; volatility ×1.2; drift 0%; always choose the highest score</td>
+      <td>90–180</td>
+      <td>Every 4 weeks</td>
+      <td>3.83%</td>
+      <td>2.71%</td>
+      <td>-2.48%</td>
+      <td>1.41</td>
+      <td>1.51</td>
+      <td>3.69%</td>
+      <td>1.47</td>
+      <td>101</td>
+      <td>4</td>
+      <td>6</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+</section>
+<section><h3>5% initial-capital risk budget · One position at a time</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Whole-spread edge versus own history; 21-session RV; 104-week history; always choose the highest score</td>
+      <td>90–180</td>
+      <td>Monthly</td>
+      <td>5.77%</td>
+      <td>4.30%</td>
+      <td>-6.17%</td>
+      <td>1.33</td>
+      <td>2.06</td>
+      <td>3.44%</td>
+      <td>0.91</td>
+      <td>63</td>
+      <td>3</td>
+      <td>25</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+</section>
+<section><h3>100% equity notional · Overlapping positions</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Whole-spread edge versus own history; 63-session RV; 104-week history; always choose the highest score</td>
+      <td>90–180</td>
+      <td>Monthly</td>
+      <td>0.72%</td>
+      <td>0.59%</td>
+      <td>-0.88%</td>
+      <td>1.24</td>
+      <td>1.85</td>
+      <td>0.41%</td>
+      <td>1.11</td>
+      <td>92</td>
+      <td>3</td>
+      <td>30</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+</section>
+<section><h3>100% equity notional · One position at a time</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IV/RV richness versus own history; 21-session RV; 104-week history; mean leg IV; positive score required</td>
+      <td>45–120</td>
+      <td>Every 2 weeks</td>
+      <td>3.60%</td>
+      <td>3.18%</td>
+      <td>-3.85%</td>
+      <td>1.13</td>
+      <td>1.39</td>
+      <td>1.80%</td>
+      <td>0.61</td>
+      <td>68</td>
+      <td>6</td>
+      <td>12</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+</section>
+<h2>Separate validation-selected leaders</h2>
+<p>Training ends 2023-07-06; validation ends 2025-02-11. These rows maximize validation Sharpe with a penalty for disagreement with training Sharpe. Later returns and later missing-quote flags do not choose the winner. All quality flags remain visible.</p>
+<section><h3>5% initial-capital risk budget · Overlapping positions</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Expected payoff Sharpe; 21-session RV; volatility ×1.2; drift 0%; positive score required</td>
+      <td>3–14</td>
+      <td>Every 2 weeks</td>
+      <td>0.22%</td>
+      <td>1.56%</td>
+      <td>-3.23%</td>
+      <td>0.15</td>
+      <td>3.57</td>
+      <td>0.21%</td>
+      <td>1.92</td>
+      <td>186</td>
+      <td>4</td>
+      <td>13</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+</section>
+<section><h3>5% initial-capital risk budget · One position at a time</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Annualized expected payoff Sharpe; 21-session RV; volatility ×1.2; drift 5%; positive score required</td>
+      <td>3–180</td>
+      <td>Every 2 weeks</td>
+      <td>0.22%</td>
+      <td>1.53%</td>
+      <td>-3.23%</td>
+      <td>0.15</td>
+      <td>3.70</td>
+      <td>0.19%</td>
+      <td>2.33</td>
+      <td>187</td>
+      <td>8</td>
+      <td>14</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+</section>
+<section><h3>100% equity notional · Overlapping positions</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Expected payoff Sharpe; 21-session RV; volatility ×1.2; drift 0%; positive score required</td>
+      <td>3–14</td>
+      <td>Every 2 weeks</td>
+      <td>0.42%</td>
+      <td>3.11%</td>
+      <td>-6.30%</td>
+      <td>0.15</td>
+      <td>3.57</td>
+      <td>0.43%</td>
+      <td>1.90</td>
+      <td>186</td>
+      <td>4</td>
+      <td>13</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+</section>
+<section><h3>100% equity notional · One position at a time</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Expected payoff Sharpe; 21-session RV; volatility ×1.2; drift 0%; positive score required</td>
+      <td>3–180</td>
+      <td>Every 2 weeks</td>
+      <td>0.48%</td>
+      <td>3.15%</td>
+      <td>-6.30%</td>
+      <td>0.17</td>
+      <td>3.70</td>
+      <td>0.46%</td>
+      <td>1.91</td>
+      <td>182</td>
+      <td>10</td>
+      <td>11</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+</section>
+<h2>Recent trades from the illustrated selector</h2><p>Spread strike targets are percentages of SPX at entry; the actual listed strikes and expiration are saved for every trade.</p>
+<section><div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry</th>
+      <th>Expiration</th>
+      <th>Actual DTE</th>
+      <th>Short target %</th>
+      <th>Width, % points</th>
+      <th>Short strike</th>
+      <th>Long strike</th>
+      <th>Entry score</th>
+      <th>Candidates</th>
+      <th>Exit</th>
+      <th>Net P&amp;L, dollars</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2024-12-20</td>
+      <td>2025-03-21</td>
+      <td>91</td>
+      <td>90.000</td>
+      <td>10.000</td>
+      <td>5,340.000</td>
+      <td>4,750.000</td>
+      <td>0.677</td>
+      <td>368</td>
+      <td>2024-12-24</td>
+      <td>1,054.329</td>
+    </tr>
+    <tr>
+      <td>2025-01-17</td>
+      <td>2025-05-16</td>
+      <td>119</td>
+      <td>110.000</td>
+      <td>7.500</td>
+      <td>6,600.000</td>
+      <td>6,150.000</td>
+      <td>2.039</td>
+      <td>368</td>
+      <td>2025-05-16</td>
+      <td>-50,000.000</td>
+    </tr>
+    <tr>
+      <td>2025-05-16</td>
+      <td>2025-08-15</td>
+      <td>91</td>
+      <td>110.000</td>
+      <td>5.000</td>
+      <td>6,550.000</td>
+      <td>6,260.000</td>
+      <td>1.859</td>
+      <td>368</td>
+      <td>2025-07-03</td>
+      <td>48,956.261</td>
+    </tr>
+    <tr>
+      <td>2025-07-18</td>
+      <td>2025-12-19</td>
+      <td>154</td>
+      <td>101.000</td>
+      <td>7.500</td>
+      <td>6,350.000</td>
+      <td>5,875.000</td>
+      <td>1.691</td>
+      <td>366</td>
+      <td>2025-08-12</td>
+      <td>4,140.467</td>
+    </tr>
+    <tr>
+      <td>2025-08-15</td>
+      <td>2026-01-16</td>
+      <td>154</td>
+      <td>92.000</td>
+      <td>5.000</td>
+      <td>5,925.000</td>
+      <td>5,600.000</td>
+      <td>0.834</td>
+      <td>246</td>
+      <td>2025-09-11</td>
+      <td>1,605.493</td>
+    </tr>
+    <tr>
+      <td>2025-09-19</td>
+      <td>2025-12-19</td>
+      <td>91</td>
+      <td>98.500</td>
+      <td>5.000</td>
+      <td>6,560.000</td>
+      <td>6,230.000</td>
+      <td>1.385</td>
+      <td>366</td>
+      <td>2025-10-24</td>
+      <td>3,720.520</td>
+    </tr>
+    <tr>
+      <td>2025-11-21</td>
+      <td>2026-04-17</td>
+      <td>147</td>
+      <td>102.000</td>
+      <td>5.000</td>
+      <td>6,725.000</td>
+      <td>6,400.000</td>
+      <td>0.811</td>
+      <td>366</td>
+      <td>2025-11-26</td>
+      <td>6,343.618</td>
+    </tr>
+    <tr>
+      <td>2025-12-19</td>
+      <td>2026-04-17</td>
+      <td>119</td>
+      <td>106.000</td>
+      <td>10.000</td>
+      <td>7,250.000</td>
+      <td>6,550.000</td>
+      <td>1.127</td>
+      <td>243</td>
+      <td>2026-04-17</td>
+      <td>18,716.830</td>
+    </tr>
+    <tr>
+      <td>2026-04-17</td>
+      <td>2026-08-21</td>
+      <td>126</td>
+      <td>110.000</td>
+      <td>5.000</td>
+      <td>7,850.000</td>
+      <td>7,475.000</td>
+      <td>1.809</td>
+      <td>369</td>
+      <td>2026-05-13</td>
+      <td>36,687.168</td>
+    </tr>
+    <tr>
+      <td>2026-05-15</td>
+      <td>2026-09-18</td>
+      <td>126</td>
+      <td>103.500</td>
+      <td>7.500</td>
+      <td>7,675.000</td>
+      <td>7,100.000</td>
+      <td>3.021</td>
+      <td>246</td>
+      <td>2026-05-29</td>
+      <td>7,276.069</td>
+    </tr>
+    <tr>
+      <td>2026-06-18</td>
+      <td>2026-10-16</td>
+      <td>120</td>
+      <td>105.500</td>
+      <td>7.500</td>
+      <td>7,925.000</td>
+      <td>7,350.000</td>
+      <td>1.638</td>
+      <td>369</td>
+      <td>2026-08-04</td>
+      <td>10,606.224</td>
+    </tr>
+    <tr>
+      <td>2026-08-21</td>
+      <td>2026-12-18</td>
+      <td>119</td>
+      <td>106.000</td>
+      <td>10.000</td>
+      <td>8,150.000</td>
+      <td>7,375.000</td>
+      <td>1.982</td>
+      <td>369</td>
+      <td>2026-09-18</td>
+      <td>-2,985.033</td>
+    </tr>
+  </tbody>
+</table></div></section>
+<h2>Best policy within each scoring family</h2>
+<section><details><summary>Historical family rankings</summary>
+<h3>5% initial-capital risk budget · Overlapping positions</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Expected edge / maximum loss; 63-session RV; volatility ×1.2; drift 0%; always choose the highest score</td>
+      <td>90–180</td>
+      <td>Every 4 weeks</td>
+      <td>3.83%</td>
+      <td>2.71%</td>
+      <td>-2.48%</td>
+      <td>1.41</td>
+      <td>1.51</td>
+      <td>3.69%</td>
+      <td>1.47</td>
+      <td>101</td>
+      <td>4</td>
+      <td>6</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected edge / maximum loss; 63-session RV; volatility ×1.2; drift 0%; always choose the highest score</td>
+      <td>90–180</td>
+      <td>Every 4 weeks</td>
+      <td>3.66%</td>
+      <td>2.70%</td>
+      <td>-2.51%</td>
+      <td>1.35</td>
+      <td>1.51</td>
+      <td>3.75%</td>
+      <td>1.48</td>
+      <td>99</td>
+      <td>3</td>
+      <td>8</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Expected payoff Sharpe; 63-session RV; volatility ×1.2; drift 0%; positive score required</td>
+      <td>90–180</td>
+      <td>Every 4 weeks</td>
+      <td>2.76%</td>
+      <td>2.16%</td>
+      <td>-2.07%</td>
+      <td>1.28</td>
+      <td>0.70</td>
+      <td>1.96%</td>
+      <td>1.23</td>
+      <td>82</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected payoff Sharpe; 63-session RV; volatility ×1.2; drift 0%; positive score required</td>
+      <td>90–180</td>
+      <td>Every 4 weeks</td>
+      <td>2.76%</td>
+      <td>2.16%</td>
+      <td>-2.07%</td>
+      <td>1.28</td>
+      <td>0.70</td>
+      <td>1.96%</td>
+      <td>1.23</td>
+      <td>82</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Whole-spread edge versus own history; 63-session RV; 104-week history; positive score required</td>
+      <td>90–180</td>
+      <td>Monthly</td>
+      <td>2.47%</td>
+      <td>2.03%</td>
+      <td>-2.23%</td>
+      <td>1.22</td>
+      <td>1.35</td>
+      <td>1.58%</td>
+      <td>0.82</td>
+      <td>88</td>
+      <td>3</td>
+      <td>31</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>IV/RV richness versus own history; 63-session RV; 104-week history; short-leg IV; positive score required</td>
+      <td>90–180</td>
+      <td>Monthly</td>
+      <td>1.41%</td>
+      <td>1.25%</td>
+      <td>-1.82%</td>
+      <td>1.13</td>
+      <td>1.39</td>
+      <td>0.80%</td>
+      <td>0.59</td>
+      <td>58</td>
+      <td>3</td>
+      <td>28</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / SPX notional; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Weekly</td>
+      <td>3.16%</td>
+      <td>3.29%</td>
+      <td>-7.37%</td>
+      <td>0.97</td>
+      <td>2.17</td>
+      <td>3.68%</td>
+      <td>1.67</td>
+      <td>417</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / maximum loss; always choose the highest score</td>
+      <td>28–90</td>
+      <td>Monthly</td>
+      <td>1.66%</td>
+      <td>1.79%</td>
+      <td>-2.34%</td>
+      <td>0.93</td>
+      <td>1.96</td>
+      <td>1.81%</td>
+      <td>0.96</td>
+      <td>96</td>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / spread width; always choose the highest score</td>
+      <td>28–90</td>
+      <td>Monthly</td>
+      <td>1.66%</td>
+      <td>1.79%</td>
+      <td>-2.34%</td>
+      <td>0.93</td>
+      <td>1.95</td>
+      <td>1.82%</td>
+      <td>0.96</td>
+      <td>96</td>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / maximum loss; always choose the highest score</td>
+      <td>45–120</td>
+      <td>Monthly</td>
+      <td>2.11%</td>
+      <td>2.78%</td>
+      <td>-4.02%</td>
+      <td>0.77</td>
+      <td>0.92</td>
+      <td>0.95%</td>
+      <td>0.42</td>
+      <td>96</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+<h3>5% initial-capital risk budget · One position at a time</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Whole-spread edge versus own history; 21-session RV; 104-week history; always choose the highest score</td>
+      <td>90–180</td>
+      <td>Monthly</td>
+      <td>5.77%</td>
+      <td>4.30%</td>
+      <td>-6.17%</td>
+      <td>1.33</td>
+      <td>2.06</td>
+      <td>3.44%</td>
+      <td>0.91</td>
+      <td>63</td>
+      <td>3</td>
+      <td>25</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Expected edge / maximum loss; 126-session RV; volatility ×1; drift 0%; positive score required</td>
+      <td>90–180</td>
+      <td>Every 4 weeks</td>
+      <td>5.59%</td>
+      <td>4.37%</td>
+      <td>-5.05%</td>
+      <td>1.27</td>
+      <td>1.68</td>
+      <td>5.43%</td>
+      <td>1.47</td>
+      <td>52</td>
+      <td>4</td>
+      <td>5</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected payoff Sharpe; 63-session RV; volatility ×1.2; drift 0%; positive score required</td>
+      <td>90–180</td>
+      <td>Every 4 weeks</td>
+      <td>5.86%</td>
+      <td>4.75%</td>
+      <td>-6.46%</td>
+      <td>1.23</td>
+      <td>0.69</td>
+      <td>3.73%</td>
+      <td>0.96</td>
+      <td>54</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Expected payoff Sharpe; 63-session RV; volatility ×1.2; drift 0%; positive score required</td>
+      <td>90–180</td>
+      <td>Every 4 weeks</td>
+      <td>5.86%</td>
+      <td>4.75%</td>
+      <td>-6.46%</td>
+      <td>1.23</td>
+      <td>0.69</td>
+      <td>3.73%</td>
+      <td>0.96</td>
+      <td>54</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected edge / maximum loss; 126-session RV; volatility ×1; drift 0%; positive score required</td>
+      <td>90–180</td>
+      <td>Every 4 weeks</td>
+      <td>5.53%</td>
+      <td>4.53%</td>
+      <td>-5.56%</td>
+      <td>1.21</td>
+      <td>1.61</td>
+      <td>5.43%</td>
+      <td>1.46</td>
+      <td>59</td>
+      <td>3</td>
+      <td>9</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>IV/RV richness versus own history; 21-session RV; 52-week history; short-leg IV; positive score required</td>
+      <td>90–180</td>
+      <td>Every 2 weeks</td>
+      <td>2.82%</td>
+      <td>2.87%</td>
+      <td>-4.83%</td>
+      <td>0.99</td>
+      <td>0.87</td>
+      <td>4.11%</td>
+      <td>1.18</td>
+      <td>53</td>
+      <td>3</td>
+      <td>14</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / SPX notional; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Weekly</td>
+      <td>3.81%</td>
+      <td>4.96%</td>
+      <td>-11.24%</td>
+      <td>0.78</td>
+      <td>1.82</td>
+      <td>6.24%</td>
+      <td>1.93</td>
+      <td>331</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / maximum loss; always choose the highest score</td>
+      <td>45–120</td>
+      <td>Monthly</td>
+      <td>3.37%</td>
+      <td>4.48%</td>
+      <td>-7.16%</td>
+      <td>0.76</td>
+      <td>0.80</td>
+      <td>2.05%</td>
+      <td>0.60</td>
+      <td>88</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / maximum loss; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Monthly</td>
+      <td>3.34%</td>
+      <td>4.50%</td>
+      <td>-5.36%</td>
+      <td>0.76</td>
+      <td>1.31</td>
+      <td>2.23%</td>
+      <td>0.54</td>
+      <td>92</td>
+      <td>6</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / spread width; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Monthly</td>
+      <td>3.34%</td>
+      <td>4.50%</td>
+      <td>-5.36%</td>
+      <td>0.76</td>
+      <td>1.31</td>
+      <td>2.23%</td>
+      <td>0.54</td>
+      <td>92</td>
+      <td>6</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+<h3>100% equity notional · Overlapping positions</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Whole-spread edge versus own history; 63-session RV; 104-week history; always choose the highest score</td>
+      <td>90–180</td>
+      <td>Monthly</td>
+      <td>0.72%</td>
+      <td>0.59%</td>
+      <td>-0.88%</td>
+      <td>1.24</td>
+      <td>1.85</td>
+      <td>0.41%</td>
+      <td>1.11</td>
+      <td>92</td>
+      <td>3</td>
+      <td>30</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>IV/RV richness versus own history; 63-session RV; 52-week history; short-leg IV; always choose the highest score</td>
+      <td>90–180</td>
+      <td>Monthly</td>
+      <td>1.09%</td>
+      <td>1.03%</td>
+      <td>-1.57%</td>
+      <td>1.06</td>
+      <td>1.57</td>
+      <td>0.49%</td>
+      <td>0.38</td>
+      <td>93</td>
+      <td>3</td>
+      <td>30</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / SPX notional; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Weekly</td>
+      <td>6.19%</td>
+      <td>5.93%</td>
+      <td>-11.53%</td>
+      <td>1.05</td>
+      <td>2.15</td>
+      <td>8.12%</td>
+      <td>1.68</td>
+      <td>417</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected payoff Sharpe; 63-session RV; volatility ×0.8; drift 0%; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Weekly</td>
+      <td>4.74%</td>
+      <td>4.56%</td>
+      <td>-11.03%</td>
+      <td>1.04</td>
+      <td>1.99</td>
+      <td>6.12%</td>
+      <td>1.71</td>
+      <td>417</td>
+      <td>5</td>
+      <td>3</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Expected payoff Sharpe; 63-session RV; volatility ×1; drift 5%; always choose the highest score</td>
+      <td>45–120</td>
+      <td>Every 4 weeks</td>
+      <td>0.83%</td>
+      <td>0.83%</td>
+      <td>-1.12%</td>
+      <td>1.00</td>
+      <td>0.92</td>
+      <td>1.04%</td>
+      <td>1.77</td>
+      <td>105</td>
+      <td>5</td>
+      <td>7</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Expected edge / maximum loss; 126-session RV; volatility ×1.2; drift 5%; positive score required</td>
+      <td>90–180</td>
+      <td>Every 4 weeks</td>
+      <td>1.12%</td>
+      <td>1.14%</td>
+      <td>-2.40%</td>
+      <td>0.98</td>
+      <td>1.01</td>
+      <td>0.91%</td>
+      <td>0.91</td>
+      <td>94</td>
+      <td>4</td>
+      <td>6</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected edge / maximum loss; 126-session RV; volatility ×1.2; drift 5%; positive score required</td>
+      <td>90–180</td>
+      <td>Every 4 weeks</td>
+      <td>1.13%</td>
+      <td>1.15%</td>
+      <td>-2.40%</td>
+      <td>0.98</td>
+      <td>0.99</td>
+      <td>0.92%</td>
+      <td>0.85</td>
+      <td>94</td>
+      <td>3</td>
+      <td>9</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / maximum loss; always choose the highest score</td>
+      <td>28–90</td>
+      <td>Monthly</td>
+      <td>0.72%</td>
+      <td>0.78%</td>
+      <td>-1.17%</td>
+      <td>0.93</td>
+      <td>2.01</td>
+      <td>0.88%</td>
+      <td>0.94</td>
+      <td>96</td>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / spread width; always choose the highest score</td>
+      <td>28–90</td>
+      <td>Monthly</td>
+      <td>0.72%</td>
+      <td>0.78%</td>
+      <td>-1.17%</td>
+      <td>0.93</td>
+      <td>2.00</td>
+      <td>0.88%</td>
+      <td>0.94</td>
+      <td>96</td>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / maximum loss; always choose the highest score</td>
+      <td>45–120</td>
+      <td>Monthly</td>
+      <td>2.15%</td>
+      <td>2.61%</td>
+      <td>-2.99%</td>
+      <td>0.83</td>
+      <td>1.77</td>
+      <td>0.60%</td>
+      <td>0.24</td>
+      <td>96</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+<h3>100% equity notional · One position at a time</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IV/RV richness versus own history; 21-session RV; 104-week history; mean leg IV; positive score required</td>
+      <td>45–120</td>
+      <td>Every 2 weeks</td>
+      <td>3.60%</td>
+      <td>3.18%</td>
+      <td>-3.85%</td>
+      <td>1.13</td>
+      <td>1.39</td>
+      <td>1.80%</td>
+      <td>0.61</td>
+      <td>68</td>
+      <td>6</td>
+      <td>12</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Whole-spread edge versus own history; 21-session RV; 104-week history; always choose the highest score</td>
+      <td>28–90</td>
+      <td>Monthly</td>
+      <td>3.05%</td>
+      <td>2.71%</td>
+      <td>-2.94%</td>
+      <td>1.13</td>
+      <td>1.83</td>
+      <td>1.65%</td>
+      <td>0.76</td>
+      <td>80</td>
+      <td>8</td>
+      <td>15</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Expected edge / maximum loss; 63-session RV; volatility ×1.2; drift 5%; always choose the highest score</td>
+      <td>45–120</td>
+      <td>Weekly</td>
+      <td>3.67%</td>
+      <td>3.37%</td>
+      <td>-4.60%</td>
+      <td>1.09</td>
+      <td>1.25</td>
+      <td>4.77%</td>
+      <td>1.00</td>
+      <td>114</td>
+      <td>6</td>
+      <td>5</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected edge / maximum loss; 126-session RV; volatility ×1; drift 0%; always choose the highest score</td>
+      <td>45–120</td>
+      <td>Weekly</td>
+      <td>2.22%</td>
+      <td>2.06%</td>
+      <td>-3.83%</td>
+      <td>1.08</td>
+      <td>1.18</td>
+      <td>2.63%</td>
+      <td>1.56</td>
+      <td>210</td>
+      <td>5</td>
+      <td>12</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Expected payoff Sharpe; 126-session RV; volatility ×1; drift 5%; positive score required</td>
+      <td>45–120</td>
+      <td>Every 4 weeks</td>
+      <td>1.37%</td>
+      <td>1.31%</td>
+      <td>-2.31%</td>
+      <td>1.05</td>
+      <td>1.71</td>
+      <td>1.18%</td>
+      <td>1.22</td>
+      <td>85</td>
+      <td>5</td>
+      <td>7</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected payoff Sharpe; 21-session RV; volatility ×1.2; drift 0%; positive score required</td>
+      <td>90–180</td>
+      <td>Weekly</td>
+      <td>2.30%</td>
+      <td>2.30%</td>
+      <td>-3.88%</td>
+      <td>1.00</td>
+      <td>0.99</td>
+      <td>2.79%</td>
+      <td>1.51</td>
+      <td>87</td>
+      <td>4</td>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / SPX notional; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Weekly</td>
+      <td>7.48%</td>
+      <td>9.14%</td>
+      <td>-18.07%</td>
+      <td>0.84</td>
+      <td>1.79</td>
+      <td>14.35%</td>
+      <td>1.94</td>
+      <td>331</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / maximum loss; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Monthly</td>
+      <td>0.79%</td>
+      <td>1.03%</td>
+      <td>-1.15%</td>
+      <td>0.77</td>
+      <td>1.33</td>
+      <td>0.56%</td>
+      <td>0.53</td>
+      <td>92</td>
+      <td>6</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / spread width; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Monthly</td>
+      <td>0.79%</td>
+      <td>1.03%</td>
+      <td>-1.15%</td>
+      <td>0.77</td>
+      <td>1.33</td>
+      <td>0.56%</td>
+      <td>0.53</td>
+      <td>92</td>
+      <td>6</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / maximum loss; always choose the highest score</td>
+      <td>45–120</td>
+      <td>Monthly</td>
+      <td>1.55%</td>
+      <td>2.17%</td>
+      <td>-3.30%</td>
+      <td>0.72</td>
+      <td>0.74</td>
+      <td>1.14%</td>
+      <td>0.57</td>
+      <td>88</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+</details></section>
+<section><details><summary>Validation family rankings</summary>
+<h3>5% initial-capital risk budget · Overlapping positions</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Expected payoff Sharpe; 21-session RV; volatility ×1.2; drift 0%; positive score required</td>
+      <td>3–14</td>
+      <td>Every 2 weeks</td>
+      <td>0.22%</td>
+      <td>1.56%</td>
+      <td>-3.23%</td>
+      <td>0.15</td>
+      <td>3.57</td>
+      <td>0.21%</td>
+      <td>1.92</td>
+      <td>186</td>
+      <td>4</td>
+      <td>13</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected payoff Sharpe; 21-session RV; volatility ×1.2; drift 0%; positive score required</td>
+      <td>3–14</td>
+      <td>Every 2 weeks</td>
+      <td>0.19%</td>
+      <td>1.53%</td>
+      <td>-3.23%</td>
+      <td>0.13</td>
+      <td>3.56</td>
+      <td>0.18%</td>
+      <td>2.53</td>
+      <td>186</td>
+      <td>4</td>
+      <td>14</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Whole-spread edge versus own history; 63-session RV; 104-week history; positive score required</td>
+      <td>3–180</td>
+      <td>Monthly</td>
+      <td>1.86%</td>
+      <td>4.55%</td>
+      <td>-8.07%</td>
+      <td>0.43</td>
+      <td>2.41</td>
+      <td>1.73%</td>
+      <td>1.16</td>
+      <td>91</td>
+      <td>14</td>
+      <td>14</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>IV/RV richness versus own history; 21-session RV; 104-week history; short-leg IV; always choose the highest score</td>
+      <td>45–120</td>
+      <td>Monthly</td>
+      <td>2.03%</td>
+      <td>3.17%</td>
+      <td>-4.06%</td>
+      <td>0.65</td>
+      <td>2.37</td>
+      <td>0.34%</td>
+      <td>0.18</td>
+      <td>96</td>
+      <td>6</td>
+      <td>15</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Expected edge / maximum loss; 126-session RV; volatility ×0.8; drift 5%; always choose the highest score</td>
+      <td>3–14</td>
+      <td>Weekly</td>
+      <td>2.12%</td>
+      <td>4.74%</td>
+      <td>-15.68%</td>
+      <td>0.47</td>
+      <td>2.38</td>
+      <td>3.19%</td>
+      <td>0.94</td>
+      <td>417</td>
+      <td>4</td>
+      <td>21</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected edge / maximum loss; 126-session RV; volatility ×0.8; drift 5%; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Weekly</td>
+      <td>2.45%</td>
+      <td>3.40%</td>
+      <td>-8.94%</td>
+      <td>0.73</td>
+      <td>2.24</td>
+      <td>2.47%</td>
+      <td>1.02</td>
+      <td>417</td>
+      <td>5</td>
+      <td>20</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / SPX notional; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Weekly</td>
+      <td>3.16%</td>
+      <td>3.29%</td>
+      <td>-7.37%</td>
+      <td>0.97</td>
+      <td>2.17</td>
+      <td>3.68%</td>
+      <td>1.67</td>
+      <td>417</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / maximum loss; always choose the highest score</td>
+      <td>28–90</td>
+      <td>Monthly</td>
+      <td>1.66%</td>
+      <td>1.79%</td>
+      <td>-2.34%</td>
+      <td>0.93</td>
+      <td>1.96</td>
+      <td>1.81%</td>
+      <td>0.96</td>
+      <td>96</td>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / spread width; always choose the highest score</td>
+      <td>28–90</td>
+      <td>Monthly</td>
+      <td>1.66%</td>
+      <td>1.79%</td>
+      <td>-2.34%</td>
+      <td>0.93</td>
+      <td>1.95</td>
+      <td>1.82%</td>
+      <td>0.96</td>
+      <td>96</td>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / maximum loss; always choose the highest score</td>
+      <td>45–120</td>
+      <td>Monthly</td>
+      <td>4.40%</td>
+      <td>5.88%</td>
+      <td>-8.23%</td>
+      <td>0.76</td>
+      <td>1.74</td>
+      <td>1.03%</td>
+      <td>0.24</td>
+      <td>96</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+<h3>5% initial-capital risk budget · One position at a time</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Annualized expected payoff Sharpe; 21-session RV; volatility ×1.2; drift 5%; positive score required</td>
+      <td>3–180</td>
+      <td>Every 2 weeks</td>
+      <td>0.22%</td>
+      <td>1.53%</td>
+      <td>-3.23%</td>
+      <td>0.15</td>
+      <td>3.70</td>
+      <td>0.19%</td>
+      <td>2.33</td>
+      <td>187</td>
+      <td>8</td>
+      <td>14</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Expected payoff Sharpe; 21-session RV; volatility ×1.2; drift 0%; positive score required</td>
+      <td>3–180</td>
+      <td>Every 2 weeks</td>
+      <td>0.25%</td>
+      <td>1.58%</td>
+      <td>-3.23%</td>
+      <td>0.16</td>
+      <td>3.69</td>
+      <td>0.23%</td>
+      <td>1.93</td>
+      <td>182</td>
+      <td>10</td>
+      <td>11</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Whole-spread edge versus own history; 21-session RV; 52-week history; always choose the highest score</td>
+      <td>45–120</td>
+      <td>Monthly</td>
+      <td>5.09%</td>
+      <td>5.76%</td>
+      <td>-6.86%</td>
+      <td>0.89</td>
+      <td>2.49</td>
+      <td>1.80%</td>
+      <td>0.38</td>
+      <td>73</td>
+      <td>6</td>
+      <td>14</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>IV/RV richness versus own history; 21-session RV; 104-week history; short-leg IV; always choose the highest score</td>
+      <td>45–120</td>
+      <td>Monthly</td>
+      <td>3.46%</td>
+      <td>6.08%</td>
+      <td>-7.73%</td>
+      <td>0.59</td>
+      <td>2.31</td>
+      <td>0.72%</td>
+      <td>0.22</td>
+      <td>78</td>
+      <td>6</td>
+      <td>15</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Expected edge / maximum loss; 126-session RV; volatility ×0.8; drift 5%; always choose the highest score</td>
+      <td>3–14</td>
+      <td>Weekly</td>
+      <td>3.12%</td>
+      <td>5.74%</td>
+      <td>-16.18%</td>
+      <td>0.56</td>
+      <td>2.19</td>
+      <td>5.26%</td>
+      <td>1.31</td>
+      <td>368</td>
+      <td>4</td>
+      <td>21</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected edge / maximum loss; 126-session RV; volatility ×1; drift 0%; always choose the highest score</td>
+      <td>28–90</td>
+      <td>Weekly</td>
+      <td>1.65%</td>
+      <td>3.12%</td>
+      <td>-7.67%</td>
+      <td>0.54</td>
+      <td>2.04</td>
+      <td>1.54%</td>
+      <td>0.60</td>
+      <td>268</td>
+      <td>7</td>
+      <td>15</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / maximum loss; always choose the highest score</td>
+      <td>28–90</td>
+      <td>Monthly</td>
+      <td>2.57%</td>
+      <td>4.27%</td>
+      <td>-8.86%</td>
+      <td>0.62</td>
+      <td>1.97</td>
+      <td>3.47%</td>
+      <td>0.86</td>
+      <td>75</td>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / spread width; always choose the highest score</td>
+      <td>28–90</td>
+      <td>Monthly</td>
+      <td>2.55%</td>
+      <td>4.27%</td>
+      <td>-8.86%</td>
+      <td>0.61</td>
+      <td>1.93</td>
+      <td>3.48%</td>
+      <td>0.86</td>
+      <td>75</td>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / SPX notional; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Weekly</td>
+      <td>3.81%</td>
+      <td>4.96%</td>
+      <td>-11.24%</td>
+      <td>0.78</td>
+      <td>1.82</td>
+      <td>6.24%</td>
+      <td>1.93</td>
+      <td>331</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / maximum loss; always choose the highest score</td>
+      <td>90–180</td>
+      <td>Monthly</td>
+      <td>3.08%</td>
+      <td>6.41%</td>
+      <td>-13.67%</td>
+      <td>0.51</td>
+      <td>1.53</td>
+      <td>0.82%</td>
+      <td>0.19</td>
+      <td>59</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+<h3>100% equity notional · Overlapping positions</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Expected payoff Sharpe; 21-session RV; volatility ×1.2; drift 0%; positive score required</td>
+      <td>3–14</td>
+      <td>Every 2 weeks</td>
+      <td>0.42%</td>
+      <td>3.11%</td>
+      <td>-6.30%</td>
+      <td>0.15</td>
+      <td>3.57</td>
+      <td>0.43%</td>
+      <td>1.90</td>
+      <td>186</td>
+      <td>4</td>
+      <td>13</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected payoff Sharpe; 21-session RV; volatility ×1.2; drift 0%; positive score required</td>
+      <td>3–14</td>
+      <td>Every 2 weeks</td>
+      <td>0.37%</td>
+      <td>3.05%</td>
+      <td>-6.30%</td>
+      <td>0.14</td>
+      <td>3.56</td>
+      <td>0.35%</td>
+      <td>2.62</td>
+      <td>186</td>
+      <td>4</td>
+      <td>14</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>IV/RV richness versus own history; 63-session RV; 104-week history; short-leg IV; positive score required</td>
+      <td>45–120</td>
+      <td>Monthly</td>
+      <td>0.19%</td>
+      <td>1.40%</td>
+      <td>-5.41%</td>
+      <td>0.14</td>
+      <td>2.51</td>
+      <td>-1.18%</td>
+      <td>-0.40</td>
+      <td>55</td>
+      <td>6</td>
+      <td>14</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Whole-spread edge versus own history; 21-session RV; 52-week history; always choose the highest score</td>
+      <td>45–120</td>
+      <td>Monthly</td>
+      <td>1.21%</td>
+      <td>1.37%</td>
+      <td>-2.70%</td>
+      <td>0.89</td>
+      <td>2.47</td>
+      <td>1.17%</td>
+      <td>0.68</td>
+      <td>96</td>
+      <td>6</td>
+      <td>14</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Expected edge / maximum loss; 126-session RV; volatility ×0.8; drift 5%; always choose the highest score</td>
+      <td>3–14</td>
+      <td>Weekly</td>
+      <td>2.04%</td>
+      <td>3.76%</td>
+      <td>-11.84%</td>
+      <td>0.56</td>
+      <td>2.40</td>
+      <td>3.05%</td>
+      <td>0.97</td>
+      <td>417</td>
+      <td>4</td>
+      <td>21</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected edge / maximum loss; 126-session RV; volatility ×0.8; drift 5%; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Weekly</td>
+      <td>2.37%</td>
+      <td>3.06%</td>
+      <td>-8.23%</td>
+      <td>0.78</td>
+      <td>2.25</td>
+      <td>2.51%</td>
+      <td>1.04</td>
+      <td>417</td>
+      <td>5</td>
+      <td>20</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / SPX notional; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Weekly</td>
+      <td>6.19%</td>
+      <td>5.93%</td>
+      <td>-11.53%</td>
+      <td>1.05</td>
+      <td>2.15</td>
+      <td>8.12%</td>
+      <td>1.68</td>
+      <td>417</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / maximum loss; always choose the highest score</td>
+      <td>28–90</td>
+      <td>Monthly</td>
+      <td>0.72%</td>
+      <td>0.78%</td>
+      <td>-1.17%</td>
+      <td>0.93</td>
+      <td>2.01</td>
+      <td>0.88%</td>
+      <td>0.94</td>
+      <td>96</td>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / spread width; always choose the highest score</td>
+      <td>28–90</td>
+      <td>Monthly</td>
+      <td>0.72%</td>
+      <td>0.78%</td>
+      <td>-1.17%</td>
+      <td>0.93</td>
+      <td>2.00</td>
+      <td>0.88%</td>
+      <td>0.94</td>
+      <td>96</td>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / maximum loss; always choose the highest score</td>
+      <td>45–120</td>
+      <td>Monthly</td>
+      <td>2.15%</td>
+      <td>2.61%</td>
+      <td>-2.99%</td>
+      <td>0.83</td>
+      <td>1.77</td>
+      <td>0.60%</td>
+      <td>0.24</td>
+      <td>96</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+<h3>100% equity notional · One position at a time</h3>
+<div class="table"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Entry ranking</th>
+      <th>Allowed DTE</th>
+      <th>Entries</th>
+      <th>CAGR</th>
+      <th>Annual vol</th>
+      <th>Max drawdown</th>
+      <th>Sharpe</th>
+      <th>Validation Sharpe</th>
+      <th>Test CAGR</th>
+      <th>Test Sharpe</th>
+      <th>Trades</th>
+      <th>Different DTE targets</th>
+      <th>Different short strikes</th>
+      <th>Different widths</th>
+      <th>Unresolved marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Expected payoff Sharpe; 21-session RV; volatility ×1.2; drift 0%; positive score required</td>
+      <td>3–180</td>
+      <td>Every 2 weeks</td>
+      <td>0.48%</td>
+      <td>3.15%</td>
+      <td>-6.30%</td>
+      <td>0.17</td>
+      <td>3.70</td>
+      <td>0.46%</td>
+      <td>1.91</td>
+      <td>182</td>
+      <td>10</td>
+      <td>11</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected payoff Sharpe; 21-session RV; volatility ×1.2; drift 5%; positive score required</td>
+      <td>3–180</td>
+      <td>Every 2 weeks</td>
+      <td>0.42%</td>
+      <td>3.05%</td>
+      <td>-6.30%</td>
+      <td>0.15</td>
+      <td>3.69</td>
+      <td>0.36%</td>
+      <td>2.36</td>
+      <td>187</td>
+      <td>8</td>
+      <td>14</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Whole-spread edge versus own history; 21-session RV; 52-week history; always choose the highest score</td>
+      <td>3–180</td>
+      <td>Monthly</td>
+      <td>3.21%</td>
+      <td>3.96%</td>
+      <td>-5.67%</td>
+      <td>0.82</td>
+      <td>3.17</td>
+      <td>5.14%</td>
+      <td>1.10</td>
+      <td>81</td>
+      <td>14</td>
+      <td>15</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>IV/RV richness versus own history; 21-session RV; 52-week history; mean leg IV; always choose the highest score</td>
+      <td>45–120</td>
+      <td>Monthly</td>
+      <td>3.21%</td>
+      <td>3.01%</td>
+      <td>-3.23%</td>
+      <td>1.07</td>
+      <td>2.31</td>
+      <td>2.70%</td>
+      <td>0.71</td>
+      <td>67</td>
+      <td>6</td>
+      <td>26</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Expected edge / maximum loss; 126-session RV; volatility ×0.8; drift 5%; always choose the highest score</td>
+      <td>3–14</td>
+      <td>Weekly</td>
+      <td>3.19%</td>
+      <td>4.77%</td>
+      <td>-12.33%</td>
+      <td>0.68</td>
+      <td>2.19</td>
+      <td>5.39%</td>
+      <td>1.35</td>
+      <td>368</td>
+      <td>4</td>
+      <td>21</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized expected edge / maximum loss; 126-session RV; volatility ×1; drift 5%; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Weekly</td>
+      <td>1.51%</td>
+      <td>2.41%</td>
+      <td>-8.73%</td>
+      <td>0.64</td>
+      <td>2.15</td>
+      <td>2.38%</td>
+      <td>1.68</td>
+      <td>335</td>
+      <td>6</td>
+      <td>18</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / maximum loss; always choose the highest score</td>
+      <td>28–90</td>
+      <td>Monthly</td>
+      <td>1.18%</td>
+      <td>1.92%</td>
+      <td>-4.03%</td>
+      <td>0.62</td>
+      <td>2.00</td>
+      <td>1.80%</td>
+      <td>0.86</td>
+      <td>75</td>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Credit / spread width; always choose the highest score</td>
+      <td>28–90</td>
+      <td>Monthly</td>
+      <td>1.16%</td>
+      <td>1.92%</td>
+      <td>-4.03%</td>
+      <td>0.61</td>
+      <td>1.97</td>
+      <td>1.80%</td>
+      <td>0.86</td>
+      <td>75</td>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / SPX notional; always choose the highest score</td>
+      <td>14–45</td>
+      <td>Weekly</td>
+      <td>7.48%</td>
+      <td>9.14%</td>
+      <td>-18.07%</td>
+      <td>0.84</td>
+      <td>1.79</td>
+      <td>14.35%</td>
+      <td>1.94</td>
+      <td>331</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Annualized credit / maximum loss; always choose the highest score</td>
+      <td>90–180</td>
+      <td>Monthly</td>
+      <td>1.81%</td>
+      <td>3.40%</td>
+      <td>-7.69%</td>
+      <td>0.55</td>
+      <td>1.56</td>
+      <td>0.58%</td>
+      <td>0.20</td>
+      <td>59</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+</details></section>
+<h2>Method and accounting</h2><section><p>All returns are option P&amp;L plus idle cash, without an SPX stock position. The 5% loss budget uses initial capital and can create up to 5 times initial-capital notional exposure. The 100% notional mode uses prior-close equity. Entries and early exits pay 25% of each leg’s full bid/ask spread from midpoint plus $1.50 per leg. Fractional contracts are used. Cash interest, financing, dividends, taxes and market impact are excluded.</p>
+<p>Expected-payoff scores estimate terminal spread economics under stated volatility and drift assumptions; they do not directly forecast the 25%-profit exit. The history scores use each candidate’s own prior observations. Entry selection never sees subsequent P&amp;L or future quote availability.</p>
+<p>Entry schedules are weekly, every two weeks, every four weeks or monthly. There is no off-schedule immediate reentry. Expiry settles to actual cash intrinsic; early profit-taking requires observed executable quotes after costs. Estimated marks cannot authorize entry or a profit exit.</p>
+<p>Independent checks passed for 139 retained strategies, 20,829 trades and 13,190 scheduled entry decisions. Full-grid summary files use Float32; shortlisted simulations and CSV metrics retain Float64.</p></section></body></html>

@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "buffer_strategies": 2940,
+  "buffer_ledger_rows": 958440,
+  "traded_buffer_cycles": 718907,
+  "cash_buffer_cycles": 239533,
+  "no_affordable_buffer_cycles": 179333,
+  "full_budget_and_entry_cost_checks": "All traded buffer cycles passed",
+  "actual_minimum_width": 3,
+  "retained_long_put_strategies": 2940,
+  "preserved_baseline_strategies": 2940,
+  "independent_quote_selection_rows": 958440,
+  "independently_reconstructed_buffer_daily_values": 7379400,
+  "maximum_budget_error_points": 2.842170943040401e-14,
+  "maximum_ending_equity_error_dollars": 6.984919309616089e-09,
+  "retained_long_put_and_baseline_metrics_unchanged": 5880,
+  "buffer_selection_uses_future_returns": false,
+  "automated_tests_passed": 120
+}
