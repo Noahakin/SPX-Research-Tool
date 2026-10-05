@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  const C = window.SPX_CATALOG, M = window.SPXMath, $ = id => document.getElementById(id);
+  const P = window.SPXProfit, C = P.extendCatalog(window.SPX_CATALOG,window.SPX_PROFIT_DATA), M = window.SPXMath, $ = id => document.getElementById(id);
   if (!C || !M || !window.DecompressionStream) {
     $('status').textContent = 'Open the complete website folder in current Chrome or Edge.';
     $('chartProgress').hidden = false;
@@ -8,7 +8,7 @@
     return;
   }
   const dates = C.dates, N = dates.length, byId = new Map(C.strategies.map(r => [r.id, r]));
-  const modes = ['options', 'spx', 'both'], filterIds = ['tenor', 'primary', 'width', 'premium', 'hedge'];
+  const modes = ['options', 'spx', 'both'], filterIds = ['tenor', 'primary', 'width', 'premium', 'hedge', 'profitTarget'];
   const palette = ['#3269cf', '#129487', '#cc8850', '#965db6', '#d3657c', '#439ab7', '#6c8750', '#ae683f'];
   const state = {selected: new Map(), filtered: [], category: '', start: 0, end: N - 1,
     view: 'growth', benchmark: true, busy: false, ready: false, curves: [], error: null};
@@ -37,7 +37,8 @@
   }
   function description(r) {
     return r.name + ' · ' + detail(r) + (r.dynamic ? ' · Closest affordable target, full credit allocation' : '') +
-      ' · ' + count(r.cashCycles) + ' cash cycles of ' + count(r.cycles);
+      (r.profitTarget ? ' · '+count(r.trades)+' trades · Immediate re-entry · '+count(r.profitExits)+' profit exits' :
+        ' · ' + count(r.cashCycles) + ' cash cycles of ' + count(r.cycles));
   }
   function toast(message) {
     $('toast').textContent = message; $('toast').hidden = false;
@@ -51,8 +52,13 @@
   }
   // Script shards load over file://. Decompressed arrays retain all daily data.
   const cache = new Map(), loading = new Map(), jobs = new Map(), queue = [];
+  const pricePaths = new Map(), tradePaths = new Map(), profitNav = new Map();
   let activeLoads = 0;
   function loadChunk(key) {
+    const dependencies=C.chunks[key].prices;
+    return dependencies ? Promise.all(dependencies.map(loadChunkData)).then(()=>loadChunkData(key)) : loadChunkData(key);
+  }
+  function loadChunkData(key) {
     if (cache.has(key)) return Promise.resolve(cache.get(key));
     if (loading.has(key)) return loading.get(key);
     const promise = new Promise((resolve, reject) => queue.push({key, resolve, reject}));
@@ -86,18 +92,26 @@
         const hash = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', buffer)), v => v.toString(16).padStart(2,'0')).join('');
         if (hash !== C.chunks[key].sha256) throw Error('Data integrity check failed for ' + key);
       }
-      finish(job, null, buffer);
+      const decoded=C.chunks[key].encoding==='shuffle8'?P.unshuffle(buffer):buffer;
+      if(C.chunks[key].kind==='prices')pricePaths.set(key,P.decodePrices(decoded));
+      if(C.chunks[key].kind==='trades')tradePaths.set(key,P.decodeTrades(decoded));
+      finish(job, null, decoded);
     } catch (error) { finish(job, error); }
   };
   function navFor(id, mode) {
     if (id === 'benchmark') return spxNav;
     const r = byId.get(id), buffer = cache.get(r.chunk);
+    if(r.profitTarget && buffer){
+      if(!profitNav.has(id))profitNav.set(id,P.replay(r,tradePaths.get(r.chunk),pricePaths,C));
+      return profitNav.get(id)[mode==='spx'?1:0];
+    }
     return buffer ? new Float64Array(buffer, (r.slot * 2 + (mode === 'spx' ? 1 : 0)) * N * 8, N) : null;
   }
   function filter() {
     const terms = $('search').value.toLowerCase().trim().split(/\s+/).filter(Boolean);
     state.filtered = C.strategies.filter(r => (!state.category || r.category === state.category) &&
-      filterIds.every(id => !$(id).value || String(r[id]) === $(id).value) && terms.every(t => searchText.get(r.id).includes(t)));
+      filterIds.every(id => !$(id).value || String(id==='profitTarget'?(r.profitTarget||'hold'):r[id]) === $(id).value) && terms.every(t => searchText.get(r.id).includes(t)));
+    $('profitFolderNote').hidden=$('profitTarget').value==='hold';
     $('resultCount').textContent = count(state.filtered.length) + ' strategies';
     $('strategyList').scrollTop = 0; sortLibrary();
   }
@@ -123,9 +137,15 @@
       };
       const timer = setTimeout(() => finish(null), 30000);
       script.onerror = () => finish(null);
-      script.onload = () => {
-        const index = window.SPX_RANKINGS;
-        finish(index?.version === 1 && index.source === M.rankingSource(C) ? index : null);
+      script.onload = async () => {
+        try {
+          let index = window.SPX_RANKINGS;
+          if(window.SPX_RANKINGS_COMPRESSED){
+            const bytes=Uint8Array.from(atob(window.SPX_RANKINGS_COMPRESSED),c=>c.charCodeAt(0));
+            index=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).json();
+          }
+          finish(index?.version === 1 && index.source === M.rankingSource(C) ? index : null);
+        } catch {finish(null);}
       };
       document.head.append(script);
     });
@@ -170,13 +190,14 @@
             const buffer = await loadChunk(chunk);
             if (token !== sortRevision) return;
             for (const r of rows) {
-              const nav = new Float64Array(buffer,(r.slot*2+(exposure === 'spx' ? 1 : 0))*N*8,N);
+              const nav = navFor(r.id,exposure);
               const stats = M.statistics(nav,start,end,C.initial,dates);
               scores.set(r.id,{cagr:stats.cagr,sharpe:stats.sharpe});
+              if(!state.selected.has(r.id))profitNav.delete(r.id);
             }
             // Keep selected chart series in memory; discard sorting-only series.
             if (![...state.selected.keys()].some(id => byId.get(id).chunk === chunk)) {
-              cache.delete(chunk); loading.delete(chunk);
+              cache.delete(chunk); loading.delete(chunk); tradePaths.delete(chunk);
             }
             $('sortStatus').textContent = 'Calculating rankings · ' + count(records.filter(r => scores.has(r.id)).length) + ' / ' + count(records.length);
             await frame();
@@ -245,6 +266,7 @@
   }
   function selectionChanged() {
     selectedIds = [...state.selected.keys()];
+    for(const id of profitNav.keys())if(!state.selected.has(id))profitNav.delete(id);
     $('strategyCount').textContent = count(selectedIds.length) + ' strateg' + (selectedIds.length === 1 ? 'y' : 'ies');
     renderLibrary(); renderSelected(); scheduleRefresh();
   }
@@ -508,7 +530,7 @@
     $('view').value = state.view; $('benchmark').checked = state.benchmark;
     const filters = value.filters || {}; state.category = ['','Put selling','Put buying','Both'].includes(filters.category) ? filters.category : '';
     $('search').value = typeof filters.search === 'string' ? filters.search : '';
-    for (const id of [...filterIds,'addMode']) $(id).value = [...$(id).options].some(o => o.value === filters[id]) ? filters[id] : (id === 'addMode' ? 'options' : '');
+    for (const id of [...filterIds,'addMode']) $(id).value = [...$(id).options].some(o => o.value === filters[id]) ? filters[id] : (id === 'addMode' ? 'options' : id==='profitTarget'?'hold':'');
     for (const id of ['sortBy','sortExposure']) $(id).value = [...$(id).options].some(o => o.value === filters[id]) ? filters[id] : (id === 'sortExposure' ? 'options' : '');
     // Older setups could rank one exposure while adding the other. Keep their
     // ranking preference and selected portfolios, and align future additions.
@@ -639,6 +661,7 @@
   });
   $('resetFilters').addEventListener('click',() => {
     state.category = ''; $('search').value = ''; filterIds.forEach(id => $(id).value = '');
+    $('profitTarget').value='hold';
     $('sortBy').value = ''; syncExposure();
     document.querySelectorAll('[data-category]').forEach(b => b.setAttribute('aria-pressed',String(!b.dataset.category))); filter();
   });
@@ -727,6 +750,12 @@
   $('from').value = dates[0]; $('to').value = dates[N-1]; $('benchmark').checked = true;
   $('dataThrough').textContent = 'DATA THROUGH '+friendlyDate(dates[N-1]).toUpperCase();
   $('navChart').parentElement.title = 'SPX across the full research period. Drag either handle to change dates.';
+  const folderQuery=new URLSearchParams(location.search);
+  if(['0.25','0.5','0.75'].includes(folderQuery.get('profit')))$('profitTarget').value=folderQuery.get('profit');
+  if(['Put buying','Put selling','Both'].includes(folderQuery.get('category'))){
+    state.category=folderQuery.get('category');
+    document.querySelectorAll('[data-category]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.category===state.category)));
+  }
   filter(); syncRange();
   // Every open starts with SPX alone. Saved setups are loaded only on request.
   selectionChanged();

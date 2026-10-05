@@ -4,7 +4,7 @@
   "option_strategies": 7350,
   "existing_spx_overlays_reconciled": 1470,
   "new_spx_overlays": 5880,
-  "maximum_existing_overlay_difference_dollars": 3.958120942115784e-08,
+  "maximum_existing_overlay_difference_dollars": 3.958120942115784e-8,
   "dates": 2510,
   "daily_values": 36897000,
   "encoding": "gzip + base64, little-endian Float64; exact round-trip checked for every shard",
@@ -16,5 +16,23 @@
   },
   "source_cash_sha256": "f642d7ae85522c4c4c6116b735aa98899be5b10e70647fad9a9d4e25227de9ad",
   "source_base_curves_sha256": "62391c9ceccc9fdb691d78dd1013d445e88870f7d653ed897782e19b534b10d6",
-  "total_bytes": 344234629
+  "total_bytes": 344234629,
+  "profit_taking": {
+    "status": "passed",
+    "variants": 22050,
+    "exposure_lines": 44100,
+    "daily_sessions": 2510,
+    "trades": 8229464,
+    "shared_contracts": 229258,
+    "targets": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "validation": "Accounting tests and complete JavaScript replay versus Python daily NAV samples and full-period statistics, both exposures.",
+    "protocol": "profit-data/Protocol.json"
+  },
+  "total_option_strategies": 29400,
+  "total_exposure_lines": 58800,
+  "total_daily_values": 147588000
 }

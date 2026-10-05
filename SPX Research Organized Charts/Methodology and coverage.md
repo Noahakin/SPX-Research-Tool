@@ -1,5 +1,7 @@
 # SPX Research Organized Charts
 
+The counts, schedules, and quote-audit totals in this document describe the original hold-to-expiration library. The interactive viewer also includes **25%, 50%, and 75% profit-taking variants** for Put buying, Put selling, and Both, with full-position exits and immediate re-entry. See the separate [profit-taking protocol](../SPX%20Research%20Interactive/profit-data/Protocol.json) for their entry rules, daily quote audit, and execution assumptions, or open the [profit-taking folders](../Profit%20Taking/index.html).
+
 Open **index.html** in Edge or Chrome. **Put buying**, **Put selling**, and **SPX with overlay** keep their existing folders and images. **Both** has four top-level premium budgets: **05, 10, 15 and 20 percent premium**. Each contains 105 short variations, then **Best long put** and **Best put buffer**, with seven expiration charts and an expiration comparison. Budget and short-variation folders also have comparison charts.
 
 The library has 8,820 strategy curves: 2,940 original standalone/overlay curves, 2,940 retained long-put combinations and 2,940 corrected buffer combinations. The completed export has 10,537 images at 1600 × 1000. Both uses WebP; the preserved categories keep their original PNGs. See **Chart inventory validation.json** for current export status and file verification.

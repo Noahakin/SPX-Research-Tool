@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light"><title>SPX Research · Compare</title>
 <link rel="stylesheet" href="style.css">
-<script defer src="core.js"></script><script defer src="catalog.js"></script><script defer src="app.js"></script>
+<script defer src="core.js"></script><script defer src="profit-core.js"></script><script defer src="catalog.js"></script><script defer src="profit-catalog.js"></script><script defer src="app.js"></script>
 </head>
 <body>
 <header class="topbar">
@@ -15,6 +15,8 @@
 <div class="workspace">
   <aside class="sidebar" aria-label="Strategy library">
     <div class="side-heading"><div><span class="eyebrow">BUILD YOUR COMPARISON</span><h1>Strategy library</h1></div><button id="resetFilters" class="text-button">Reset filters</button></div>
+    <label class="strategy-folder">Strategy folder<select id="profitTarget"><option value="hold">Hold to expiration</option><option value="0.25">25% profit taking</option><option value="0.5">50% profit taking</option><option value="0.75">75% profit taking</option><option value="">All variants</option></select></label>
+    <p id="profitFolderNote" class="profit-folder-note" hidden>Close the whole option position at the target, then immediately enter a fresh trade.</p>
     <label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="search" type="search" placeholder="Search, e.g. 98/95 buffer" aria-label="Search strategies"></label>
     <div id="categories" class="category-tabs" aria-label="Strategy category">
       <button data-category="" aria-pressed="true">All</button><button data-category="Put selling" aria-pressed="false">Put selling</button><button data-category="Put buying" aria-pressed="false">Put buying</button><button data-category="Both" aria-pressed="false">Both</button>
@@ -62,10 +64,11 @@
 <dialog id="methods"><form method="dialog"><button class="dialog-close" aria-label="Close methodology">×</button></form><span class="eyebrow">RESEARCH NOTES</span><h2>What each line represents</h2>
 <h3>Options only, with SPX, or both</h3><p>Options use 100% of current equity in SPX notional at each option roll. “With SPX” adds 100% SPX price exposure to that same option strategy. All quantities stay fixed between rolls, then resize using the combined portfolio’s equity. SPX stays invested when an option trade is unavailable. This is an overlay, not a 50/50 portfolio.</p>
 <h3>Dates and option expiries are separate</h3><p>The expiry filter chooses the option’s holding schedule. Date controls choose which part of the historical portfolio you view. Changing dates does not restart trades or reselect hedges. Returns include the first selected session, using the prior close as the starting value (or initial capital on the first research date). Every line is rebased to the same starting capital.</p>
+<h3>Profit taking at 25%, 50%, or 75%</h3><p>These folders apply to Put buying, Put selling, and Both. The target is net profit as a share of the initial debit paid for Put buying, or the net credit retained for Put selling and Both. All option legs, including the hedge, close together when the target is reached after closing costs. A fresh trade opens at the same daily snapshot with updated strikes, maturity, and position size. If no valid replacement is available, the strategy retries on following sessions. SPX exposure stays invested and does not determine the profit trigger.</p><p>Targets are checked at the daily close; intraday hits are not observed. Entry and early exit each pay the stated slippage and commissions. Estimated quotes cannot trigger execution. Fresh trades choose the closest listed PM expiry: 1–5 days for the 3-day target, within 3 days for 1–2 weeks, and within 7 days for longer targets; ties prefer longer. The existing hold-to-expiration schedules remain unchanged.</p>
 <h3>Buffers buy protection; Sharpe does not select them</h3><p>Buffers use the full allocated net credit on every traded roll. The rule chooses the closest affordable target to the money, preferring a 5-point width at that target and allowing 4 or 3. At least one buffer per short contract is required; the remaining budget buys more of it. Actual width is at least 3% of entry SPX. If no valid buffer is affordable, the option combination stays in cash. Targets use the existing one-point grid, with hedge strikes between 80% and 100% of SPX.</p>
 <h3>Long-put selections are retrospective</h3><p>Long-put combinations retain the earlier highest full-period combined Sharpe selections. They are historical research winners, not out-of-sample results. Adding SPX or changing the visible dates does not optimize or change those selected hedges.</p>
 <h3>Costs, returns and metrics</h3><p>Each option leg pays 25% of its full bid/ask spread from midpoint plus $1.50 per contract at entry. Positions settle at intrinsic value on expiry; daily marks use the audited quotes. SPX excludes dividends. Cash earns zero. Financing, borrowing costs and taxes are not included.</p><p>CAGR uses elapsed calendar years. Volatility and Sharpe use daily returns, annualized at 252 sessions; Sharpe assumes a zero cash rate. Drawdown starts with the selected period’s starting capital in its high-water mark. Annualized statistics are unavailable for a single session. Short windows can produce extreme annualized values.</p>
-<p class="method-links"><a href="Data%20validation.json">Data validation</a><a href="../SPX%20Research%20Organized%20Charts/Methodology%20and%20coverage.md">Full research methodology</a></p></dialog>
+<p class="method-links"><a href="Data%20validation.json">Data validation</a><a href="profit-data/Protocol.json">Profit-taking protocol</a><a href="../SPX%20Research%20Organized%20Charts/Methodology%20and%20coverage.md">Full research methodology</a></p></dialog>
 <div id="toast" class="toast" role="status" hidden></div>
 <noscript>This comparison website requires JavaScript. Open it in Chrome or Edge with JavaScript enabled.</noscript>
 </body></html>

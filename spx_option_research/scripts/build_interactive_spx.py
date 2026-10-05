@@ -89,7 +89,7 @@ def catalog_row(row, chunk, slot):
 
 def copy_assets(site=SITE):
     site.mkdir(parents=True, exist_ok=True)
-    for name in ("index.html", "style.css", "core.js", "app.js"):
+    for name in ("index.html", "style.css", "core.js", "profit-core.js", "app.js"):
         shutil.copy2(ASSETS/name, site/name)
     library = site.parent / "SPX Research Organized Charts" / "index.html"
     if library.exists():

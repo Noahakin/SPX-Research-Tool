@@ -6,7 +6,9 @@ An offline interactive chart viewer and Python research library for SPX put spre
 
 Download or clone the complete repository, then open **[index.html](index.html)** in current Microsoft Edge or Chrome. No server, Python installation, API key, or internet connection is needed to view the included results. GitHub's file preview does not run the website; open the downloaded files locally.
 
-The [interactive viewer](<SPX Research Interactive/index.html>) includes 7,350 strategies and 14,700 options-only/with-SPX lines. It opens with only SPX selected. Compare multiple strategies, change each line's SPX exposure, and choose a historical date window. The upper-left metrics show CAGR, annualized volatility, maximum drawdown, and Sharpe, including differences versus SPX for portfolios that include it.
+The [interactive viewer](<SPX Research Interactive/index.html>) includes the original 7,350 strategies and 22,050 profit-taking variants: 29,400 strategies and 58,800 options-only/with-SPX lines. It opens with only SPX selected. Compare multiple strategies, change each line's SPX exposure, and choose a historical date window. The upper-left metrics show CAGR, annualized volatility, maximum drawdown, and Sharpe, including differences versus SPX for portfolios that include it.
+
+The [profit-taking folders](<Profit Taking/index.html>) contain **25%, 50%, and 75%** targets for Put buying, Put selling, and Both. Select a **Strategy folder** in the viewer to compare variants with hold to expiration. All option legs close together once net executable profit reaches the target, then a replacement trade enters at the same daily close using current strikes, maturity, hedge selection and equity. Put buying targets a percentage of the initial debit; Put selling and Both target a percentage of retained net credit. SPX P&L does not trigger the option exit, and SPX remains invested between option positions. Both entry and early exit include slippage and commissions. The [research protocol](<SPX Research Interactive/profit-data/Protocol.json>) describes maturity tolerances, quote quality, sizing, and daily timing. Original hold-to-expiration curves remain unchanged.
 
 Use **Sort by** to rank the filtered strategy list by CAGR or Sharpe, highest or lowest first. **Rank exposure** and **Add new lines as** stay linked: changing either single-exposure setting updates the other. **Both versions** adds both portfolios while **Rank exposure** chooses which one to rank. Each ranked value labels its exposure. Existing selections keep their settings; a notice offers **Match selected to ranking** when selected strategies omit the ranked exposure. Loading an older setup with conflicting settings preserves its ranking and selected portfolios, and aligns future additions with that ranking. Rankings follow the chart's current dates; unavailable metrics appear last. Standard date presets use compact precomputed rankings. Custom dates calculate the same metrics from the matching strategies' daily data, with progress shown while sorting.
 
@@ -20,7 +22,8 @@ The latest spread-selection experiments are separate from the interactive viewer
 
 | Path | Contents |
 | --- | --- |
-| `SPX Research Interactive/` | Ready-to-open viewer and all 126 compressed daily-data shards |
+| `SPX Research Interactive/` | Ready-to-open viewer, original daily curves, and shared contract paths/trade records for profit variants |
+| `Profit Taking/` | Separate folders for the 25%, 50%, and 75% targets |
 | `spx_option_research/web/` | Viewer source assets |
 | `spx_option_research/scripts/` | Data preparation, backtests, grid searches, audits, and chart generation |
 | `spx_option_research/src/spxresearch/` | Shared research library |
@@ -73,6 +76,18 @@ python -B spx_option_research/scripts/build_interactive_spx.py --assets-only
 ```
 
 After changing the chart dataset or statistics, regenerate the offline ranking tables with `npm run build:rankings`. The Vercel build also refreshes missing or outdated tables automatically. The tables retain full-precision CAGR and Sharpe for both exposures across all eight standard date presets.
+
+To rebuild the profit-taking variants, point `--source-root` to the original Raw Data directory containing the option archive and audited research inputs. The calculation runs in memory and exports shared contract prices and trade records, preserving full floating-point precision:
+
+```powershell
+python -B spx_option_research/scripts/profit_taking_research.py --source-root ..
+node deployment/verify-profit-data.mjs .publish/profit-taking-stage
+node deployment/install-profit-data.mjs
+npm run build:rankings
+npm run build
+```
+
+The installer refuses to replace an existing profit dataset automatically. Review a replacement before moving it into the viewer. The verifier checks every variant's reconstructed daily NAV samples and full-period statistics against the Python backtest in both exposures. Run the accounting regression tests with `python -B -m unittest discover -s spx_option_research/tests -p test_profit_taking_research.py -q`.
 
 ## Rerun the research
 
