@@ -2,6 +2,7 @@ import { copyFileSync, existsSync, linkSync, lstatSync, mkdirSync, readFileSync,
   readdirSync, realpathSync, rmSync, statSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import '../SPX Research Interactive/core.js';
 
 const root = realpathSync(fileURLToPath(new URL('..', import.meta.url)));
 const output = resolve(root, 'public');
@@ -25,6 +26,14 @@ const catalogScript = readFileSync(join(viewer, 'catalog.js'), 'utf8');
 const match = /^window\.SPX_CATALOG=(.*);\s*$/s.exec(catalogScript);
 if (!match) throw new Error('Invalid interactive catalog.js');
 const catalog = JSON.parse(match[1]);
+let rankings;
+try {
+  rankings = JSON.parse(readFileSync(join(viewer, 'rankings.js'), 'utf8').replace(/^window\.SPX_RANKINGS=/, '').replace(/;\s*$/, ''));
+} catch {}
+if (rankings?.version !== 1 || rankings.source !== globalThis.SPXMath.rankingSource(catalog)) {
+  console.log('Refreshing rankings for the current chart data and statistics.');
+  await import('./build-rankings.mjs');
+}
 for (const [key, chunk] of Object.entries(catalog.chunks)) {
   if (!/^data\/c\d+\.js$/.test(chunk.file)) throw new Error(`Unexpected data path for ${key}`);
   if (!existsSync(join(viewer, chunk.file)) || !statSync(join(viewer, chunk.file)).size) {

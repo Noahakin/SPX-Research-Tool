@@ -8,6 +8,8 @@ Download or clone the complete repository, then open **[index.html](index.html)*
 
 The [interactive viewer](<SPX Research Interactive/index.html>) includes 7,350 strategies and 14,700 options-only/with-SPX lines. It opens with only SPX selected. Compare multiple strategies, change each line's SPX exposure, and choose a historical date window. The upper-left metrics show CAGR, annualized volatility, maximum drawdown, and Sharpe, including differences versus SPX for portfolios that include it.
 
+Use **Sort by** to rank the filtered strategy list by CAGR or Sharpe, highest or lowest first. **Rank exposure** chooses options-only or with-SPX performance, independently of the exposure used when adding chart lines. Rankings follow the chart's current dates; unavailable metrics appear last. Standard date presets use compact precomputed rankings. Custom dates calculate the same metrics from the matching strategies' daily data, with progress shown while sorting.
+
 The latest spread-selection experiments are separate from the interactive viewer's original strategy catalog:
 
 - [Dynamic maturity selection](spx_option_research/results/dynamic_maturity_search/Report.md): 202,752 policies that choose strikes, width, and maturity at each scheduled entry, with 25% net-profit exits. Includes equity curves, trade ledgers, the complete grid, and selection/accounting audits.
@@ -69,6 +71,8 @@ The included viewer does not require these packages. To refresh its interface fr
 ```powershell
 python -B spx_option_research/scripts/build_interactive_spx.py --assets-only
 ```
+
+After changing the chart dataset or statistics, regenerate the offline ranking tables with `npm run build:rankings`. The Vercel build also refreshes missing or outdated tables automatically. The tables retain full-precision CAGR and Sharpe for both exposures across all eight standard date presets.
 
 ## Rerun the research
 

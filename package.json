@@ -4,7 +4,8 @@
   "private": true,
   "description": "Static SPX research viewer and completed study reports",
   "scripts": {
-    "build": "node deployment/build.mjs"
+    "build": "node deployment/build.mjs",
+    "build:rankings": "node deployment/build-rankings.mjs"
   },
   "engines": {
     "node": "24.x"

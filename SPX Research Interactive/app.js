@@ -24,6 +24,9 @@
   const modeName = mode => mode === 'spx' ? 'With SPX' : 'Options only';
   let colorIndex = 0, revision = 0, refreshTimer, toastTimer, plot = null, drag = null, hoverIndex = null;
   let selectedIds = [], metrics = new Map(), metricWindow = '', hoverRow = null;
+  const catalogOrder = new Map(C.strategies.map((r,i) => [r.id,i]));
+  let sortRevision = 0, sortBusy = false, sortError = null, sortWindow = '', sortRange = '';
+  let sortScores = new Map(), rankingIndexPromise;
   let chartMetricRows = [], chartMetricRowHeight = 48;
   const chartMetricKeys = ['cagr','vol','maxDD','sharpe'];
   const spxNav = Float64Array.from(C.spx, v => C.initial * v / C.spx[0]);
@@ -96,7 +99,89 @@
     state.filtered = C.strategies.filter(r => (!state.category || r.category === state.category) &&
       filterIds.every(id => !$(id).value || String(r[id]) === $(id).value) && terms.every(t => searchText.get(r.id).includes(t)));
     $('resultCount').textContent = count(state.filtered.length) + ' strategies';
-    $('addMatching').disabled = !state.filtered.length; $('strategyList').scrollTop = 0; renderLibrary();
+    $('strategyList').scrollTop = 0; sortLibrary();
+  }
+  function loadRankingIndex() {
+    if (rankingIndexPromise) return rankingIndexPromise;
+    rankingIndexPromise = new Promise(resolve => {
+      const script = document.createElement('script'); script.src = 'rankings.js';
+      let done = false;
+      const finish = value => {
+        if (done) return; done = true; clearTimeout(timer); script.remove(); resolve(value);
+      };
+      const timer = setTimeout(() => finish(null), 30000);
+      script.onerror = () => finish(null);
+      script.onload = () => {
+        const index = window.SPX_RANKINGS;
+        finish(index?.version === 1 && index.source === M.rankingSource(C) ? index : null);
+      };
+      document.head.append(script);
+    });
+    return rankingIndexPromise;
+  }
+  function finishLibrarySort() {
+    sortBusy = false; $('strategyList').setAttribute('aria-busy','false');
+    $('addMatching').disabled = !state.filtered.length;
+    renderLibrary();
+  }
+  async function sortLibrary() {
+    const token = ++sortRevision, sort = $('sortBy').value, exposure = $('sortExposure').value;
+    sortError = null; $('sortExposure').disabled = !sort;
+    if (!sort) {
+      $('sortStatus').textContent = 'Sort uses the chart’s date range.';
+      finishLibrarySort(); return;
+    }
+    const start = state.start, end = state.end, key = start + ':' + end + ':' + exposure;
+    if (sortWindow !== key) { sortWindow = key; sortScores = new Map(); }
+    const scores = sortScores, records = state.filtered.slice();
+    const [metric,direction] = sort.split('-');
+    sortBusy = true; $('strategyList').setAttribute('aria-busy','true');
+    $('addMatching').disabled = true; $('sortStatus').textContent = 'Calculating rankings…'; renderLibrary();
+    try {
+      if (records.some(r => !scores.has(r.id))) {
+        const index = await loadRankingIndex(); if (token !== sortRevision) return;
+        const stored = index?.windows?.[start + ':' + end];
+        if (Array.isArray(stored) && stored.length === C.strategies.length * 4) {
+          for (const r of records) {
+            const offset = catalogOrder.get(r.id) * 4 + (exposure === 'spx' ? 2 : 0);
+            scores.set(r.id,{cagr:stored[offset],sharpe:stored[offset+1]});
+          }
+        } else {
+          // Custom date windows use the same exact NAV statistics as the chart.
+          const groups = new Map();
+          for (const r of records) if (!scores.has(r.id)) {
+            if (!groups.has(r.chunk)) groups.set(r.chunk,[]);
+            groups.get(r.chunk).push(r);
+          }
+          for (const [chunk,rows] of groups) {
+            if (token !== sortRevision) return;
+            const buffer = await loadChunk(chunk);
+            if (token !== sortRevision) return;
+            for (const r of rows) {
+              const nav = new Float64Array(buffer,(r.slot*2+(exposure === 'spx' ? 1 : 0))*N*8,N);
+              const stats = M.statistics(nav,start,end,C.initial,dates);
+              scores.set(r.id,{cagr:stats.cagr,sharpe:stats.sharpe});
+            }
+            // Keep selected chart series in memory; discard sorting-only series.
+            if (![...state.selected.keys()].some(id => byId.get(id).chunk === chunk)) {
+              cache.delete(chunk); loading.delete(chunk);
+            }
+            $('sortStatus').textContent = 'Calculating rankings · ' + count(records.filter(r => scores.has(r.id)).length) + ' / ' + count(records.length);
+            await frame();
+          }
+        }
+      }
+      if (token !== sortRevision) return;
+      state.filtered = records.sort((a,b) => M.compareScores(scores.get(a.id)?.[metric],scores.get(b.id)?.[metric],direction === 'desc') || catalogOrder.get(a.id)-catalogOrder.get(b.id));
+      $('strategyList').scrollTop = 0;
+      $('sortStatus').textContent = (metric === 'cagr' ? 'CAGR' : 'Sharpe') + ' · ' + modeName(exposure) + ' · Chart dates. Unavailable values last.';
+      finishLibrarySort();
+    } catch (error) {
+      if (token !== sortRevision) return;
+      sortError = error.message;
+      $('sortStatus').textContent = 'Sorting could not finish. Change a filter or choose the sort again to retry.';
+      finishLibrarySort();
+    }
   }
   function renderLibrary() {
     const list = $('strategyList'), h = 66, start = Math.max(0, Math.floor(list.scrollTop / h) - 3);
@@ -104,11 +189,14 @@
     $('strategySpace').style.height = state.filtered.length * h + 'px';
     $('strategyRows').style.transform = 'translateY(' + start * h + 'px)';
     $('strategyRows').innerHTML = state.filtered.slice(start, end).map(r => {
-      const chosen = state.selected.has(r.id);
+      const chosen = state.selected.has(r.id), metric = $('sortBy').value.split('-')[0];
+      const ranked = metric && !sortBusy && !sortError;
+      const score = sortScores.get(r.id)?.[metric];
       return '<label class="strategy-row' + (chosen ? ' chosen' : '') + '" title="' + esc(description(r)) + '">' +
         '<input type="checkbox" data-id="' + esc(r.id) + '"' + (chosen ? ' checked' : '') + ' aria-label="' + esc(r.name + ', ' + r.subtitle) + '">' +
         '<span class="row-text"><strong>' + esc(r.name) + '</strong><small>' + esc(r.subtitle) + '</small></span>' +
-        '<span class="mini-tag">' + (r.category === 'Both' ? Math.round(r.premium * 100) + '%' : r.category === 'Put buying' ? 'BUY' : 'SELL') + '</span></label>';
+        (ranked ? '<span class="sort-value"><b>' + (Number.isFinite(score) ? metric === 'cagr' ? pct(score) : fmt(score,2) : '—') + '</b><small>' + (metric === 'cagr' ? 'CAGR' : 'Sharpe') + '</small></span>' :
+          '<span class="mini-tag">' + (r.category === 'Both' ? Math.round(r.premium * 100) + '%' : r.category === 'Put buying' ? 'BUY' : 'SELL') + '</span>') + '</label>';
     }).join('') || '<div class="empty-results">No strategies match.<br>Try fewer filters or another search.</div>';
   }
   function metricCell(values, key) {
@@ -194,6 +282,8 @@
     $('navSelection').style.width = (state.end - state.start) / (N - 1) * 100 + '%';
     $('rangeLabel').textContent = friendlyDate(dates[state.start]) + ' — ' + friendlyDate(dates[state.end]);
     $('sessionCount').textContent = count(state.end - state.start + 1) + ' sessions';
+    const next = state.start + ':' + state.end;
+    if (sortRange !== next) { sortRange = next; if ($('sortBy').value) sortLibrary(); }
   }
   function scheduleRefresh(delay = 0) {
     revision++; state.busy = true; state.error = null;
@@ -385,7 +475,7 @@
   function setup() {
     return {format:'spx-research-comparison', version:1, from:dates[state.start], to:dates[state.end], view:state.view,
       benchmark:state.benchmark, selected:[...state.selected].map(([id,s]) => ({id,...s})),
-      filters:{category:state.category, search:$('search').value, addMode:$('addMode').value, ...Object.fromEntries(filterIds.map(id => [id,$(id).value]))}};
+      filters:{category:state.category, search:$('search').value, addMode:$('addMode').value, sortBy:$('sortBy').value, sortExposure:$('sortExposure').value, ...Object.fromEntries(filterIds.map(id => [id,$(id).value]))}};
   }
   function applySetup(value) {
     if (value?.format !== 'spx-research-comparison' || value.version !== 1 || !Array.isArray(value.selected)) throw Error('This is not an SPX comparison setup.');
@@ -403,6 +493,7 @@
     const filters = value.filters || {}; state.category = ['','Put selling','Put buying','Both'].includes(filters.category) ? filters.category : '';
     $('search').value = typeof filters.search === 'string' ? filters.search : '';
     for (const id of [...filterIds,'addMode']) $(id).value = [...$(id).options].some(o => o.value === filters[id]) ? filters[id] : (id === 'addMode' ? 'options' : '');
+    for (const id of ['sortBy','sortExposure']) $(id).value = [...$(id).options].some(o => o.value === filters[id]) ? filters[id] : (id === 'sortExposure' ? 'options' : '');
     document.querySelectorAll('[data-category]').forEach(b => b.setAttribute('aria-pressed',String(b.dataset.category === state.category)));
     filter(); setRange(dates[start],dates[end],start === 0 && end === N-1 ? 'ALL' : ''); selectionChanged(); return skipped;
   }
@@ -516,6 +607,7 @@
   let searchTimer;
   $('search').addEventListener('input',() => { clearTimeout(searchTimer); searchTimer = setTimeout(filter,100); });
   filterIds.forEach(id => $(id).addEventListener('change',filter));
+  for (const id of ['sortBy','sortExposure']) $(id).addEventListener('change',filter);
   $('categories').addEventListener('click',e => {
     if (!e.target.hasAttribute('data-category')) return; state.category = e.target.dataset.category;
     if (state.category && state.category !== 'Both') { $('premium').value = ''; $('hedge').value = ''; }
@@ -523,6 +615,7 @@
   });
   $('resetFilters').addEventListener('click',() => {
     state.category = ''; $('search').value = ''; filterIds.forEach(id => $(id).value = '');
+    $('sortBy').value = ''; $('sortExposure').value = 'options';
     document.querySelectorAll('[data-category]').forEach(b => b.setAttribute('aria-pressed',String(!b.dataset.category))); filter();
   });
   $('addMatching').addEventListener('click',() => {
@@ -618,6 +711,8 @@
     get selectedCount() { return state.selected.size; }, get lineCount() { return state.curves.length; },
     get loadedChunks() { return cache.size; }, get range() { return [state.start,state.end]; },
     get matchedCount() { return state.filtered.length; }, get plot() { return plot; }, setup, applySetup, metricsCSV,
+    get sorting() { return {busy:sortBusy,error:sortError,sort:$('sortBy').value,exposure:$('sortExposure').value}; },
+    rankedIds: () => state.filtered.map(r => r.id), rank: id => sortScores.get(id),
     statistics: (id,mode='options') => metrics.get(id+':'+mode)?.stats,
     values: (id,mode='options') => navFor(id,mode)
   };

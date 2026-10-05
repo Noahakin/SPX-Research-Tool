@@ -48,6 +48,16 @@
     const ticks=[];for(let v=Math.ceil(lo/step)*step;v<=hi+step*1e-6;v+=step)ticks.push(Math.abs(v)<step*1e-8?0:v);
     return {ticks,step};
   }
-  const api={time,lowerBound,windowIndices,presetDates,statistics,valueAt,niceTicks};
+  function compareScores(a,b,descending=true){
+    const validA=typeof a==='number'&&Number.isFinite(a),validB=typeof b==='number'&&Number.isFinite(b);
+    if(!validA||!validB)return validA?-1:validB?1:0;
+    return descending?b-a:a-b;
+  }
+  function rankingSource(catalog){
+    return JSON.stringify([statistics.toString(),catalog.initial,catalog.dates,
+      catalog.strategies.map(r=>[r.id,r.chunk,r.slot]),
+      Object.entries(catalog.chunks).map(([key,c])=>[key,c.sha256,c.bytes])]);
+  }
+  const api={time,lowerBound,windowIndices,presetDates,statistics,valueAt,niceTicks,compareScores,rankingSource};
   root.SPXMath=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof window==='undefined'?globalThis:window);
