@@ -29,6 +29,25 @@ The latest spread-selection experiments are separate from the interactive viewer
 
 Raw IVolatility quote downloads, intermediate caches, installed dependencies, browser profiles, local credentials, and the duplicate static image library are excluded. The original image inventory describes the full local export, not images shipped in this repository. The interactive data includes those chart curves. Some older research folders contain only reports and summaries; their larger intermediate outputs must be rebuilt.
 
+## Deploy to Vercel
+
+Import **Noahakin/SPX-Research-Tool** using Vercel's GitHub integration, with the repository root (`./`) as **Root Directory** and **Other** as the **Framework Preset**. Deploy the `main` branch.
+
+The committed `vercel.json` explicitly disables Python/framework detection, skips dependency installation, runs `node deployment/build.mjs`, and publishes `public/`. No Python entrypoint, environment variables, or API keys are needed for the website. If an existing Vercel project was detected as **Python**, change its Framework Preset to **Other** and redeploy the latest commit; clear old build/install/output overrides if present.
+
+The build publishes the complete interactive chart dataset, methodology, and both completed maturity studies with their charts and downloads. Python research code and local caches remain outside the hosted output. Original `.html` links and paths containing spaces are preserved. The homepage links to the interactive viewer and both studies.
+
+Use the GitHub import for this large dataset. Vercel's direct CLI source-upload limit on Hobby is 100 MB, smaller than this repository; that limit does not apply to the Git integration's repository checkout.
+
+To check the same static build locally with Node.js 24:
+
+```powershell
+npm run build
+python -B -m http.server 8080 --directory public
+```
+
+Open `http://localhost:8080/` in Edge. Python is used only as a convenient local file server in this example; Vercel serves the generated files directly. The root `requirements.txt` is solely for running the research locally.
+
 ## Python setup
 
 Run commands from the repository root. The research environment used Python 3.14; dependencies are recorded in the requirements files.

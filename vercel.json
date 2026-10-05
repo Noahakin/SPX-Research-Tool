@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "node -e \"console.log('Static site: no dependencies to install')\"",
+  "buildCommand": "node deployment/build.mjs",
+  "outputDirectory": "public",
+  "cleanUrls": false,
+  "trailingSlash": true
+}

@@ -7,6 +7,9 @@
 venv/
 .research_dependencies/
 .publish/
+.vercel/
+node_modules/
+/public/
 
 # Local data archives and caches
 /0*/
