@@ -32,6 +32,7 @@
       <label>Rank exposure<select id="sortExposure" disabled><option value="options">Options only</option><option value="spx">With SPX</option></select></label>
     </div>
     <p id="sortStatus" class="library-sort-note" role="status" aria-live="polite">Sort uses the chart’s date range.</p>
+    <div id="sortExposureNotice" class="sort-exposure-notice" hidden><p id="sortExposureMessage" role="status" aria-live="polite"></p><button id="matchRankExposure" class="text-button">Match selected to ranking</button></div>
     <div class="result-controls"><span id="resultCount">Loading strategies…</span><button id="addMatching" class="small-button">Add all matches <span>+</span></button></div>
     <div id="strategyList" class="virtual-list" role="group" aria-label="Matching strategies"><div id="strategySpace"></div><div id="strategyRows"></div></div>
     <p class="side-foot">Mix any number of strategies and expiries. Filters narrow the library; they keep your selected lines.</p>

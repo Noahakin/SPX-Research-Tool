@@ -101,6 +101,18 @@
     $('resultCount').textContent = count(state.filtered.length) + ' strategies';
     $('strategyList').scrollTop = 0; sortLibrary();
   }
+  function syncExposure(source = 'addMode') {
+    if ($('addMode').value === 'both') return;
+    if (source === 'sortExposure') $('addMode').value = $('sortExposure').value;
+    else $('sortExposure').value = $('addMode').value;
+  }
+  function renderExposureNotice() {
+    const exposure = $('sortExposure').value;
+    const mismatched = [...state.selected.values()].filter(s => !lineModes(s.mode).includes(exposure)).length;
+    $('sortExposureNotice').hidden = !$('sortBy').value || !mismatched;
+    $('sortExposureMessage').textContent = count(mismatched) + ' selected strateg' + (mismatched === 1 ? 'y uses ' : 'ies use ') +
+      modeName(exposure === 'spx' ? 'options' : 'spx') + '; rankings use ' + modeName(exposure) + '.';
+  }
   function loadRankingIndex() {
     if (rankingIndexPromise) return rankingIndexPromise;
     rankingIndexPromise = new Promise(resolve => {
@@ -174,7 +186,8 @@
       if (token !== sortRevision) return;
       state.filtered = records.sort((a,b) => M.compareScores(scores.get(a.id)?.[metric],scores.get(b.id)?.[metric],direction === 'desc') || catalogOrder.get(a.id)-catalogOrder.get(b.id));
       $('strategyList').scrollTop = 0;
-      $('sortStatus').textContent = (metric === 'cagr' ? 'CAGR' : 'Sharpe') + ' · ' + modeName(exposure) + ' · Chart dates. Unavailable values last.';
+      $('sortStatus').textContent = (metric === 'cagr' ? 'CAGR' : 'Sharpe') + ' · ' + modeName(exposure) + ' · Chart dates. New lines: ' +
+        ($('addMode').value === 'both' ? 'both versions' : modeName(exposure)) + '.';
       finishLibrarySort();
     } catch (error) {
       if (token !== sortRevision) return;
@@ -184,6 +197,7 @@
     }
   }
   function renderLibrary() {
+    renderExposureNotice();
     const list = $('strategyList'), h = 66, start = Math.max(0, Math.floor(list.scrollTop / h) - 3);
     const end = Math.min(state.filtered.length, start + Math.ceil(list.clientHeight / h) + 7);
     $('strategySpace').style.height = state.filtered.length * h + 'px';
@@ -191,11 +205,13 @@
     $('strategyRows').innerHTML = state.filtered.slice(start, end).map(r => {
       const chosen = state.selected.has(r.id), metric = $('sortBy').value.split('-')[0];
       const ranked = metric && !sortBusy && !sortError;
-      const score = sortScores.get(r.id)?.[metric];
+      const score = sortScores.get(r.id)?.[metric], exposure = modeName($('sortExposure').value);
       return '<label class="strategy-row' + (chosen ? ' chosen' : '') + '" title="' + esc(description(r)) + '">' +
         '<input type="checkbox" data-id="' + esc(r.id) + '"' + (chosen ? ' checked' : '') + ' aria-label="' + esc(r.name + ', ' + r.subtitle) + '">' +
         '<span class="row-text"><strong>' + esc(r.name) + '</strong><small>' + esc(r.subtitle) + '</small></span>' +
-        (ranked ? '<span class="sort-value"><b>' + (Number.isFinite(score) ? metric === 'cagr' ? pct(score) : fmt(score,2) : '—') + '</b><small>' + (metric === 'cagr' ? 'CAGR' : 'Sharpe') + '</small></span>' :
+        (ranked ? '<span class="sort-value" title="' + (metric === 'cagr' ? 'CAGR' : 'Sharpe') + ' · ' + exposure + ' · Chart dates"><b>' +
+          (Number.isFinite(score) ? metric === 'cagr' ? pct(score) : fmt(score,2) : '—') + '</b><small>' + (metric === 'cagr' ? 'CAGR' : 'Sharpe') +
+          '</small><small class="sort-exposure">' + exposure + '</small></span>' :
           '<span class="mini-tag">' + (r.category === 'Both' ? Math.round(r.premium * 100) + '%' : r.category === 'Put buying' ? 'BUY' : 'SELL') + '</span>') + '</label>';
     }).join('') || '<div class="empty-results">No strategies match.<br>Try fewer filters or another search.</div>';
   }
@@ -494,6 +510,9 @@
     $('search').value = typeof filters.search === 'string' ? filters.search : '';
     for (const id of [...filterIds,'addMode']) $(id).value = [...$(id).options].some(o => o.value === filters[id]) ? filters[id] : (id === 'addMode' ? 'options' : '');
     for (const id of ['sortBy','sortExposure']) $(id).value = [...$(id).options].some(o => o.value === filters[id]) ? filters[id] : (id === 'sortExposure' ? 'options' : '');
+    // Older setups could rank one exposure while adding the other. Keep their
+    // ranking preference and selected portfolios, and align future additions.
+    syncExposure($('sortBy').value ? 'sortExposure' : 'addMode');
     document.querySelectorAll('[data-category]').forEach(b => b.setAttribute('aria-pressed',String(b.dataset.category === state.category)));
     filter(); setRange(dates[start],dates[end],start === 0 && end === N-1 ? 'ALL' : ''); selectionChanged(); return skipped;
   }
@@ -607,7 +626,12 @@
   let searchTimer;
   $('search').addEventListener('input',() => { clearTimeout(searchTimer); searchTimer = setTimeout(filter,100); });
   filterIds.forEach(id => $(id).addEventListener('change',filter));
-  for (const id of ['sortBy','sortExposure']) $(id).addEventListener('change',filter);
+  for (const id of ['sortBy','sortExposure','addMode']) $(id).addEventListener('change',() => { syncExposure(id); filter(); });
+  $('matchRankExposure').addEventListener('click',() => {
+    const exposure = $('sortExposure').value;
+    for (const s of state.selected.values()) if (s.mode !== 'both') s.mode = exposure;
+    selectionChanged();
+  });
   $('categories').addEventListener('click',e => {
     if (!e.target.hasAttribute('data-category')) return; state.category = e.target.dataset.category;
     if (state.category && state.category !== 'Both') { $('premium').value = ''; $('hedge').value = ''; }
@@ -615,7 +639,7 @@
   });
   $('resetFilters').addEventListener('click',() => {
     state.category = ''; $('search').value = ''; filterIds.forEach(id => $(id).value = '');
-    $('sortBy').value = ''; $('sortExposure').value = 'options';
+    $('sortBy').value = ''; syncExposure();
     document.querySelectorAll('[data-category]').forEach(b => b.setAttribute('aria-pressed',String(!b.dataset.category))); filter();
   });
   $('addMatching').addEventListener('click',() => {
