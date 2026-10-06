@@ -42,6 +42,26 @@
     const value=curve.nav[index]/curve.stats.base*100;
     return view==='return'?value-100:value;
   }
+  function returnCorrelation(nav,benchmark,start,end,initial,benchmarkInitial=initial){
+    const n=end-start+1;
+    if(!nav||!benchmark||start<0||n<2||end>=nav.length||end>=benchmark.length)return null;
+    let previous=start?nav[start-1]:initial,marketPrevious=start?benchmark[start-1]:benchmarkInitial;
+    if(!Number.isFinite(previous)||previous<=0||!Number.isFinite(marketPrevious)||marketPrevious<=0)return null;
+    let mean=0,marketMean=0,m2=0,marketM2=0,covariance=0;
+    for(let i=start;i<=end;i++){
+      const value=nav[i],market=benchmark[i];
+      if(!Number.isFinite(value)||value<=0||!Number.isFinite(market)||market<=0)return null;
+      const r=value/previous-1,s=market/marketPrevious-1,count=i-start+1;
+      const delta=r-mean,marketDelta=s-marketMean;
+      mean+=delta/count;marketMean+=marketDelta/count;
+      m2+=delta*(r-mean);marketM2+=marketDelta*(s-marketMean);covariance+=delta*(s-marketMean);
+      previous=value;marketPrevious=market;
+    }
+    // Constant daily returns have no defined correlation, including rounding noise.
+    if(Math.sqrt(m2/(n-1))<=1e-14||Math.sqrt(marketM2/(n-1))<=1e-14)return null;
+    const correlation=covariance/Math.sqrt(m2)/Math.sqrt(marketM2);
+    return Number.isFinite(correlation)?Math.max(-1,Math.min(1,correlation)):null;
+  }
   function niceTicks(lo,hi,count=5){
     const range=hi-lo||1,raw=range/count,power=10**Math.floor(Math.log10(raw)),fraction=raw/power;
     const step=(fraction<=1?1:fraction<=2?2:fraction<=2.5?2.5:fraction<=5?5:10)*power;
@@ -58,6 +78,6 @@
       catalog.strategies.map(r=>[r.id,r.chunk,r.slot]),
       Object.entries(catalog.chunks).map(([key,c])=>[key,c.sha256,c.bytes])]);
   }
-  const api={time,lowerBound,windowIndices,presetDates,statistics,valueAt,niceTicks,compareScores,rankingSource};
+  const api={time,lowerBound,windowIndices,presetDates,statistics,returnCorrelation,valueAt,niceTicks,compareScores,rankingSource};
   root.SPXMath=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof window==='undefined'?globalThis:window);

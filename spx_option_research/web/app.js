@@ -17,6 +17,7 @@
   const fmt = (v, digits = 1) => v == null || !Number.isFinite(v) ? '—' :
     Math.abs(v) >= 1e7 ? v.toExponential(2) : v.toLocaleString('en-US', {minimumFractionDigits: digits, maximumFractionDigits: digits});
   const pct = v => v == null ? '—' : fmt(v * 100) + '%';
+  const metricText = (key,v) => key === 'correlation' ? fmt(v,3) : key === 'sharpe' ? fmt(v,2) : pct(v);
   const shortNumber = v => new Intl.NumberFormat('en-US', {notation: 'compact', maximumFractionDigits: 1}).format(v);
   const friendlyDate = s => new Date(M.time(s)).toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric', timeZone:'UTC'});
   const frame = () => new Promise(resolve => requestAnimationFrame(resolve));
@@ -29,7 +30,7 @@
   let sortRevision = 0, sortBusy = false, sortError = null, sortWindow = '', sortRange = '';
   let sortScores = new Map(), rankingIndexPromise;
   let chartMetricRows = [], chartMetricRowHeight = 48;
-  const chartMetricKeys = ['cagr','vol','maxDD','sharpe'];
+  const chartMetricKeys = ['cagr','vol','maxDD','sharpe','correlation'];
   const spxNav = Float64Array.from(C.spx, v => C.initial * v / C.spx[0]);
   const searchText = new Map(C.strategies.map(r => [r.id,
     [r.name, r.subtitle, r.category, r.hedge, r.days + ' days', r.hedgeHigh && 'long ' + r.hedgeHigh].join(' ').toLowerCase()]));
@@ -241,8 +242,8 @@
   function metricCell(values, key) {
     return '<div class="metric-cell">' + values.map((value, i) => {
       const v = value.stats?.[key];
-      return '<div class="' + (i ? 'second ' : '') + (v < 0 ? 'negative' : '') + '" title="' + modeName(value.mode) + '">' +
-        '<span class="sr-only">' + modeName(value.mode) + ': </span>' + (key === 'sharpe' ? fmt(v, 2) : pct(v)) + '</div>';
+      return '<div class="' + (i ? 'second ' : '') + (v < 0 && key !== 'correlation' ? 'negative' : '') + '" title="' + modeName(value.mode) + '">' +
+        '<span class="sr-only">' + modeName(value.mode) + ': </span>' + metricText(key,v) + '</div>';
     }).join('') + '</div>';
   }
   function renderSelected() {
@@ -259,7 +260,7 @@
         '<span class="label" title="' + esc(description(r)) + '"><strong>' + esc(r.name) + '</strong><small>' + esc(detail(r)) + '</small></span></div>' +
         '<select class="exposure-select" data-action="mode" aria-label="Exposure for ' + esc(r.name + ', ' + r.subtitle) + '">' +
         modes.map(mode => '<option value="' + mode + '"' + (s.mode === mode ? ' selected' : '') + '>' + (mode === 'both' ? 'Both' : modeName(mode)) + '</option>').join('') + '</select>' +
-        ['total','cagr','vol','sharpe','maxDD'].map(key => metricCell(values, key)).join('') +
+        ['total','cagr','vol','sharpe','maxDD','correlation'].map(key => metricCell(values, key)).join('') +
         '<button class="remove-button" data-action="remove" aria-label="Remove ' + esc(r.name) + '">×</button></div>';
     }).join('') || '<div class="empty-results">Your selected strategies and their performance will appear here.</div>';
   }
@@ -284,7 +285,7 @@
     chartMetricRows = state.curves.filter(c => c.id !== 'benchmark');
     if (state.benchmark || compared) chartMetricRows.unshift({id:'benchmark',mode:'options',color:'#47566f',...benchmark});
     $('chartMetrics').hidden = !chartMetricRows.length;
-    $('chartMetrics').classList.toggle('narrow', $('chartMetrics').clientWidth < 520);
+    $('chartMetrics').classList.toggle('narrow', $('chartMetrics').clientWidth < 600);
     chartMetricRowHeight = $('chartMetrics').classList.contains('narrow') ? 72 : 48;
     $('chartMetricsCount').textContent = count(chartMetricRows.length) + (chartMetricRows.length === 1 ? ' portfolio' : ' portfolios');
     $('chartMetricsNote').hidden = !compared;
@@ -304,8 +305,8 @@
       return '<div class="chart-metric-row" data-id="' + esc(c.id) + '" data-mode="' + c.mode + '">' +
         '<div class="chart-metric-name" title="' + esc(label + ' · ' + subtitle) + '"><i style="border-color:' + c.color + ';border-top-style:' + (c.mode === 'spx' ? 'dashed' : 'solid') + '"></i>' +
         '<span><strong>' + esc(label) + '</strong><small>' + esc(subtitle) + '</small></span></div>' +
-        chartMetricKeys.map(key => '<div class="chart-metric-value" data-metric="' + key + '"><b>' + (key === 'sharpe' ? fmt(c.stats[key],2) : pct(c.stats[key])) + '</b>' +
-          (c.mode === 'spx' ? '<small title="Difference versus SPX for the selected dates">' + metricDifference(c.stats[key],benchmark?.[key],key) + '</small>' : '') + '</div>').join('') + '</div>';
+        chartMetricKeys.map(key => '<div class="chart-metric-value" data-metric="' + key + '"><b>' + metricText(key,c.stats[key]) + '</b>' +
+          (c.mode === 'spx' && key !== 'correlation' ? '<small title="Difference versus SPX for the selected dates">' + metricDifference(c.stats[key],benchmark?.[key],key) + '</small>' : '') + '</div>').join('') + '</div>';
     }).join('');
   }
   function setRange(from, to, preset = '') {
@@ -354,6 +355,7 @@
         const item = wanted[i], key = item.id + ':' + item.mode;
         if (!metrics.has(key)) {
           const nav = navFor(item.id, item.mode), stats = M.statistics(nav, start, end, C.initial, dates, drawdown);
+          stats.correlation = M.returnCorrelation(nav, spxNav, start, end, C.initial);
           metrics.set(key, {nav, stats, start});
         }
         if (performance.now() - batch > 10) {
@@ -547,11 +549,11 @@
   }
   function metricsCSV() {
     if (state.busy) throw Error('Wait for the current comparison to finish loading.');
-    const rows = [['strategy_id','strategy','details','exposure','visible','first_session','last_session','observations','total_return','cagr','annualized_volatility','sharpe_zero_cash_rate','max_drawdown']];
+    const rows = [['strategy_id','strategy','details','exposure','visible','first_session','last_session','observations','total_return','cagr','annualized_volatility','sharpe_zero_cash_rate','max_drawdown','correlation_to_spx']];
     const append = (id,mode,s) => {
       const c = metrics.get(id+':'+mode), r = byId.get(id); if (!c) return;
       rows.push([id,r?.name || 'SPX benchmark',r ? detail(r) : 'SPX price index',id === 'benchmark' ? 'SPX' : modeName(mode),s.visible,
-        dates[state.start],dates[state.end],c.stats.observations,...['total','cagr','vol','sharpe','maxDD'].map(k => c.stats[k])]);
+        dates[state.start],dates[state.end],c.stats.observations,...['total','cagr','vol','sharpe','maxDD','correlation'].map(k => c.stats[k])]);
     };
     for (const [id,s] of state.selected) for (const mode of lineModes(s.mode)) append(id,mode,s);
     if (state.benchmark) append('benchmark','options',{visible:true});
@@ -585,27 +587,27 @@
     const list = $('chartMetricsList'), listRect = list.getBoundingClientRect(), rowHeight = chartMetricRowHeight;
     const bodyTop = listRect.top-rect.top, start = Math.floor(list.scrollTop/rowHeight);
     const benchmark = metrics.get('benchmark:options')?.stats;
-    const columnX = i => narrow ? 9+(width-18)*(i+.5)/4 : width-11-(3-i)*81;
+    const columnX = i => narrow ? 9+(width-18)*(i+.5)/chartMetricKeys.length : width-11-(chartMetricKeys.length-1-i)*81;
     ctx.save(); ctx.translate((rect.left-wrap.left)*scale,top+(rect.top-wrap.top)*scale); ctx.scale(scale,scale);
     ctx.fillStyle = '#fffffff5'; ctx.fillRect(0,0,width,height); ctx.strokeStyle = '#dfe6f0'; ctx.lineWidth = 1; ctx.strokeRect(.5,.5,width-1,height-1);
     ctx.fillStyle = '#182b46'; ctx.font = '600 10px "Segoe UI",sans-serif'; ctx.textAlign = 'left'; ctx.fillText('Period performance',11,18);
     ctx.font = '8px "Segoe UI",sans-serif'; ctx.textAlign = 'right'; ctx.fillStyle = '#8190a6'; ctx.fillText(count(chartMetricRows.length)+' portfolios',width-11,18);
     if (!narrow) {ctx.textAlign='left';ctx.fillText('Portfolio',11,bodyTop-8);}
     ctx.textAlign = narrow ? 'center' : 'right';
-    ['CAGR','Ann. vol.','Max drawdown','Sharpe'].forEach((label,i) => ctx.fillText(label,columnX(i),bodyTop-8));
+    ['CAGR','Ann. vol.',narrow?'Max DD':'Max drawdown','Sharpe','SPX corr.'].forEach((label,i) => ctx.fillText(label,columnX(i),bodyTop-8,narrow?(width-18)/chartMetricKeys.length-3:76));
     ctx.save(); ctx.beginPath(); ctx.rect(0,bodyTop,width,list.clientHeight); ctx.clip();
     for(let j=start;j<Math.min(chartMetricRows.length,start+Math.ceil(list.clientHeight/rowHeight)+1);j++) {
       const c=chartMetricRows[j],r=byId.get(c.id),y=bodyTop+j*rowHeight-list.scrollTop;
       const label=r?r.name:'SPX benchmark', subtitle=r?r.subtitle+' · '+modeName(c.mode):'Price index · Same date range';
-      const nameWidth=narrow?width-39:width-353;
+      const nameWidth=narrow?width-39:width-29-chartMetricKeys.length*81;
       ctx.strokeStyle='#edf1f6';ctx.beginPath();ctx.moveTo(0,y+rowHeight);ctx.lineTo(width,y+rowHeight);ctx.stroke();
       ctx.strokeStyle=c.color;ctx.lineWidth=2;ctx.setLineDash(c.mode==='spx'?[4,3]:[]);ctx.beginPath();ctx.moveTo(11,y+14);ctx.lineTo(23,y+14);ctx.stroke();ctx.setLineDash([]);ctx.lineWidth=1;
       ctx.fillStyle='#182b46';ctx.textAlign='left';ctx.font='600 9px "Segoe UI",sans-serif';ctx.fillText(label,29,y+17,nameWidth);
       ctx.fillStyle='#8592a6';ctx.font='8px "Segoe UI",sans-serif';ctx.fillText(subtitle,29,y+29,nameWidth);
       chartMetricKeys.forEach((key,i)=>{
         ctx.textAlign=narrow?'center':'right';ctx.fillStyle='#182b46';ctx.font='600 10px "Segoe UI",sans-serif';
-        ctx.fillText(key==='sharpe'?fmt(c.stats[key],2):pct(c.stats[key]),columnX(i),y+(narrow?47:21));
-        if(c.mode==='spx'){ctx.fillStyle='#8392a8';ctx.font='8px "Segoe UI",sans-serif';ctx.fillText(metricDifference(c.stats[key],benchmark?.[key],key),columnX(i),y+(narrow?60:34));}
+        ctx.fillText(metricText(key,c.stats[key]),columnX(i),y+(narrow?47:21));
+        if(c.mode==='spx' && key!=='correlation'){ctx.fillStyle='#8392a8';ctx.font='8px "Segoe UI",sans-serif';ctx.fillText(metricDifference(c.stats[key],benchmark?.[key],key),columnX(i),y+(narrow?60:34));}
       });
     }
     ctx.restore();
