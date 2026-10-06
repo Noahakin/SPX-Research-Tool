@@ -22,6 +22,7 @@
   const frame = () => new Promise(resolve => requestAnimationFrame(resolve));
   const lineModes = mode => mode === 'both' ? ['options', 'spx'] : [mode];
   const modeName = mode => mode === 'spx' ? 'With SPX' : 'Options only';
+  const sortLabels = {cagr:'CAGR', sharpe:'Sharpe', maxDD:'Max drawdown'};
   let colorIndex = 0, revision = 0, refreshTimer, toastTimer, plot = null, drag = null, hoverIndex = null;
   let selectedIds = [], metrics = new Map(), metricWindow = '', hoverRow = null;
   const catalogOrder = new Map(C.strategies.map((r,i) => [r.id,i]));
@@ -110,7 +111,8 @@
   function filter() {
     const terms = $('search').value.toLowerCase().trim().split(/\s+/).filter(Boolean);
     state.filtered = C.strategies.filter(r => (!state.category || r.category === state.category) &&
-      filterIds.every(id => !$(id).value || String(id==='profitTarget'?(r.profitTarget||'hold'):r[id]) === $(id).value) && terms.every(t => searchText.get(r.id).includes(t)));
+      filterIds.every(id => !$(id).value || (id === 'width' && $(id).value === 'spreads' ? r.width > 0 :
+        String(id==='profitTarget'?(r.profitTarget||'hold'):r[id]) === $(id).value)) && terms.every(t => searchText.get(r.id).includes(t)));
     $('profitFolderNote').hidden=$('profitTarget').value==='hold';
     $('resultCount').textContent = count(state.filtered.length) + ' strategies';
     $('strategyList').scrollTop = 0; sortLibrary();
@@ -144,7 +146,7 @@
             const bytes=Uint8Array.from(atob(window.SPX_RANKINGS_COMPRESSED),c=>c.charCodeAt(0));
             index=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).json();
           }
-          finish(index?.version === 1 && index.source === M.rankingSource(C) ? index : null);
+          finish(index?.version === 2 && index.source === M.rankingSource(C) ? index : null);
         } catch {finish(null);}
       };
       document.head.append(script);
@@ -173,10 +175,10 @@
       if (records.some(r => !scores.has(r.id))) {
         const index = await loadRankingIndex(); if (token !== sortRevision) return;
         const stored = index?.windows?.[start + ':' + end];
-        if (Array.isArray(stored) && stored.length === C.strategies.length * 4) {
+        if (Array.isArray(stored) && stored.length === C.strategies.length * 6) {
           for (const r of records) {
-            const offset = catalogOrder.get(r.id) * 4 + (exposure === 'spx' ? 2 : 0);
-            scores.set(r.id,{cagr:stored[offset],sharpe:stored[offset+1]});
+            const offset = catalogOrder.get(r.id) * 6 + (exposure === 'spx' ? 3 : 0);
+            scores.set(r.id,{cagr:stored[offset],sharpe:stored[offset+1],maxDD:stored[offset+2]});
           }
         } else {
           // Custom date windows use the same exact NAV statistics as the chart.
@@ -192,7 +194,7 @@
             for (const r of rows) {
               const nav = navFor(r.id,exposure);
               const stats = M.statistics(nav,start,end,C.initial,dates);
-              scores.set(r.id,{cagr:stats.cagr,sharpe:stats.sharpe});
+              scores.set(r.id,{cagr:stats.cagr,sharpe:stats.sharpe,maxDD:stats.maxDD});
               if(!state.selected.has(r.id))profitNav.delete(r.id);
             }
             // Keep selected chart series in memory; discard sorting-only series.
@@ -207,7 +209,7 @@
       if (token !== sortRevision) return;
       state.filtered = records.sort((a,b) => M.compareScores(scores.get(a.id)?.[metric],scores.get(b.id)?.[metric],direction === 'desc') || catalogOrder.get(a.id)-catalogOrder.get(b.id));
       $('strategyList').scrollTop = 0;
-      $('sortStatus').textContent = (metric === 'cagr' ? 'CAGR' : 'Sharpe') + ' · ' + modeName(exposure) + ' · Chart dates. New lines: ' +
+      $('sortStatus').textContent = sortLabels[metric] + ' · ' + modeName(exposure) + ' · Chart dates. New lines: ' +
         ($('addMode').value === 'both' ? 'both versions' : modeName(exposure)) + '.';
       finishLibrarySort();
     } catch (error) {
@@ -230,8 +232,8 @@
       return '<label class="strategy-row' + (chosen ? ' chosen' : '') + '" title="' + esc(description(r)) + '">' +
         '<input type="checkbox" data-id="' + esc(r.id) + '"' + (chosen ? ' checked' : '') + ' aria-label="' + esc(r.name + ', ' + r.subtitle) + '">' +
         '<span class="row-text"><strong>' + esc(r.name) + '</strong><small>' + esc(r.subtitle) + '</small></span>' +
-        (ranked ? '<span class="sort-value" title="' + (metric === 'cagr' ? 'CAGR' : 'Sharpe') + ' · ' + exposure + ' · Chart dates"><b>' +
-          (Number.isFinite(score) ? metric === 'cagr' ? pct(score) : fmt(score,2) : '—') + '</b><small>' + (metric === 'cagr' ? 'CAGR' : 'Sharpe') +
+        (ranked ? '<span class="sort-value" title="' + sortLabels[metric] + ' · ' + exposure + ' · Chart dates"><b>' +
+          (Number.isFinite(score) ? metric === 'sharpe' ? fmt(score,2) : pct(score) : '—') + '</b><small>' + sortLabels[metric] +
           '</small><small class="sort-exposure">' + exposure + '</small></span>' :
           '<span class="mini-tag">' + (r.category === 'Both' ? Math.round(r.premium * 100) + '%' : r.category === 'Put buying' ? 'BUY' : 'SELL') + '</span>') + '</label>';
     }).join('') || '<div class="empty-results">No strategies match.<br>Try fewer filters or another search.</div>';
@@ -745,7 +747,7 @@
   }).observe($('chartWrap'));
   [...new Map(C.strategies.map(r => [r.days,r.tenor])).entries()].sort((a,b) => a[0]-b[0]).forEach(([,tenor]) => $('tenor').add(new Option(tenor,tenor)));
   [...new Set(C.strategies.map(r => r.primary))].sort((a,b) => b-a).forEach(v => $('primary').add(new Option(v+'% of SPX',String(v))));
-  [...new Set(C.strategies.map(r => r.width))].sort((a,b) => a-b).forEach(v => $('width').add(new Option(v ? v+' points' : 'Single put',String(v))));
+  [...new Set(C.strategies.map(r => r.width))].filter(v => v > 0).sort((a,b) => a-b).forEach(v => $('width').add(new Option(v+' points',String(v))));
   for (const id of ['from','to']) { $(id).min = dates[0]; $(id).max = dates[N-1]; }
   $('from').value = dates[0]; $('to').value = dates[N-1]; $('benchmark').checked = true;
   $('dataThrough').textContent = 'DATA THROUGH '+friendlyDate(dates[N-1]).toUpperCase();

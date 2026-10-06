@@ -29,7 +29,7 @@ let rankings;
 try {
   rankings = readRankings(join(viewer,'rankings.js'));
 } catch {}
-if (rankings?.version !== 1 || rankings.source !== globalThis.SPXMath.rankingSource(catalog)) {
+if (rankings?.version !== 2 || rankings.source !== globalThis.SPXMath.rankingSource(catalog)) {
   console.log('Refreshing rankings for the current chart data and statistics.');
   await import('./build-rankings.mjs');
 }

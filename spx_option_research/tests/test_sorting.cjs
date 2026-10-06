@@ -27,3 +27,28 @@ test('a single-session window has no annualized CAGR or Sharpe to rank', () => {
   assert.equal(stats.cagr,null);assert.equal(stats.sharpe,null);
   assert.equal(compareScores(stats.cagr,0),1);
 });
+
+test('smallest drawdown ranks zero and shallow losses before deep losses', () => {
+  const dates=['2020-01-01','2020-01-02','2020-01-03'];
+  const rows=[
+    {id:'deep',nav:[100,80,100]},
+    {id:'shallow',nav:[100,95,100]},
+    {id:'rising',nav:[100,105,110]},
+  ].map(r=>({id:r.id,v:statistics(r.nav,0,2,100,dates).maxDD}));
+  rows.push({id:'missing',v:null});
+  assert.deepEqual(rows.slice().sort((a,b)=>compareScores(a.v,b.v)).map(r=>r.id),['rising','shallow','deep','missing']);
+  assert.deepEqual(rows.slice().sort((a,b)=>compareScores(a.v,b.v,false)).map(r=>r.id),['deep','shallow','rising','missing']);
+});
+
+test('drawdown rankings use the selected window including its first-session loss', () => {
+  const dates=['2020-01-01','2020-01-02','2020-01-03','2020-01-06'];
+  const recovered=[100,80,100,110],lateLoss=[100,100,95,100];
+  const full=[recovered,lateLoss].map(nav=>statistics(nav,0,3,100,dates).maxDD);
+  const recent=[recovered,lateLoss].map(nav=>statistics(nav,2,3,100,dates).maxDD);
+  assert(compareScores(full[0],full[1])>0);
+  assert(compareScores(recent[0],recent[1])<0);
+  assert(Math.abs(recent[1]+0.05)<1e-12);
+  const oneDay=statistics(lateLoss,2,2,100,dates);
+  assert(Math.abs(oneDay.maxDD+0.05)<1e-12);
+  assert.equal(oneDay.cagr,null);
+});
