@@ -74,7 +74,7 @@
     return descending?b-a:a-b;
   }
   function rankingSource(catalog){
-    return JSON.stringify([statistics.toString(),catalog.profitData?root.SPXProfit.signature:null,catalog.initial,catalog.dates,
+    return JSON.stringify([statistics.toString(),returnCorrelation.toString(),catalog.profitData?root.SPXProfit.signature:null,catalog.initial,catalog.dates,
       catalog.strategies.map(r=>[r.id,r.chunk,r.slot]),
       Object.entries(catalog.chunks).map(([key,c])=>[key,c.sha256,c.bytes])]);
   }

@@ -12,11 +12,12 @@ const M = globalThis.SPXMath;
 const root = fileURLToPath(new URL('..', import.meta.url));
 const site = join(root,'SPX Research Interactive');
 const catalog = readCatalog(site), P=globalThis.SPXProfit, prices=new Map();
+const spxNav = Float64Array.from(catalog.spx,v=>catalog.initial*v/catalog.spx[0]);
 const ranges = new Map(['ALL','1M','3M','6M','YTD','1Y','3Y','5Y'].map(period => {
   const range = M.windowIndices(catalog.dates,...M.presetDates(catalog.dates,period));
   return [range.join(':'),range];
 }));
-const windows = Object.fromEntries([...ranges.keys()].map(key => [key,new Array(catalog.strategies.length*6).fill(null)]));
+const windows = Object.fromEntries([...ranges.keys()].map(key => [key,new Array(catalog.strategies.length*8).fill(null)]));
 const groups = new Map();
 catalog.strategies.forEach((r,i) => {
   if (!groups.has(r.chunk)) groups.set(r.chunk,[]);
@@ -37,15 +38,16 @@ for (const [key,chunk] of Object.entries(catalog.chunks)) {
       const nav = replay?replay[mode]:new Float64Array(data,(r.slot*2+mode)*n*8,n);
       for (const [range,[start,end]] of ranges) {
         const stats = M.statistics(nav,start,end,catalog.initial,catalog.dates);
-        windows[range][i*6+mode*3] = Number.isFinite(stats.cagr) ? stats.cagr : null;
-        windows[range][i*6+mode*3+1] = Number.isFinite(stats.sharpe) ? stats.sharpe : null;
-        windows[range][i*6+mode*3+2] = Number.isFinite(stats.maxDD) ? stats.maxDD : null;
+        windows[range][i*8+mode*4] = Number.isFinite(stats.cagr) ? stats.cagr : null;
+        windows[range][i*8+mode*4+1] = Number.isFinite(stats.sharpe) ? stats.sharpe : null;
+        windows[range][i*8+mode*4+2] = Number.isFinite(stats.maxDD) ? stats.maxDD : null;
+        windows[range][i*8+mode*4+3] = M.returnCorrelation(nav,spxNav,start,end,catalog.initial);
       }
     }
   }
   if (++completed % 32 === 0) console.log(`Ranking tables: ${completed}/${Object.keys(catalog.chunks).length} verified data shards`);
 }
-const packed=gzipSync(Buffer.from(JSON.stringify({version:2,source:M.rankingSource(catalog),windows})));
+const packed=gzipSync(Buffer.from(JSON.stringify({version:3,source:M.rankingSource(catalog),windows})));
 const artifact = 'window.SPX_RANKINGS_COMPRESSED='+JSON.stringify(packed.toString('base64'))+';\n';
 const pending = join(site,'rankings.js.tmp');
 writeFileSync(pending,artifact); renameSync(pending,join(site,'rankings.js'));

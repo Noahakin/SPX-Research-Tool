@@ -23,7 +23,7 @@
   const frame = () => new Promise(resolve => requestAnimationFrame(resolve));
   const lineModes = mode => mode === 'both' ? ['options', 'spx'] : [mode];
   const modeName = mode => mode === 'spx' ? 'With SPX' : 'Options only';
-  const sortLabels = {cagr:'CAGR', sharpe:'Sharpe', maxDD:'Max drawdown'};
+  const sortLabels = {cagr:'CAGR', sharpe:'Sharpe', maxDD:'Max drawdown', correlation:'SPX corr.'};
   let colorIndex = 0, revision = 0, refreshTimer, toastTimer, plot = null, drag = null, hoverIndex = null;
   let selectedIds = [], metrics = new Map(), metricWindow = '', hoverRow = null;
   const catalogOrder = new Map(C.strategies.map((r,i) => [r.id,i]));
@@ -147,7 +147,7 @@
             const bytes=Uint8Array.from(atob(window.SPX_RANKINGS_COMPRESSED),c=>c.charCodeAt(0));
             index=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).json();
           }
-          finish(index?.version === 2 && index.source === M.rankingSource(C) ? index : null);
+          finish(index?.version === 3 && index.source === M.rankingSource(C) ? index : null);
         } catch {finish(null);}
       };
       document.head.append(script);
@@ -176,10 +176,10 @@
       if (records.some(r => !scores.has(r.id))) {
         const index = await loadRankingIndex(); if (token !== sortRevision) return;
         const stored = index?.windows?.[start + ':' + end];
-        if (Array.isArray(stored) && stored.length === C.strategies.length * 6) {
+        if (Array.isArray(stored) && stored.length === C.strategies.length * 8) {
           for (const r of records) {
-            const offset = catalogOrder.get(r.id) * 6 + (exposure === 'spx' ? 3 : 0);
-            scores.set(r.id,{cagr:stored[offset],sharpe:stored[offset+1],maxDD:stored[offset+2]});
+            const offset = catalogOrder.get(r.id) * 8 + (exposure === 'spx' ? 4 : 0);
+            scores.set(r.id,{cagr:stored[offset],sharpe:stored[offset+1],maxDD:stored[offset+2],correlation:stored[offset+3]});
           }
         } else {
           // Custom date windows use the same exact NAV statistics as the chart.
@@ -195,7 +195,8 @@
             for (const r of rows) {
               const nav = navFor(r.id,exposure);
               const stats = M.statistics(nav,start,end,C.initial,dates);
-              scores.set(r.id,{cagr:stats.cagr,sharpe:stats.sharpe,maxDD:stats.maxDD});
+              scores.set(r.id,{cagr:stats.cagr,sharpe:stats.sharpe,maxDD:stats.maxDD,
+                correlation:M.returnCorrelation(nav,spxNav,start,end,C.initial)});
               if(!state.selected.has(r.id))profitNav.delete(r.id);
             }
             // Keep selected chart series in memory; discard sorting-only series.
@@ -234,7 +235,7 @@
         '<input type="checkbox" data-id="' + esc(r.id) + '"' + (chosen ? ' checked' : '') + ' aria-label="' + esc(r.name + ', ' + r.subtitle) + '">' +
         '<span class="row-text"><strong>' + esc(r.name) + '</strong><small>' + esc(r.subtitle) + '</small></span>' +
         (ranked ? '<span class="sort-value" title="' + sortLabels[metric] + ' · ' + exposure + ' · Chart dates"><b>' +
-          (Number.isFinite(score) ? metric === 'sharpe' ? fmt(score,2) : pct(score) : '—') + '</b><small>' + sortLabels[metric] +
+          (Number.isFinite(score) ? metricText(metric,score) : '—') + '</b><small>' + sortLabels[metric] +
           '</small><small class="sort-exposure">' + exposure + '</small></span>' :
           '<span class="mini-tag">' + (r.category === 'Both' ? Math.round(r.premium * 100) + '%' : r.category === 'Put buying' ? 'BUY' : 'SELL') + '</span>') + '</label>';
     }).join('') || '<div class="empty-results">No strategies match.<br>Try fewer filters or another search.</div>';
